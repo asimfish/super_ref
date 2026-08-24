@@ -99,6 +99,26 @@ python3 scripts/citationctl doctor workspaces/my-audit
 - 会议/期刊口径必须由出版方权威通道证实：arXiv 预印本路由可核作者与标题，但通常无法证实 venue/出版年（预印本各来源年份还会互相冲突），此类引用会按设计阻塞。
 - 传输层会按 `Content-Encoding` 声明或 gzip 魔数解压响应（解压后仍受同一字节上限约束）；曾观测到 `ojs.aaai.org` 无视 `Accept-Encoding: identity` 且不声明编码直接返回 gzip 字节。
 
+## 修正链路示例：workspaces/labelfree-correction-demo
+
+单条引用的全链路演示（批次 `b15a13aa`）：AAAI 2017 开放获取论文，声称作者为印刷缩写 `R. Stewart, S. Ermon`。四 agent 共识判定 `CORRECTION_REQUIRED`（0 阻塞），`propose` 已生成前后对照：
+
+```text
+authors: ["R. Stewart", "S. Ermon"]  ->  ["Russell Stewart", "Stefano Ermon"]
+proposal sha256: 4182b7d51d2a51edf22956fbff3bb0669574e96bec6edebc99aeee6dec0e8122
+```
+
+作者审阅 `CITATION_CORRECTIONS.json` 后自行执行：
+
+```bash
+python3 scripts/citationctl apply workspaces/labelfree-correction-demo \
+  --author-approved --replace-ledger \
+  --proposal-sha256 4182b7d51d2a51edf22956fbff3bb0669574e96bec6edebc99aeee6dec0e8122
+python3 scripts/citationctl doctor workspaces/labelfree-correction-demo
+```
+
+按设计，agent 不得代替作者提供批准标志与哈希。
+
 ## 真实数据示例：workspaces/capsat-citation-audit
 
 对一篇 NeurIPS 2026 投稿 rebuttal 中逐字转录的 13 条引用声称做了完整审计（批次 `8f4eb633`）：

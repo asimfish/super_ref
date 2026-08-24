@@ -1,0 +1,217 @@
+Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence (AAAI-17)
+
+Label-Free Supervision of Neural Networks with
+Physics and Domain Knowledge
+Russell Stewart , Stefano Ermon
+Department of Computer Science, Stanford University
+{stewartr, ermon}@cs.stanford.edu
+
+Abstract
+In many machine learning applications, labeled data is scarce
+and obtaining more labels is expensive. We introduce a new
+approach to supervising neural networks by specifying constraints that should hold over the output space, rather than direct examples of input-output pairs. These constraints are derived from prior domain knowledge, e.g., from known laws of
+physics. We demonstrate the effectiveness of this approach on
+real world and simulated computer vision tasks. We are able
+to train a convolutional neural network to detect and track
+objects without any labeled examples. Our approach can signiﬁcantly reduce the need for labeled training data, but introduces new challenges for encoding prior knowledge into
+appropriate loss functions.
+
+f
+
+X
+
+Y
+
+g
+
+R
+
+Figure 1: Constraint learning aims to recover the transformation f without providing labels y. Instead, we look for a
+mapping f that captures the structure required by g.
+and relationships that are known to hold because of prior
+domain knowledge. The process of providing these necessary constraints may still require large amounts of domain
+speciﬁc engineering.
+Nevertheless, by training without direct examples of the
+values our hidden (output) variables take, we gain several
+advantages over traditional supervised learning, including
+1) a reduction in the amount of work spent labeling, and 2)
+an increase in generality, as a single set of constraints can
+be applied to multiple data sets without relabeling. The primary contribution of this work is to demonstrate how constraint learning may be used to supervise neural networks
+across three practical computer vision tasks. We explore the
+challenge of simultaneously learning feature representations
+over raw data and avoiding trivial, low entropy solutions in
+the constraint space.
+
+Introduction
+Applications of machine learning are often encumbered by
+the need for large amounts of labeled training data. Neural networks have made large amounts of labeled data even
+more crucial to success (Krizhevsky, Sutskever, and Hinton
+2012; LeCun, Bengio, and Hinton 2015). Nonetheless, we
+observe that humans are often able to learn without direct
+examples, opting instead for high level instructions for how
+a task should be performed, or what it will look like when
+completed. In this work, we ask whether a similar principle can be applied to teaching machines; can we supervise
+networks without individual examples by instead describing
+only the structure of desired outputs?
+Contemporary methods for learning without labels often fall under the category of unsupervised learning. Autoencoders, for example, aim to uncover hidden structure in
+the data without having access to any label. Such systems
+succeed in producing highly compressed, yet informative
+representations of the inputs (Kingma and Welling 2013;
+Le 2013). However, these representations differ from ours as
+they are not explicitly constrained to have a particular meaning or semantics.
+In this paper, we constrain the type-level semantics of the
+hidden variables we hope to discover, but still train without labels by learning from constraints (see (Shcherbatyi and
+Andres 2016) for an introduction to this idea). Intuitively, algebraic and logical constraints are used to encode structures
+
+Problem Setup
+In a traditional supervised learning setting, we are given a
+training set D = {(x1 , y1 ), · · · , (xn , yn )} of n training examples. Each example is a pair (xi , yi ) formed by an instance xi ∈ X and the corresponding output (label) yi ∈ Y .
+The goal is to learn a function f : X → Y mapping inputs to outputs. To quantify performance, a loss function
+ : Y × Y → R is provided, and a mapping is found via
+f ∗ = arg min
+f ∈F
+
+n
+
+
+(f (xi ), yi )
+
+(1)
+
+i=1
+
+where the optimization is over a pre-deﬁned class of functions F (hypothesis class). In our case, F will be (convolutional) neural networks parameterized by their weights.
+
+c 2017, Association for the Advancement of Artiﬁcial
+Copyright 
+Intelligence (www.aaai.org). All rights reserved.
+
+2576
+
+our person detection experiment, if g is undesirably satisﬁed
+by a f ≡ C constant output, we can add a term to favor outputs with higher entropy. The process of designing the loss
+g and the regularization term R is a form of supervision, and
+can require a signiﬁcant time investment. But unlike hand
+labeling, it does not increase proportional to the size of the
+data, |D|, and can be applied to new data sets often without
+modiﬁcation.
+
+By restricting the space of possible functions specifying
+the hypothesis class F, we are leveraging prior knowledge
+about the speciﬁc problem we are trying to solve. Informally,
+the so-called No Free Lunch Theorems state that every machine learning algorithm must make such assumptions in order to work (Wolpert 2002). Another common way in which
+a modeler incorporates prior knowledge is by specifying an
+a-priori preference for certain functions in F, incorporating a regularization
+R : F → R, and solving for
+term
+n
+f ∗ = arg minf ∈F i=1 (f (xi ), yi ) + R(f ). Typically, the
+regularization term R : F → R speciﬁes a preference for
+“simpler” functions (Occam’s razor).
+In many ML settings, the input space X is complex (images), while the output space Y is simple (e.g., a binary classiﬁcation problem where Y = {0, 1}). Here, we are interested in structured prediction problems, where both X and
+Y are complex. For example, in our ﬁrst experiment, X corresponds to image sequences (video) and Y to the height
+of an object as it is moving through the air. The goal is to
+identify a function f ∗ that correctly maps frames to the corresponding height of the object. Clearly, the heights in each
+frame are not independent, and the sequence demonstrates
+a well-deﬁned structure. In fact, we known from elementary physics that any correct sequence of outputs forms a
+parabola.
+In this paper, we model prior knowledge on the structure
+of the outputs by providing a weighted constraint function
+g : X × Y → R, used to penalize “structures” that are not
+consistent with our prior knowledge. When Y is a (multidimensional) discrete space (e.g., describing many potential
+binary attributes of an image) as in our third application,
+g can be speciﬁed compactly using a graphical model approach, as a sum of weighted potential or constraints that
+only depend on a small subsets of the variables (Richardson and Domingos 2006) (Lafferty, McCallum, and Pereira
+2001).
+The question we explore in this paper is whether this weak
+form of supervision is sufﬁcient to learn interesting functions. While one clearly needs labels, y, to evaluate f ∗ , labels may not be necessary to discover f ∗ . If prior knowledge informs us that outputs of f ∗ have other unique properties among functions in F, we may use these properties
+for training rather than direct examples y. Speciﬁcally, we
+consider an unsupervised approach where the labels yi are
+not provided to us, and optimize for a necessary property of
+the output, g instead. That is, we search for
+fˆ∗ = arg min
+f ∈F
+
+n
+
+
+g(xi , f (xi )) + R(f )
+
+Experiments
+The goal of our method is to train a network, f , mapping
+from inputs to outputs that we care about, without needing
+direct examples of those outputs. In our ﬁrst two experiments, we construct a mapping from an image to the location of an object it contains. Learning is made possible by
+exploiting structure that holds in images over time. In our
+third experiment, we map an image to two boolean variables
+describing whether or not the image contains two special objects. Learning exploits the unique causal semantics existing
+between these objects. Across our experiments, we provide
+labels only for the purpose of evaluation.
+
+Tracking an object in free fall
+In our ﬁrst experiment, we record videos of an object
+being thrown across the ﬁeld of view and aim to learn
+the object’s height in each frame. Our goal is to obtain a regression network on color images, i.e. a map. We will train this netping from height×width×3 →
+work as a structured prediction problem operating on a sequence of N images to produce a sequence of N heights,
+ height×width×3 N
+→ N , and each piece of data xi will
+be a vector of images, x. Rather than supervising our network with direct labels, y ∈ RN , we instead supervise the
+network to ﬁnd an object obeying the elementary physics of
+free falling objects. Because gravity acts equally on all objects, we need not encode the object’s mass or volume.
+An object acting under gravity will have a ﬁxed acceleration of a = −9.8m/s2 , and the plot of the object’s height
+over time will form a parabola:
+
+R
+
+R
+
+R
+
+R
+
+yi = y0 + v0 (iΔt) + a(iΔt)2
+where Δt = 0.1s is the duration between frames. This equation provides a necessary constraint, which the correct mapping f ∗ must satisfy. We thus train f by making incremental
+improvements in the direction of better satisfying this equation.
+Given any trajectory of N height predictions, f (x), we
+ﬁt a parabola with ﬁxed curvature to those predictions, and
+minimize the resulting residual. Formally, we specify a =
+[aΔt2 , a(2Δt)2 , . . . , a(N Δt)2 ] and set
+
+(2)
+
+i=1
+
+In some experiments, we ﬁnd that commonly used hypothesis classes (convolutional layers encoding translation invariance) and regularization terms R may be sufﬁcient to avoid
+functions f ∈ F optimizing (2) but not (1). In these settings,
+we can optimize (2) in place of (1) with Stochastic Gradient
+Descent (SGD), freeing us from the need for labels.
+When optimizing (2) is not sufﬁcient to ﬁnd f ∗ , we will
+add additional regularization terms to supervise the machine
+towards correct convergence. For example, as we will see in
+
+ŷ = a + A(AT A)−1 AT (f (x) − a)
+where
+
+2577
+
+⎡
+
+Δt
+⎢ 2Δt
+⎢ 3Δt
+A=⎢
+⎢ .
+⎣ ..
+N Δt
+
+⎤
+1
+1 ⎥
+1 ⎥
+⎥
+.. ⎥
+. ⎦
+1
+
+(3)
+
+

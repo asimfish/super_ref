@@ -1,0 +1,15 @@
+{
+  "workspace_purpose": "End-to-end correction-chain demo on one real citation claim (AAAI 2017, open-access venue-of-record via DOI + AAAI OJS).",
+  "citation_audit": {
+    "network": {
+      "resolver_mode": "trusted_proxy",
+      "allowed_domains": [
+        "doi.org",
+        "crossref.org",
+        "semanticscholar.org",
+        "aaai.org"
+      ]
+    }
+  },
+  "trusted_proxy_justification": "This machine routes all egress through its own local relay at 127.0.0.1:7890 (system-wide proxy); strict peer attestation is unusable behind a local relay per docs/citation-verification.md section 6. The allowlist is restricted to the DOI authority routes plus ojs.aaai.org, the DOI landing redirect target."
+}

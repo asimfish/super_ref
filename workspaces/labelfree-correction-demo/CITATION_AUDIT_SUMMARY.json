@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "b15a13aa-8872-4605-80e4-ec1815a8f57d",
+  "generated_at": "2026-08-24T22:34:52+00:00",
+  "status": "CORRECTION_REQUIRED",
+  "applied": false,
+  "approval": null,
+  "target_references_sha256": "1ed464fbfa7351201fa202e03b4d6c48972c7e3e53be9a2dcbf1a4f854800238",
+  "manifest_sha256": "09aa12b767ccceac58a8d2caa965ef2b574510207c9561021a59d7be1d4094d6",
+  "reference_count": 1,
+  "references": [
+    {
+      "reference_id": "REF-LABELFREE-PHYSICS",
+      "status": "CORRECTION_REQUIRED",
+      "decision_path": "CITATION_AUDIT/decisions/REF-LABELFREE-PHYSICS.json",
+      "decision_sha256": "86482596ef56153b39c08123b3437a1fd0301af357fd4fd14d814375ebbb6f20",
+      "verified_fields": {
+        "authors": "PASS",
+        "title": "PASS",
+        "year": "PASS",
+        "venue": "PASS"
+      }
+    }
+  ]
+}

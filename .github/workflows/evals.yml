@@ -1,0 +1,23 @@
+name: evals
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install poppler (pdftotext)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Byte-compile
+        run: python3 -m py_compile scripts/citationctl scripts/citation_audit/*.py
+      - name: Unit and property evals
+        run: python3 evals/run_citation_unit_evals.py
+      - name: End-to-end security and state-machine evals
+        run: python3 evals/run_citation_evals.py

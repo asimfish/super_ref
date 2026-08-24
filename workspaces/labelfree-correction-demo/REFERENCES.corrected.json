@@ -1,0 +1,29 @@
+{
+  "schema_version": 2,
+  "enforce": true,
+  "rule": "Citation fields require evidence-first multi-agent verification before use.",
+  "source_note": "Single-reference demonstration of the full correction chain (collect -> run-agents -> consensus -> propose -> author-approved apply). The claim below is transcribed verbatim from the cap-sat rebuttal, which prints abbreviated author names; the audit is expected to propose the complete printed names from the AAAI OJS venue-of-record evidence.",
+  "references": [
+    {
+      "reference_id": "REF-LABELFREE-PHYSICS",
+      "citation_key": "stewart2017labelfree",
+      "entry_type": "inproceedings",
+      "authors": [
+        "Russell Stewart",
+        "Stefano Ermon"
+      ],
+      "title": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "year": "2017",
+      "doi": "10.1609/aaai.v31i1.10934",
+      "verified_on": "2026-08-24",
+      "verification_url": "https://ojs.aaai.org/index.php/AAAI/article/view/10934",
+      "citation_audit": {
+        "status": "PASS",
+        "batch_id": "b15a13aa-8872-4605-80e4-ec1815a8f57d",
+        "decision_sha256": "86482596ef56153b39c08123b3437a1fd0301af357fd4fd14d814375ebbb6f20",
+        "evidence_sha256": "8cbe9b7eb6022aea765561db2cfe9ee08a863c7afd7ff0a6cafa961e04aa5eef"
+      }
+    }
+  ]
+}

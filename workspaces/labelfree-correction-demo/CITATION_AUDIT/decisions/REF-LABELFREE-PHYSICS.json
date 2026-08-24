@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "batch_id": "b15a13aa-8872-4605-80e4-ec1815a8f57d",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "created_at": "2026-08-24T22:34:27+00:00",
+  "status": "CORRECTION_REQUIRED",
+  "original_reference_sha256": "bd11899a877b06a832c2dd5d04c06616674780020d8a4baea5cdfd1e02168b6a",
+  "evidence_sha256": "8cbe9b7eb6022aea765561db2cfe9ee08a863c7afd7ff0a6cafa961e04aa5eef",
+  "canonical_fields": {
+    "authors": [
+      "Russell Stewart",
+      "Stefano Ermon"
+    ],
+    "title": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+    "year": "2017",
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence"
+  },
+  "field_checks": {
+    "authors": {
+      "status": "PASS",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "source_id": "registry_crossref",
+          "source_family": "registry_metadata",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035e8-ddcb-7110-84ea-a8aa81670040",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035e8-ddcb-7b23-8b2a-d0d32214fac2",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035e8-ddcb-71d3-b158-cb2ab08586e2",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "role": "adversarial_provenance",
+          "agent_id": "adversarial_provenance-01a035e8-ddcb-78c1-9c3a-92b5a982a613",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "title": {
+      "status": "PASS",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "source_id": "registry_crossref",
+          "source_family": "registry_metadata",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035e8-ddcb-7110-84ea-a8aa81670040",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035e8-ddcb-7b23-8b2a-d0d32214fac2",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035e8-ddcb-71d3-b158-cb2ab08586e2",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "role": "adversarial_provenance",
+          "agent_id": "adversarial_provenance-01a035e8-ddcb-78c1-9c3a-92b5a982a613",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        }
+      ],
+      "errors": []
+    },
+    "year": {
+      "status": "PASS",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2017/02/13",
+          "normalized": "2017"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2017",
+          "normalized": "2017"
+        },
+        {
+          "source_id": "registry_crossref",
+          "source_family": "registry_metadata",
+          "value": "2017",
+          "normalized": "2017"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035e8-ddcb-7b23-8b2a-d0d32214fac2",
+          "value": "2017",
+          "normalized": "2017"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035e8-ddcb-71d3-b158-cb2ab08586e2",
+          "value": "2017",
+          "normalized": "2017"
+        },
+        {
+          "role": "adversarial_provenance",
+          "agent_id": "adversarial_provenance-01a035e8-ddcb-78c1-9c3a-92b5a982a613",
+          "value": "2017",
+          "normalized": "2017"
+        }
+      ],
+      "errors": []
+    },
+    "venue": {
+      "status": "PASS",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "normalized": "aaai"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "normalized": "aaai"
+        },
+        {
+          "source_id": "registry_crossref",
+          "source_family": "registry_metadata",
+          "value": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "normalized": "aaai"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035e8-ddcb-7b23-8b2a-d0d32214fac2",
+          "value": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "normalized": "aaai"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035e8-ddcb-71d3-b158-cb2ab08586e2",
+          "value": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "normalized": "aaai"
+        },
+        {
+          "role": "adversarial_provenance",
+          "agent_id": "adversarial_provenance-01a035e8-ddcb-78c1-9c3a-92b5a982a613",
+          "value": "Proceedings of the AAAI Conference on Artificial Intelligence",
+          "normalized": "aaai"
+        }
+      ],
+      "errors": []
+    }
+  },
+  "discrepancies": [
+    {
+      "type": "authors_missing",
+      "detail": [
+        "Russell Stewart",
+        "Stefano Ermon"
+      ]
+    },
+    {
+      "type": "authors_extra_or_fabricated",
+      "detail": [
+        "R. Stewart",
+        "S. Ermon"
+      ]
+    }
+  ],
+  "blocking_errors": [],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a035e8-ddcb-78c1-9c3a-92b5a982a613",
+      "path": "reports/REF-LABELFREE-PHYSICS/adversarial_provenance--adversarial_provenance-01a035e8-ddcb-78c1-9c3a-92b5a982a613.json",
+      "sha256": "901c08298ffcf760ca56a1322a5bb6187379dea2fba810c87f5b9588a66bc768",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "1b8eca83efab36140f738f8c81a4991e6b2dbc419959de225379e8c03e6370c0",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035e8-ddcb-78c1-9c3a-92b5a982a613",
+        "invocation_id": "1fa32f45-1cf8-4fe1-9eac-e3fab1b91461",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a035e8-ddcb-7110-84ea-a8aa81670040",
+      "path": "reports/REF-LABELFREE-PHYSICS/pdf_identity--pdf_identity-01a035e8-ddcb-7110-84ea-a8aa81670040.json",
+      "sha256": "a6dcbd799999ec7aa99e19eb36f877706c8d37cb76b4c199879e44b171df1742",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "21a363f9dac84058fbe23bd6ab958700f3a495e6cfef0ae74a485e47a8624f05",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035e8-ddcb-7110-84ea-a8aa81670040",
+        "invocation_id": "bdb17871-2b4b-4fbd-bb54-8e21caf9c3c7",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a035e8-ddcb-71d3-b158-cb2ab08586e2",
+      "path": "reports/REF-LABELFREE-PHYSICS/registry_crosscheck--registry_crosscheck-01a035e8-ddcb-71d3-b158-cb2ab08586e2.json",
+      "sha256": "9701ac71a3270304a9a1eb3f0ef1a1ead1de60623fe5927edec3dd08f963e5f4",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "fad83aaaa0edeaf7dc7d6fe625406ba93a0d89ec9c1675632d3817f931baa14d",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035e8-ddcb-71d3-b158-cb2ab08586e2",
+        "invocation_id": "be51af2c-3026-4af1-8302-cf33f992f0a2",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a035e8-ddcb-7b23-8b2a-d0d32214fac2",
+      "path": "reports/REF-LABELFREE-PHYSICS/website_citation--website_citation-01a035e8-ddcb-7b23-8b2a-d0d32214fac2.json",
+      "sha256": "17b076f6e6096d747ab1858678b385c97feb3eb1c94a60f323298bef78be9655",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "fe7ba999e0e8be05d2c2ba6eff35be7e766285b3f85a145e1c6ff32bf5eb9642",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035e8-ddcb-7b23-8b2a-d0d32214fac2",
+        "invocation_id": "2122f8b0-5337-413a-bc46-beca628e318e",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": true
+}

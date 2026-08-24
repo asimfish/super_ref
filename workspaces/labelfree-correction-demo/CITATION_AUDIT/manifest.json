@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "batch_id": "b15a13aa-8872-4605-80e4-ec1815a8f57d",
+  "created_at": "2026-08-24T22:33:46+00:00",
+  "status": "CORRECTION_REQUIRED",
+  "references_path": "REFERENCES.json",
+  "references_sha256": "1ed464fbfa7351201fa202e03b4d6c48972c7e3e53be9a2dcbf1a4f854800238",
+  "source_bib": null,
+  "config": {
+    "schema_version": 1,
+    "enforce": true,
+    "required_roles": [
+      "pdf_identity",
+      "website_citation",
+      "registry_crosscheck",
+      "adversarial_provenance"
+    ],
+    "field_required_roles": {
+      "authors": [
+        "pdf_identity",
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "title": [
+        "pdf_identity",
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "year": [
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "venue": [
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ]
+    },
+    "require_all_source_values_to_agree": true,
+    "required_source_families": [
+      "paper_pdf",
+      "landing_page",
+      "citation_export",
+      "registry_metadata"
+    ],
+    "network": {
+      "timeout_seconds": 25,
+      "allow_http": false,
+      "resolver_mode": "trusted_proxy",
+      "allowed_domains": [
+        "doi.org",
+        "crossref.org",
+        "semanticscholar.org",
+        "aaai.org"
+      ],
+      "max_redirects": 5,
+      "user_agent": "super-rebuttal-citation-audit/1.0",
+      "max_pdf_bytes": 52428800,
+      "min_pdf_bytes": 1024,
+      "max_html_bytes": 5242880,
+      "max_citation_bytes": 2097152,
+      "max_metadata_bytes": 5242880
+    },
+    "pdf": {
+      "first_pages": 2,
+      "extract_timeout_seconds": 30,
+      "min_extracted_chars": 80,
+      "max_extract_bytes": 1048576,
+      "max_memory_mb": 512
+    },
+    "agent_runner": {
+      "type": "codex_cli",
+      "binary": "codex",
+      "max_parallel": 4,
+      "timeout_seconds": 900
+    }
+  },
+  "references": [
+    {
+      "reference_id": "REF-LABELFREE-PHYSICS",
+      "reference_sha256": "bd11899a877b06a832c2dd5d04c06616674780020d8a4baea5cdfd1e02168b6a",
+      "status": "CORRECTION_REQUIRED",
+      "evidence_sha256": "8cbe9b7eb6022aea765561db2cfe9ee08a863c7afd7ff0a6cafa961e04aa5eef",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-LABELFREE-PHYSICS/pdf_identity.json",
+          "sha256": "94bcd4b5569e7a7b9dd3717a66932ff3124116044c2771226eac68c831df421c"
+        },
+        "website_citation": {
+          "path": "packets/REF-LABELFREE-PHYSICS/website_citation.json",
+          "sha256": "fb23a3e4a9f34df20d7ecf60d1cb2afbcf0784cfa7466059a54ad3e79496c264"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-LABELFREE-PHYSICS/registry_crosscheck.json",
+          "sha256": "3ab9f6ca337a5cae770f754721830be4c98537091216bf39e5d5db262b6c2350"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-LABELFREE-PHYSICS/adversarial_provenance.json",
+          "sha256": "bfdde21ff7421239d1c143bbc5d9b05e93bf03bfc61dbc059a9e22e1dc7d3f8d"
+        }
+      },
+      "decision_path": "decisions/REF-LABELFREE-PHYSICS.json",
+      "decision_sha256": "86482596ef56153b39c08123b3437a1fd0301af357fd4fd14d814375ebbb6f20"
+    }
+  ],
+  "updated_at": "2026-08-24T22:34:27+00:00"
+}
