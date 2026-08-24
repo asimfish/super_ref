@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-SURVEYPROP",
+  "role": "adversarial_provenance",
+  "agent_id": "adversarial_provenance-01a035c1-c92e-7733-bd27-fbcfa10d4602",
+  "recorded_at": "2026-08-24T21:51:48+00:00",
+  "packet_sha256": "f0198e86f4c30dbcdedc355f7cd3fb350a53cc2e1e7c13be10c8cdd2b5485a90",
+  "evidence_sha256": "d3ff56f04a031b7f084a7bf1117f02bd11bfe557cd9fb70bd9ad3adcb51918f4",
+  "body_sha256": "8ebc64ca1141ffcb4234ec7a6553c8fc36a4e8a300f5e5c3801e58d7ea4f0265",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "375918d07a2816de81055c91d0610c199b1a2a0e9e9619e2396d96524ff5fc97",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c1-c92e-7733-bd27-fbcfa10d4602",
+    "invocation_id": "f60c0a80-0704-4f48-a4b0-d6631cd62598",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "BLOCKED",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "A. Braunstein",
+          "M. Mézard",
+          "R. Zecchina"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Survey Propagation: An Algorithm for Satisfiability",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "2005",
+        "issues": [
+          "The original reference gives 2005, while the landing page and arXiv registry give 2002 and the citation export gives 2006; the supplied evidence does not resolve this conflict."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "Random Structures & Algorithms",
+        "issues": [
+          "No supplied artifact verifies the claimed journal venue; the registry identifies only arXiv."
+        ],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Publication year is unresolved: original reference 2005, arXiv landing page and registry 2002, citation export 2006.",
+      "The claimed venue Random Structures & Algorithms is unsupported by the supplied evidence."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "Author count, order, surnames, and initials align across all structured observations; the omitted accent in secondary metadata is not treated as an identity conflict. The unresolved year conflict is blocking under the adversarial-provenance assignment."
+  }
+}

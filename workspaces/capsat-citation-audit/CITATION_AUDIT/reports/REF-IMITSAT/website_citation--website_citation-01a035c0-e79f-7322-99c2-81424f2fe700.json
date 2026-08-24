@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-IMITSAT",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a035c0-e79f-7322-99c2-81424f2fe700",
+  "recorded_at": "2026-08-24T21:50:46+00:00",
+  "packet_sha256": "47cca585866382e6fabf3fd2105d43615503541d2b960ac006817ffca6cf1f37",
+  "evidence_sha256": "fe4141cff92e1986de84b2223c258a6b587b6e20c1df4a778fbbf9ef0efcd1fa",
+  "body_sha256": "37b3117df3612073926f8f991c87f605fc626fe57d6a23ec6f40f4cb378aac27",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "db7d0d8794e616f1ffd41c8109aa3778f2fbe597cb05d17f5d438d48f65e4b34",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c0-e79f-7322-99c2-81424f2fe700",
+    "invocation_id": "11c74855-8900-4a76-bc68-6deb7212b317",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "CORRECT",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Zhang, Zewei",
+          "Liu, Huan",
+          "Yu, Yuanhao",
+          "Chen, Jun",
+          "Xu, Xiangyu"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Boolean Satisfiability via Imitation Learning",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "2025",
+        "issues": [
+          "The landing page reports 2025/09/29, while the site-provided BibTeX export reports 2026."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "Neither supplied artifact provides a venue."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Year conflict: landing_page reports 2025/09/29, whereas citation_export reports 2026."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "All five authors match with no missing, added, or reordered authors; the landing page's surname-first display and BibTeX's given-name-first display represent the same author sequence."
+  }
+}

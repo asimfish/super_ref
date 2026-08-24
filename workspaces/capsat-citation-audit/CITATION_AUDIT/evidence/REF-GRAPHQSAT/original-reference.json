@@ -1,0 +1,12 @@
+{
+  "reference_id": "REF-GRAPHQSAT",
+  "citation_key": "kurin2020graphqsat",
+  "entry_type": "inproceedings",
+  "authors": [
+    "V. Kurin"
+  ],
+  "title": "Can Q-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+  "venue": "NeurIPS",
+  "year": "2020",
+  "arxiv_id": "1909.11830"
+}

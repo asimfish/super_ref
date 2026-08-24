@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-MUST",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a035c0-5cb5-7a91-8d3d-f91b85e9886f",
+  "recorded_at": "2026-08-24T21:50:10+00:00",
+  "packet_sha256": "c5fe6bde32945db13499316d5e3db2167d1f71e3ae61b5be36c3a3c3a010f91a",
+  "evidence_sha256": "c624f30f209d813df34ee8076121e0b6be8849d5790b43c93c3316734972ce8a",
+  "body_sha256": "91c4509938bca00c3de6ae0047ba639e325bcb77d92f72ae74465fdf4ae930af",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "2322f486558db3d7de0edf49958b97f61a5066e3a5f40c63d580bdaac7e2cc05",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c0-5cb5-7a91-8d3d-f91b85e9886f",
+    "invocation_id": "e6640fe9-e2c7-4d5f-bd8f-a6064af3c6b8",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "CORRECT",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Junnan Li",
+          "Silvio Savarese",
+          "Steven C. H. Hoi"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Masked Unsupervised Self-training for Label-free Image Classification",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "",
+        "issues": [
+          "The landing page reports 2022/06/07 (year 2022), while the site-provided BibTeX export reports 2023."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "Neither supplied artifact provides a venue value."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Year conflict: landing_page gives 2022/06/07, whereas citation_export gives 2023.",
+      "No authors are missing, added, reordered, or conflicting."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "Author identity and order agree across both artifacts; only name formatting differs between surname-first landing-page metadata and natural-order BibTeX."
+  }
+}

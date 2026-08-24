@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/kvMwVB8xiZbD7+k2YJC7FQL1mzk</id>
+  <title>arXiv Query: search_query=&amp;id_list=2309.16941&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-24T21:11:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2309.16941" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2309.16941v2</id>
+    <title>G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks</title>
+    <updated>2024-05-10T21:45:26Z</updated>
+    <link href="https://arxiv.org/abs/2309.16941v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2309.16941v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Graph neural networks (GNNs) have recently emerged as a promising approach for solving the Boolean Satisfiability Problem (SAT), offering potential alternatives to traditional backtracking or local search SAT solvers. However, despite the growing volume of literature in this field, there remains a notable absence of a unified dataset and a fair benchmark to evaluate and compare existing approaches. To address this crucial gap, we present G4SATBench, the first benchmark study that establishes a comprehensive evaluation framework for GNN-based SAT solvers. In G4SATBench, we meticulously curate a large and diverse set of SAT datasets comprising 7 problems with 3 difficulty levels and benchmark a broad range of GNN models across various prediction tasks, training objectives, and inference algorithms. To explore the learning abilities and comprehend the strengths and limitations of GNN-based SAT solvers, we also compare their solving processes with the heuristics in search-based SAT solvers. Our empirical results provide valuable insights into the performance of GNN-based SAT solvers and further suggest that existing GNN models can effectively learn a solving strategy akin to greedy local search but struggle to learn backtracking search in the latent space. Our codebase is available at https://github.com/zhaoyu-li/G4SATBench.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-09-29T02:50:57Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zhaoyu Li</name>
+    </author>
+    <author>
+      <name>Jinpei Guo</name>
+    </author>
+    <author>
+      <name>Xujie Si</name>
+    </author>
+  </entry>
+</feed>

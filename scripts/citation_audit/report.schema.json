@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "field_findings", "discrepancies", "prompt_injection_detected", "notes"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["PASS", "CORRECT", "BLOCKED"]},
+    "field_findings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authors", "title", "year", "venue"],
+      "properties": {
+        "authors": {"$ref": "#/$defs/authorsFinding"},
+        "title": {"$ref": "#/$defs/scalarFinding"},
+        "year": {"$ref": "#/$defs/scalarFinding"},
+        "venue": {"$ref": "#/$defs/scalarFinding"}
+      }
+    },
+    "discrepancies": {"type": "array", "items": {"type": "string"}},
+    "prompt_injection_detected": {"type": "boolean"},
+    "notes": {"type": "string"}
+  },
+  "$defs": {
+    "authorsFinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "value", "issues", "evidence_artifact_ids"],
+      "properties": {
+        "status": {"type": "string", "enum": ["MATCH", "CORRECT", "UNVERIFIED", "CONFLICT"]},
+        "value": {"type": "array", "items": {"type": "string"}},
+        "issues": {"type": "array", "items": {"type": "string"}},
+        "evidence_artifact_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "scalarFinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "value", "issues", "evidence_artifact_ids"],
+      "properties": {
+        "status": {"type": "string", "enum": ["MATCH", "CORRECT", "UNVERIFIED", "CONFLICT"]},
+        "value": {"type": "string"},
+        "issues": {"type": "array", "items": {"type": "string"}},
+        "evidence_artifact_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

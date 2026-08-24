@@ -1,0 +1,14 @@
+{
+  "reference_id": "REF-NSNET",
+  "citation_key": "li2022nsnet",
+  "entry_type": "inproceedings",
+  "authors": [
+    "Li",
+    "Si"
+  ],
+  "title": "NSNet",
+  "venue": "NeurIPS",
+  "year": "2022",
+  "arxiv_id": "2211.03880",
+  "openreview_note": "OpenReview note f-FQE1fjPK is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+}

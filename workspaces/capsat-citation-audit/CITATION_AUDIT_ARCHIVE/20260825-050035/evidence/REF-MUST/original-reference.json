@@ -1,0 +1,14 @@
+{
+  "reference_id": "REF-MUST",
+  "citation_key": "li2023must",
+  "entry_type": "inproceedings",
+  "authors": [
+    "J. Li",
+    "S. Savarese",
+    "S. Hoi"
+  ],
+  "title": "Masked Unsupervised Self-training for Label-free Image Classification",
+  "venue": "ICLR",
+  "year": "2023",
+  "openreview_id": "ZAKkiVxiAM9"
+}

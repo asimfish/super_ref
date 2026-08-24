@@ -1,0 +1,109 @@
+Published in Transactions on Machine Learning Research (05/2024)
+
+G4SATBench: Benchmarking and Advancing SAT Solving
+with Graph Neural Networks
+Zhaoyu Li
+
+zhaoyu@cs.toronto.edu
+
+University of Toronto
+
+Jinpei Guo
+
+mike0728@sjtu.edu.cn
+
+arXiv:2309.16941v2 [cs.LG] 10 May 2024
+
+Shanghai Jiao Tong University
+
+Xujie Si
+
+six@cs.toronto.edu
+
+University of Toronto
+
+Reviewed on OpenReview: https: // openreview. net/ forum? id= 7VB5db72lr
+
+Abstract
+Graph neural networks (GNNs) have recently emerged as a promising approach for solving
+the Boolean Satisfiability Problem (SAT), offering potential alternatives to traditional backtracking or local search SAT solvers. However, despite the growing volume of literature in
+this field, there remains a notable absence of a unified dataset and a fair benchmark to evaluate and compare existing approaches. To address this crucial gap, we present G4SATBench,
+the first benchmark study that establishes a comprehensive evaluation framework for GNNbased SAT solvers. In G4SATBench, we meticulously curate a large and diverse set of SAT
+datasets comprising 7 problems with 3 difficulty levels and benchmark a broad range of GNN
+models across various prediction tasks, training objectives, and inference algorithms. To explore the learning abilities and comprehend the strengths and limitations of GNN-based
+SAT solvers, we also compare their solving processes with the heuristics in search-based
+SAT solvers. Our empirical results provide valuable insights into the performance of GNNbased SAT solvers and further suggest that existing GNN models can effectively learn a
+solving strategy akin to greedy local search but struggle to learn backtracking search in the
+latent space. Our codebase is available at https://github.com/zhaoyu-li/G4SATBench.
+
+1
+
+Introduction
+
+The Boolean Satisfiability Problem (SAT) is a crucial problem at the nexus of computer science, logic, and
+operations research, which has garnered significant attention over the past five decades. To solve SAT instances efficiently, modern SAT solvers have been developed with backtracking (especially with conflict-driven
+clause learning, a.k.a. CDCL) or local search (LS) heuristics that effectively exploit the instance’s structure
+and traverse its vast search space (Biere et al., 2009). However, designing such heuristics remains a highly
+non-trivial and time-consuming task, with a lack of significant improvement in recent years. Conversely, the
+recent rapid advances in graph neural networks (GNNs) (Li et al., 2016; Kipf & Welling, 2017; Xu et al.,
+2019) have shown impressive performances in analyzing structured data, offering a promising opportunity
+to enhance or even replace modern SAT solvers. As such, there have been massive efforts to leverage GNNs
+to solve SAT over the last few years (Holden et al., 2021; Guo et al., 2022).
+Despite the recent progress, the question of how (well) GNNs can solve SAT remains unanswered. One
+of the main reasons for this is the variety of learning objectives and usage scenarios employed in existing
+work, making it difficult to evaluate different methods in a fair and comprehensive manner. For example,
+NeuroSAT (Selsam et al., 2019) predicts satisfiability, NeuroCore (Selsam & Bjørner, 2019) classifies unsatcore variables, QuerySAT (Ozolins et al., 2022) constructs a satisfying assignment, and NSNet (Li & Si, 2022)
+1
+
+Published in Transactions on Machine Learning Research (05/2024)
+
+predicts marginal distributions of all satisfying solutions to solve the SAT problem. Moreover, most previous
+research has experimented on different datasets that vary in a range of settings (e.g., data distribution,
+instance size, and dataset size), which leads to a lack of unified and standardized datasets for training and
+evaluation. Additionally, some work (Amizadeh et al., 2019b; Shi et al., 2023; Yan et al., 2023) has noted
+the difficulty of re-implementing prior approaches as baselines, rendering it arduous to draw consistent
+conclusions about the performance of peer methods. All of these issues impede the development of GNNbased solvers for SAT solving.
+To systematically quantify the progress in this field and facilitate rapid, reproducible, and generalizable
+research, we propose G4SATBench, the first comprehensive benchmark study for SAT solving with GNNs.
+G4SATBench is characterized as follows:
+• First, we construct a large and diverse collection of SAT datasets that includes instances from distinct
+sources and difficulty levels. Specifically, our benchmark consists of 7 different datasets from 3 benchmark
+families, including random instances, pseudo-industrial instances, and combinatorial problems. It not only
+covers a wide range of prior datasets but also introduces 3 levels of difficulty for each dataset to enable
+fine-grained analyses.
+• Second, we re-implement various GNN-based SAT solvers with unified interfaces and configuration settings, establishing a general evaluation protocol for fair and comprehensive comparisons. Our framework
+allows for evaluating different GNN models in SAT solving with various prediction tasks, training objectives, and inference algorithms, encompassing the diverse learning frameworks employed in the existing
+literature.
+• Third, we present baseline results and conduct thorough analyses of GNN-based SAT solvers, providing a
+detailed reference of prior work and laying a solid foundation for future research. Our evaluations assess
+the performances of different choices of GNN models (e.g., graph constructions, message-passing schemes)
+with particular attention to some critical parameters (e.g., message-passing iterations), as well as their
+generalization ability across different distributions.
+• Lastly, we conduct a series of in-depth experiments to explore the learning abilities of GNN-based SAT
+solvers. Specifically, we compare the training and solving processes of GNNs with the heuristics employed
+in both CDCL and LS-based SAT solvers. Our experimental results reveal that GNNs tend to develop a
+solving heuristic similar to greedy local search to find a satisfying assignment but fail to effectively learn
+the CDCL heuristic in the latent space.
+We believe that G4SATBench will help the research community to make significant strides in understanding
+the capabilities and limitations of GNNs for solving SAT and facilitate further endeavors in this domain.
+
+2
+
+Related Work
+
+SAT solving with GNNs. Existing GNN-based SAT solvers can be broadly categorized into two
+branches (Holden et al., 2021; Guo et al., 2022): standalone neural solvers and neural-guided solvers. Standalone neural solvers utilize GNNs to solve SAT instances directly. For example, a stream of research (Bünz
+& Lamm, 2017; Selsam et al., 2019; Jaszczur et al., 2020; Cameron et al., 2020; Shi et al., 2023) focuses
+on predicting the satisfiability of a given formula, while several alternative approaches (Amizadeh et al.,
+2019a;b; Ozolins et al., 2022; Li et al., 2023; Yan et al., 2023) aim to construct a satisfying assignment.
+Neural-guided solvers, on the other hand, integrate GNNs with modern SAT solvers, trying to improve their
+search heuristics with the prediction of GNNs. These methods typically train GNN models using supervised
+learning on some tasks such as unsat-core variable prediction (Selsam & Bjørner, 2019; Wang et al., 2021),
+satisfying assignment prediction (Zhang et al., 2020), glue variable prediction (Han, 2020), and assignment
+marginal prediction (Li & Si, 2022), or through reinforcement learning (Yolcu & Póczos, 2019; Kurin et al.,
+2020) by modeling the entire search procedure as a Markov decision process. Despite the rich literature on
+SAT solving with GNNs, there is no benchmark study to evaluate and compare the performance of these
+GNN models. We hope the proposed G4SATBench would address this gap.
+2
+
+

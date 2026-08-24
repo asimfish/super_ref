@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "role": "adversarial_provenance",
+  "agent_id": "adversarial_provenance-01a03595-8f7e-7501-bf10-551da26ff78b",
+  "recorded_at": "2026-08-24T21:03:44+00:00",
+  "packet_sha256": "ba339bee69a34c53ec9c78fc57f8699a63d91c0bc92e4046290322bc28ec9bac",
+  "evidence_sha256": "1d876473dec7e607f35b97576654546266081f82f3f67b413521fef45d2f9312",
+  "body_sha256": "9a53bc3650ac26b8c49522bd9066a04d2a5b4e0cdd54e3cc11b0941d628d5fa5",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "2601b50830034c34a5fa439a903640ed0a6e8c06d6583e2ad35fdd2b47daa3c6",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a03595-8f7e-7501-bf10-551da26ff78b",
+    "invocation_id": "aa2b5b4e-b819-4e92-b41a-2a5faf87e78b",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "BLOCKED",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "R. Stewart",
+          "S. Ermon"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "year": {
+        "status": "UNVERIFIED",
+        "value": "2017",
+        "issues": [
+          "Supplied artifacts establish the arXiv record in 2016 but do not verify the claimed 2017 conference-publication year."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "AAAI",
+        "issues": [
+          "No supplied artifact verifies AAAI as the publication venue; the registry observation identifies only arXiv."
+        ],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      }
+    },
+    "discrepancies": [
+      "The original reference claims an AAAI inproceedings publication from 2017, while the supplied evidence verifies only an arXiv record dated 2016."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "Author initials, surnames, count, and order align exactly with the complete names Russell Stewart and Stefano Ermon. The title is consistently supported, but the conference venue and year remain unverified."
+  }
+}

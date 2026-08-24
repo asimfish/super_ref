@@ -1,0 +1,231 @@
+SATformer: Transformer-Based UNSAT Core Learning
+Zhengyuan Shi1 , Min Li1 , Yi Liu1 , Sadaf Khan1 , Junhua Huang2 , Hui-Ling Zhen2 , Mingxuan Yuan2 and Qiang Xu1
+
+arXiv:2209.00953v2 [cs.AI] 12 Mar 2024
+
+1
+
+The Chinese University of Hong Kong, 2 Noah’s Ark Lab, Huawei
+{zyshi21, mli, yliu22, skhan, qxu}@cse.cuhk.edu.hk
+{huangjunhua15, zhenhuiling2, Yuan.Mingxuan}@huawei.com
+
+Abstract—This paper introduces SATformer, a novel Transformerbased approach for the Boolean Satisfiability (SAT) problem. Rather than
+solving the problem directly, SATformer approaches the problem from the
+opposite direction by focusing on unsatisfiability. Specifically, it models
+clause interactions to identify any unsatisfiable sub-problems. Using a
+graph neural network, we convert clauses into clause embeddings and
+employ a hierarchical Transformer-based model to understand clause correlation. SATformer is trained through a multi-task learning approach,
+using the single-bit satisfiability result and the minimal unsatisfiable
+core (MUC) for UNSAT problems as clause supervision. As an end-toend learning-based satisfiability classifier, the performance of SATformer
+surpasses that of NeuroSAT significantly. Furthermore, we integrate the
+clause predictions made by SATformer into modern heuristic-based SAT
+solvers and validate our approach with a logic equivalence checking task.
+Experimental results show that our SATformer can decrease the runtime
+of existing solvers by an average of 21.33%.
+
+I. I NTRODUCTION
+The Boolean Satisfiability (SAT) problem, fundamental to many
+fields, seeks to identify if there exists at least one assignment
+that makes a given Boolean formula True. Key applications in the
+electronic design automation (EDA) field include logic equivalence
+checking (LEC) [1], model checking [2], and automatic test pattern
+generation (ATPG) [3]. Being the first proven NP-complete problem,
+SAT has no complete solution achievable in polynomial time. Most
+solvers [4]–[10] use heuristic search techniques for large industrial
+SAT instances. They return a ’satisfiable’ (SAT) result if a valid
+assignment is found, ’unsatisfiable’ (UNSAT) if all search paths
+yield no valid assignment, or ’unknown’ if the maximum runtime is
+exceeded. Despite impressive results from existing solvers on general
+benchmarks [10]–[12], limitations remain in their ability to address
+EDA problems effectively.
+One notable issue is the inability of current solvers to selfdirect heuristic selection based on satisfiability. Although modern
+solvers [7]–[10] offer satisfiability-specific modes (SAT or UNSAT),
+they rely on manual selection rather than self-prediction of satisfiability. Moreover, heuristic efficiency can vary markedly when
+solving SAT and UNSAT instances [13]. For instance, while the
+local search heuristic can expedite the resolution of SAT instances,
+it can slow down UNSAT instances, and vice versa for the dynamic
+restart heuristic. Inappropriate configuration of solver heuristics can
+potentially increase solving time by up to 50% [14], as solvers prove
+SAT and UNSAT in divergent manners. Thus, the prediction of SAT
+or UNSAT before solving is critical for heuristic adjustment and
+optimizing the efficiency of heuristic algorithms in solvers.
+Another notable limitation of existing solvers is the absence of
+dedicated heuristics for UNSAT problems. Many EDA applications
+confront numerous UNSAT problems, which present a greater challenge than SAT problems. For instance, in logic equivalence checking
+and model checking, a majority of instances are unsatisfiable, necessitating significant runtime to confirm unsatisfiability [15], [16].
+Similarly, in ATPG, proving that some faults are untestable, which
+corresponds to proving unsatisfiability, consumes a considerable
+amount of runtime [17], [18]. Hence, integrating an efficient UNSAT
+
+heuristic can substantially enhance the generalizability and efficiency
+of modern solvers within the EDA domain.
+To address the above issues, we propose SATformer, a novel
+framework for Boolean satisfiability that not only predicts satisfiability but also accelerates the solving process for unsatisfiable
+problems. We reinterpret the nature of unsatisfiability as the presence
+of an unsatisfiable sub-problem and address this by modeling clause
+interactions. Specifically, the solver asserts unsatisfiability only when
+an inevitable conflict arises while seeking valid assignments. This
+conflict is embodied in a subset of clauses known as the Unsatisfiable Core (UNSAT Core), whereby the sub-problem formed by the
+UNSAT Core is also unsatisfiable. Consequently, by capturing clause
+interactions and identifying the UNSAT Core, we can determine the
+satisfiability of the given instance.
+To model clause correlation, we formulate a deep learning model
+that represents clauses as embeddings using a graph neural network
+(GNN) and discerns clause connections through a novel hierarchical Transformer-based model. This hierarchical model consolidates
+clauses into clause groups incrementally, capturing relationships
+between these groups. Hence, our model learns interactions among
+multiple clauses, transcending the pairwise dependency typical of
+standard Transformers. Additionally, our model is dual-task trained:
+for satisfiability prediction with single-bit supervision, and for UNSAT Core prediction supervised by the minimal unsatisfiable core
+(MUC). Despite an UNSAT instance potentially containing multiple
+cores of varying size, the core with the minimal number of clauses
+exhibits less diversity, as highlighted in NeuroCore [19].
+We further deploy SATformer as an initialization heuristic for
+SAT solvers. SATformer outputs a binary prediction indicating satisfiability and a ’prediction score’ for each clause that estimates
+its likelihood of forming an UNSAT core. We view clauses with
+high prediction scores as key contributors to unsatisfiability, and
+propose that addressing sub-problems composed of such high-score
+clauses can hasten the discovery of UNSAT results. We leverage this
+clause prediction score to determine search priorities. Specifically,
+we calculate variable priority scores based on variable-clause connections and use these as the initial variable activity scores, e.g.,
+the Variable State Independent Decaying Sum (VSIDS) [20]. As
+most SAT solvers provide a variable branching priority interface [4],
+[8], [9], [20], SATformer can be seamlessly integrated as a plugin, negating extensive solver reconstruction. Unlike previous variable
+branching heuristics that solely concentrate on variable activity, our
+approach utilizes clause-level correlation. We validate the efficacy
+of SATformer by augmenting the performance of two modern SAT
+solvers: CaDiCaL [8] and Kissat [9].
+This work makes the following contributions:
+We propose a fresh perspective on the unsatisfiability problem
+by modeling clause correlations and identifying the presence of
+unsatisfiable sub-problems.
+• We introduce a hierarchical Transformer-based model to capture
+clause interactions, leveraging the minimal UNSAT core as
+•
+
+𝐶1
+
+supervision, and training our model to distinguish clauses that
+are likely or unlikely to form an UNSAT core.
+• We integrate our model as a learning-enhanced initialization
+heuristic into contemporary SAT solvers, yielding a notable
+acceleration in the solving process.
+We organize the rest of the paper as follows. Section II reviews
+the related works about learning-aided SAT solvers and Transformer
+blocks. We detail our SATformer framework in Section III and
+demonstrate the effectiveness of our model with comprehensive
+experiments in Section V. Finally, Section VI concludes this paper.
+II. R ELATED W ORK
+A. Deep Learning for SAT Solving
+In the area of combinatorial optimization, the increasing size of
+problem instances remains a critical challenge. For the SAT problem,
+deep learning provides an attractive solution to improve the solving
+efficiency, as surveyed in [21].
+Generally, learning-based SAT solvers fall into two categories:
+standalone learning-based SAT solvers and learning-aided SAT
+solvers. On the one hand, standalone learning-based SAT solvers
+predict satisfiability and decode assignments with end-to-end deep
+learning models solely. For example, NeuroSAT [22] treats the SAT
+problem as a classification task and trains an end-to-end GNN-based
+framework to predict binary results (satisfiable or unsatisfiable). DGDAGRNN [23] focuses on the circuit satisfiability problem, i.e.,
+determining whether the single primary output of a given circuit can
+return logic ’1’. They propose a differentiable method to predict a
+value that evaluates the satisfiaility. By maximizing the value based on
+reinforcement learning, the model is more likely to find a satisfiable
+assignment. DeepSAT [24] formulates the SAT solution as a product
+of conditional Bernoulli distributions and obtains an assignment by
+maximizing the joint probability. However, the performance of these
+standalone learning-based solvers lags behind modern non-learning
+approaches by a large margin [19], [24]. Since all assertions produced
+by deep learning models are based on probabilistic statistic, while
+SAT problem is a strictly deterministic logic reasoning problem, it is
+naturally unsuitable to solve the SAT problem with a pure learning
+method.
+On the other hand, combining deep learning model with modern
+SAT solvers has emerged as a promising research direction. As
+heuristics dominate mainstream modern SAT solvers, learning-aided
+solutions that replace manually-crafted heuristics with more effective
+and efficient heuristics produced by deep learning models can result in
+significant performance improvements [19], [25]–[27]. For example,
+NLocalSAT [25] achieves a runtime reduction of 27% ∼ 62% on the
+stochastic local search (SLS) SAT solver by producing initialization
+assignments using a deep learning model. Graph-Q-SAT [26] replaces
+the searching heuristic with a reinforcement learning agent and
+reduces the number of iterations required to solve SAT problems.
+Moreover, NeuroCore [19] and NeuroComb [27] learn the distribution
+of UNSAT cores to guide SAT solving. Although these learningaided solutions are powerful, they are generally designed and do
+not guarantee to speed up a specific kind of problem [10]–[12]. In
+industrial applications, engineers are often more focused on solving
+problems in a specific domain. Therefore, a task-specific solution
+that incorporates prior knowledge about the problems at hand is
+more practical than a general solution. In this paper, we focus on the
+unsatisfiable problem in the EDA area and propose a corresponding
+learning-aided solution.
+
+𝑥!
+
+¬𝑥!
+
+𝐶2
+
+𝐶3
+
+𝑥" ¬𝑥"
+
+𝑥# ¬𝑥#
+
+Fig. 1. An example of Literal-Clause Graph (LCG).
+
+B. Transformer and Self-attention Mechanism
+The Transformer [28] is well acknowledged as one of the most
+powerful architectures for modeling sequential data. The adoption
+of the Transformer has led to tremendous progress in the field of
+text comprehension [29], machine translation [30] and even computer
+vision [31], [32]. The self-attention mechanism in the Transformer
+block treats sequential input tokens as a fully connected graph and
+represents the connectivity between every pair of nodes. This enables
+Transformer-based models to capture the correlation between each
+pair of tokens.
+The first attempt to involve the Transformer for solving MaxSAT
+problem (a variant of SAT problem) is introduced in [33]. The
+proposed model represents a given SAT instance as a bipartite graph
+and applies Transformers to aggregate the message over the nodes. In
+our work, we treat the clauses as a non-ordered sequence and apply
+the Transformer to capture the correlation among these clauses.
+III. SAT FORMER
+A. Boolean Satisfiability Problem
+A Boolean formula ϕ consists of a set of variables {xj }Ij=1 ∈
+{T rue, F alse} and a set of Boolean operators {AND (∧), OR(∨),
+NOT(¬), ...} over these variables. Solving the SAT problem involves
+determining whether there is at least one valid assignment of the
+variables so that the given formula ϕ evaluates to true.
+Any Boolean formula can be converted into Conjunctive Normal
+Form (CNF) with an equivalent transformation in linear time [34].
+Under CNF conventions, variables and theirs negations are referred
+to as literals (denoted as xj or ¬xj ). A disjunction of several literals
+constructs a clause Ci = (x1 ∨ x2 ∨ ...). A conjunction of clauses
+forms a propositional instance ϕ = (C1 ∧ C2 ∧ ...). In Eq. (1), we
+provide an example to exstandard CNF, wherein the instance has
+three variables I = {x1 , x2 , x3 } and consists of three clauses C1 =
+¬x1 ∨ x2 , C2 = ¬x2 ∨ ¬x3 , C3 = x1 ∨ x3 .
+ϕ := (¬x1 ∨ x2 ) ∧ (¬x2 ∨ ¬x3 ) ∧ (x1 ∨ x3 )
+
+(1)
+
+The Literal-Clause Graph (LCG) is a bipartite graph representation
+of CNF formulas, which consists of literal nodes and clause nodes.
+Two types of edges are defined in LCG: one connecting a literal
+node to a clause node, and another connecting a literal node to its
+corresponding negation. Fig. 1 is an example representing Eq. (1) in
+LCG.
+Besides, given an unsatisfiable CNF instance, if a sub-problem
+constructed by some of its clauses is also unsatisfiable, then such a
+sub-problem with specific clauses is referred to as an UNSAT core.
+Take the unsatisfiable instance ϕU shown in Eq. (2) as an example.
+′
+We can extract an unsatisfiable sub-problem ϕU = C2 ∧ C5 ∧ C6 as
+one of the UNSAT cores of the original instance ϕU . The concept
+of UNSAT core can be further exstandarded by the searching-based
+solving process. As the clauses C2 and C6 each only include one
+
+

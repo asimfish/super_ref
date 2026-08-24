@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-GRAPHQSAT",
+  "role": "pdf_identity",
+  "agent_id": "pdf_identity-01a035ca-0cb0-7430-b3c0-a327afbc00b5",
+  "recorded_at": "2026-08-24T22:00:46+00:00",
+  "packet_sha256": "c143483bf1e816f9be383b8b34bedba217ee8dff4448c8be13ab16bbd12a6fc6",
+  "evidence_sha256": "7d4bafdc06fca2a6b3cf888f94a2f73daff105fa5f61fb6bdefce4acb7a2a69e",
+  "body_sha256": "b651cc6fc4b373bc6356392373fc2eb7555394890648738bf62c890e2c4062cc",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "72c236bb6c69dd25f0f63252506cd7193f6cef3dfbe931e1c8a62b8b50c1249e",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035ca-0cb0-7430-b3c0-a327afbc00b5",
+    "invocation_id": "afc58446-d4ce-4c0d-a517-ee895de639b2",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "CORRECT",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Vitaly Kurin",
+          "Saad Godil",
+          "Shimon Whiteson",
+          "Bryan Catanzaro"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "Can Q-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "year": {
+        "status": "CORRECT",
+        "value": "2020",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "venue": {
+        "status": "CORRECT",
+        "value": "34th Conference on Neural Information Processing Systems (NeurIPS 2020), Vancouver, Canada.",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "Author order and title were transcribed from the PDF identity page. The year and venue are explicitly printed in the conference footer."
+  }
+}

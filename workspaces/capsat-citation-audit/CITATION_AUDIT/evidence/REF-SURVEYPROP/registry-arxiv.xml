@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/3qXoqK5ZdHG9j1axEfm8TbD3vVw</id>
+  <title>arXiv Query: search_query=&amp;id_list=cs/0212002&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-24T21:11:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=cs/0212002" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/cs/0212002v4</id>
+    <title>Survey propagation: an algorithm for satisfiability</title>
+    <updated>2006-04-04T23:24:08Z</updated>
+    <link href="https://arxiv.org/abs/cs/0212002v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/cs/0212002v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  We study the satisfiability of randomly generated formulas formed by $M$ clauses of exactly $K$ literals over $N$ Boolean variables. For a given value of $N$ the problem is known to be most difficult with $α=M/N$ close to the experimental threshold $α_c$ separating the region where almost all formulas are SAT from the region where all formulas are UNSAT. Recent results from a statistical physics analysis suggest that the difficulty is related to the existence of a clustering phenomenon of the solutions when $α$ is close to (but smaller than) $α_c$. We introduce a new type of message passing algorithm which allows to find efficiently a satisfiable assignment of the variables in the difficult region. This algorithm is iterative and composed of two main parts. The first is a message-passing procedure which generalizes the usual methods like Sum-Product or Belief Propagation: it passes messages that are surveys over clusters of the ordinary messages. The second part uses the detailed probabilistic information obtained from the surveys in order to fix variables and simplify the problem. Eventually, the simplified problem that remains is solved by a conventional heuristic.</summary>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.stat-mech" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2002-12-04T17:08:29Z</published>
+    <arxiv:comment>19 pages, 6 figure</arxiv:comment>
+    <arxiv:primary_category term="cs.CC"/>
+    <arxiv:journal_ref>Random Structures and Algorithms 27, 201-226 (2005)</arxiv:journal_ref>
+    <author>
+      <name>A. Braunstein</name>
+    </author>
+    <author>
+      <name>M. Mezard</name>
+    </author>
+    <author>
+      <name>R. Zecchina</name>
+    </author>
+  </entry>
+</feed>

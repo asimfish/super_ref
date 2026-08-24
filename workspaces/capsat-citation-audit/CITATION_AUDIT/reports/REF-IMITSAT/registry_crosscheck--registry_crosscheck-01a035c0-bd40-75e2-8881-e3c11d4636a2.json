@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-IMITSAT",
+  "role": "registry_crosscheck",
+  "agent_id": "registry_crosscheck-01a035c0-bd40-75e2-8881-e3c11d4636a2",
+  "recorded_at": "2026-08-24T21:50:35+00:00",
+  "packet_sha256": "d6c3f920cdf10dbb4435389cabbe91a4a53cce05aa52b6440b2613c94d797acb",
+  "evidence_sha256": "fe4141cff92e1986de84b2223c258a6b587b6e20c1df4a778fbbf9ef0efcd1fa",
+  "body_sha256": "cbeec101d957d375d027bb7ff9ec2f273fe1d77a60dd55c1541422a295534c79",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "28c8bdbe4e0f5363d836fec87169317e0e5f900b5ad26e7645fa16f43623e7b7",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c0-bd40-75e2-8881-e3c11d4636a2",
+    "invocation_id": "478f8fef-96fb-402e-b372-27b59c872b76",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Zewei Zhang",
+          "Huan Liu",
+          "Yuanhao Yu",
+          "Jun Chen",
+          "Xiangyu Xu"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "Boolean Satisfiability via Imitation Learning",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      },
+      "year": {
+        "status": "CORRECT",
+        "value": "2025",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      },
+      "venue": {
+        "status": "CORRECT",
+        "value": "arXiv",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "All required bibliographic fields are supported by the supplied arXiv registry metadata."
+  }
+}

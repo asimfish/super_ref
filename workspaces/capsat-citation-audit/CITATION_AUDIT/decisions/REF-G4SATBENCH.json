@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-G4SATBENCH",
+  "created_at": "2026-08-24T22:01:14+00:00",
+  "status": "BLOCKED",
+  "original_reference_sha256": "68176ed9ab3d91605d9f0a2764de75196e60665c023c2b81612fff37d143cb43",
+  "evidence_sha256": "62e1fe57cee4bade3b0449f24839c39c05beee0a72f0308dc5ca69fc1d316f3e",
+  "canonical_fields": {},
+  "field_checks": {
+    "authors": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Li, Zhaoyu",
+            "Guo, Jinpei",
+            "Si, Xujie"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "jinpei guo",
+            "xujie si"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "Zhaoyu Li",
+            "Jinpei Guo",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "jinpei guo",
+            "xujie si"
+          ]
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": [
+            "Zhaoyu Li",
+            "Jinpei Guo",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "jinpei guo",
+            "xujie si"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c1-8809-73a0-b069-56ee9657cdad",
+          "value": [
+            "Zhaoyu Li",
+            "Jinpei Guo",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "jinpei guo",
+            "xujie si"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c1-a6f6-7cb3-ac2b-de8674e19505",
+          "value": [
+            "Zhaoyu Li",
+            "Jinpei Guo",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "jinpei guo",
+            "xujie si"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-8f53-74c1-a1e4-f95bfd9cdac7",
+          "value": [
+            "Zhaoyu Li",
+            "Jinpei Guo",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "jinpei guo",
+            "xujie si"
+          ]
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify authors (CORRECT)"
+      ]
+    },
+    "title": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+          "normalized": "g4satbench benchmarking and advancing sat solving with graph neural networks"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+          "normalized": "g4satbench benchmarking and advancing sat solving with graph neural networks"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+          "normalized": "g4satbench benchmarking and advancing sat solving with graph neural networks"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c1-8809-73a0-b069-56ee9657cdad",
+          "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+          "normalized": "g4satbench benchmarking and advancing sat solving with graph neural networks"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c1-a6f6-7cb3-ac2b-de8674e19505",
+          "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+          "normalized": "g4satbench benchmarking and advancing sat solving with graph neural networks"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-8f53-74c1-a1e4-f95bfd9cdac7",
+          "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+          "normalized": "g4satbench benchmarking and advancing sat solving with graph neural networks"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify title (MATCH)"
+      ]
+    },
+    "year": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2023/09/29",
+          "normalized": "2023"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2024",
+          "normalized": "2024"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "2023-09-29T02:50:57Z",
+          "normalized": "2023"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-8f53-74c1-a1e4-f95bfd9cdac7",
+          "value": "2023",
+          "normalized": "2023"
+        }
+      ],
+      "errors": [
+        "source conflict for year: 2023: ['landing_page', 'registry_arxiv']; 2024: ['citation_export']",
+        "role website_citation did not verify year (CONFLICT)",
+        "role adversarial_provenance did not verify year (CONFLICT)"
+      ]
+    },
+    "venue": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-8f53-74c1-a1e4-f95bfd9cdac7",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "errors": [
+        "venue has fewer than two agreeing source families",
+        "role website_citation did not verify venue (UNVERIFIED)",
+        "role adversarial_provenance did not verify venue (UNVERIFIED)"
+      ]
+    }
+  },
+  "discrepancies": [],
+  "blocking_errors": [
+    "role adversarial_provenance did not verify authors (CORRECT)",
+    "role adversarial_provenance did not verify title (MATCH)",
+    "source conflict for year: 2023: ['landing_page', 'registry_arxiv']; 2024: ['citation_export']",
+    "role website_citation did not verify year (CONFLICT)",
+    "role adversarial_provenance did not verify year (CONFLICT)",
+    "venue has fewer than two agreeing source families",
+    "role website_citation did not verify venue (UNVERIFIED)",
+    "role adversarial_provenance did not verify venue (UNVERIFIED)"
+  ],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a035c1-8401-74f3-a22d-4eade2e02372",
+      "path": "reports/REF-G4SATBENCH/adversarial_provenance--adversarial_provenance-01a035c1-8401-74f3-a22d-4eade2e02372.json",
+      "sha256": "d6642c9ef147c398ebd9e32e603638224db6d2f6beb68f739121db711c5166f1",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "de28f35b8e5373efcc27fcdd56dc2c43217da74359d94bc6e3668d138257f9cd",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-8401-74f3-a22d-4eade2e02372",
+        "invocation_id": "ea2ccc5b-5835-4723-8227-9ea070865a86",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a035c1-8809-73a0-b069-56ee9657cdad",
+      "path": "reports/REF-G4SATBENCH/pdf_identity--pdf_identity-01a035c1-8809-73a0-b069-56ee9657cdad.json",
+      "sha256": "33a4f2bef9b8746dc325a8110184c3aeb7a7aba68428f0cc9c505d663e7419c2",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "df2fcb638bfb27d4dd3778c9542d3e5c06308470cbbf17ef882487dcee67739b",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-8809-73a0-b069-56ee9657cdad",
+        "invocation_id": "9e4cf666-aa30-4c62-9566-776270665f75",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a035c1-8f53-74c1-a1e4-f95bfd9cdac7",
+      "path": "reports/REF-G4SATBENCH/registry_crosscheck--registry_crosscheck-01a035c1-8f53-74c1-a1e4-f95bfd9cdac7.json",
+      "sha256": "4c6ab44e90c98b8c8b58f31e466d82173eea4dde398f184ac9b4b4b3feee8d09",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "d4361a0fa26f28fb7ca95f97eab8e0e690c13d5caaceac2284395d4e1dc8354a",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-8f53-74c1-a1e4-f95bfd9cdac7",
+        "invocation_id": "48a7a06c-cd72-4fd5-ab55-7529803f5972",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a035c1-a6f6-7cb3-ac2b-de8674e19505",
+      "path": "reports/REF-G4SATBENCH/website_citation--website_citation-01a035c1-a6f6-7cb3-ac2b-de8674e19505.json",
+      "sha256": "a822278223181a62f830b4503d22a38fbd3c8a2a0446345231b804f9b420e21d",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "60f253641623cbe22651d9cdca0ac7821a65d0fcb78c30c2437ac78300aab9fd",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-a6f6-7cb3-ac2b-de8674e19505",
+        "invocation_id": "d4f14c44-cc8c-426e-8e9d-28a22488e5df",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": false
+}

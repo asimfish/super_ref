@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "batch_id": "4cae8159-c46e-4179-8c90-e4d67891bd8c",
+  "reference_id": "REF-GRAPHQSAT",
+  "reference_sha256": "10d8ada36810c05a23ee09360cf5c9f3b78501a8d99db672032bc2f30948e01b",
+  "adapter": "arxiv",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T20:55:20+00:00",
+  "status": "BLOCKED",
+  "errors": [
+    "landing_page: actual network peer is not public: 127.0.0.1",
+    "citation_export: actual network peer is not public: 127.0.0.1",
+    "registry_arxiv: failed to fetch registry_arxiv from https://export.arxiv.org/api/query?id_list=1909.11830: HTTP Error 429: Unknown Error",
+    "paper_pdf: no candidate produced a valid PDF; https://arxiv.org/pdf/1909.11830: actual network peer is not public: 127.0.0.1",
+    "source binding: citation_export does not expose the audited arXiv id",
+    "source binding: registry_arxiv does not expose the audited arXiv id",
+    "missing required source family: paper_pdf",
+    "missing required source family: landing_page",
+    "missing required source family: citation_export",
+    "missing required source family: registry_metadata"
+  ],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [],
+  "observations": [],
+  "discoveries": {
+    "pdf_candidates": [
+      "https://arxiv.org/pdf/1909.11830"
+    ]
+  },
+  "source_binding": {
+    "adapter": "arxiv",
+    "status": "BLOCKED",
+    "identifier_type": "arxiv",
+    "identifier": "1909.11830",
+    "checks": {
+      "landing_page": "",
+      "citation_export": "",
+      "registry_arxiv": ""
+    },
+    "errors": [
+      "citation_export does not expose the audited arXiv id",
+      "registry_arxiv does not expose the audited arXiv id"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-NSNET",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a035c1-6a0c-7022-b419-a51ea3ceb566",
+  "recorded_at": "2026-08-24T21:51:18+00:00",
+  "packet_sha256": "f41666f4bdce175fe2c777b6c0dfdab1a99b77907409f23f6fd634e56457ac63",
+  "evidence_sha256": "23f1ddb1ad55033d291ab191168ae7b33ea9e7537fb652c9cfbb77c103414655",
+  "body_sha256": "dceb9f24fa9e0a71e9eb58596edbbca47bbdf68b6ed93f1e7153d4c6e9d23d5f",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "51ab6f940293247f335ba74be734cca16ed7af5cb68a9d0edb800c9a56696a15",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c1-6a0c-7022-b419-a51ea3ceb566",
+    "invocation_id": "6bab94ca-dc39-4bda-993b-1380918e2c94",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Zhaoyu Li",
+          "Xujie Si"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "MATCH",
+        "value": "2022",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "No venue is provided by either supplied artifact."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "Landing-page metadata and site-provided BibTeX agree on author identities and order, title, and year."
+  }
+}

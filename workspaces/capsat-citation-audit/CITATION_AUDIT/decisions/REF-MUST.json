@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-MUST",
+  "created_at": "2026-08-24T22:01:14+00:00",
+  "status": "BLOCKED",
+  "original_reference_sha256": "c88f248ea60ee7ce8ac361707d7f70f1da206396766559d3766a00d8e5517f68",
+  "evidence_sha256": "c624f30f209d813df34ee8076121e0b6be8849d5790b43c93c3316734972ce8a",
+  "canonical_fields": {},
+  "field_checks": {
+    "authors": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Li, Junnan",
+            "Savarese, Silvio",
+            "Hoi, Steven C. H."
+          ],
+          "normalized": [
+            "junnan li",
+            "silvio savarese",
+            "steven c h hoi"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "Junnan Li",
+            "Silvio Savarese",
+            "Steven C. H. Hoi"
+          ],
+          "normalized": [
+            "junnan li",
+            "silvio savarese",
+            "steven c h hoi"
+          ]
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": [
+            "Junnan Li",
+            "Silvio Savarese",
+            "Steven C. H. Hoi"
+          ],
+          "normalized": [
+            "junnan li",
+            "silvio savarese",
+            "steven c h hoi"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c0-4593-7931-a910-69a95c59dc86",
+          "value": [
+            "Junnan Li",
+            "Silvio Savarese",
+            "Steven Hoi"
+          ],
+          "normalized": [
+            "junnan li",
+            "silvio savarese",
+            "steven hoi"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c0-5cb5-7a91-8d3d-f91b85e9886f",
+          "value": [
+            "Junnan Li",
+            "Silvio Savarese",
+            "Steven C. H. Hoi"
+          ],
+          "normalized": [
+            "junnan li",
+            "silvio savarese",
+            "steven c h hoi"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-4c74-7773-8f31-3aa16464de69",
+          "value": [
+            "Junnan Li",
+            "Silvio Savarese",
+            "Steven C. H. Hoi"
+          ],
+          "normalized": [
+            "junnan li",
+            "silvio savarese",
+            "steven c h hoi"
+          ]
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify authors (MATCH)",
+        "independent agent conflict for authors: ('junnan li', 'silvio savarese', 'steven hoi'): ['pdf_identity']; ('junnan li', 'silvio savarese', 'steven c h hoi'): ['website_citation', 'registry_crosscheck']"
+      ]
+    },
+    "title": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "Masked Unsupervised Self-training for Label-free Image Classification",
+          "normalized": "masked unsupervised self training for label free image classification"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "Masked Unsupervised Self-training for Label-free Image Classification",
+          "normalized": "masked unsupervised self training for label free image classification"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "Masked Unsupervised Self-training for Label-free Image Classification",
+          "normalized": "masked unsupervised self training for label free image classification"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c0-4593-7931-a910-69a95c59dc86",
+          "value": "Masked Unsupervised Self-Training for Label Free Image Classification",
+          "normalized": "masked unsupervised self training for label free image classification"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c0-5cb5-7a91-8d3d-f91b85e9886f",
+          "value": "Masked Unsupervised Self-training for Label-free Image Classification",
+          "normalized": "masked unsupervised self training for label free image classification"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-4c74-7773-8f31-3aa16464de69",
+          "value": "Masked Unsupervised Self-training for Label-free Image Classification",
+          "normalized": "masked unsupervised self training for label free image classification"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify title (MATCH)"
+      ]
+    },
+    "year": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2022/06/07",
+          "normalized": "2022"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2023",
+          "normalized": "2023"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "2022-06-07T02:03:06Z",
+          "normalized": "2022"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-4c74-7773-8f31-3aa16464de69",
+          "value": "2022",
+          "normalized": "2022"
+        }
+      ],
+      "errors": [
+        "source conflict for year: 2022: ['landing_page', 'registry_arxiv']; 2023: ['citation_export']",
+        "role website_citation did not verify year (CONFLICT)",
+        "role adversarial_provenance did not verify year (CONFLICT)"
+      ]
+    },
+    "venue": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-4c74-7773-8f31-3aa16464de69",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "errors": [
+        "venue has fewer than two agreeing source families",
+        "role website_citation did not verify venue (UNVERIFIED)",
+        "role adversarial_provenance did not verify venue (UNVERIFIED)"
+      ]
+    }
+  },
+  "discrepancies": [],
+  "blocking_errors": [
+    "role adversarial_provenance did not verify authors (MATCH)",
+    "independent agent conflict for authors: ('junnan li', 'silvio savarese', 'steven hoi'): ['pdf_identity']; ('junnan li', 'silvio savarese', 'steven c h hoi'): ['website_citation', 'registry_crosscheck']",
+    "role adversarial_provenance did not verify title (MATCH)",
+    "source conflict for year: 2022: ['landing_page', 'registry_arxiv']; 2023: ['citation_export']",
+    "role website_citation did not verify year (CONFLICT)",
+    "role adversarial_provenance did not verify year (CONFLICT)",
+    "venue has fewer than two agreeing source families",
+    "role website_citation did not verify venue (UNVERIFIED)",
+    "role adversarial_provenance did not verify venue (UNVERIFIED)"
+  ],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a035c0-40b2-7480-aee3-3ef52675de05",
+      "path": "reports/REF-MUST/adversarial_provenance--adversarial_provenance-01a035c0-40b2-7480-aee3-3ef52675de05.json",
+      "sha256": "cd3a1aa7669fff4ffd85b70f62545d109b27c9d29417d58d7662da304fb439fd",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "da20c95533945bf3a4b48a582d69777dabd9225848edf9723989d8a04e582b15",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-40b2-7480-aee3-3ef52675de05",
+        "invocation_id": "b3b75f5e-6648-47bd-976d-896e2463ae18",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a035c0-4593-7931-a910-69a95c59dc86",
+      "path": "reports/REF-MUST/pdf_identity--pdf_identity-01a035c0-4593-7931-a910-69a95c59dc86.json",
+      "sha256": "c693df612147a7e9d0a498f85bb01c6b9cc99108e9331cfe26170773b36457db",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "324bd9adfff66739e9a94d7a52738f73a3b50eae2e123cc5e4d55506b2cd10b8",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-4593-7931-a910-69a95c59dc86",
+        "invocation_id": "cc5740a4-3750-4da6-b014-6d247a84e435",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a035c0-4c74-7773-8f31-3aa16464de69",
+      "path": "reports/REF-MUST/registry_crosscheck--registry_crosscheck-01a035c0-4c74-7773-8f31-3aa16464de69.json",
+      "sha256": "e3e52a859f2ae0e192a58beefd13e1b8afb381920d5c6551e671164fa2964f13",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "dc16a411329f327b82b15814cac1d26da87afd736c516708390392ae325fa4b2",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-4c74-7773-8f31-3aa16464de69",
+        "invocation_id": "c1462e4c-def8-4a34-8e39-07e757db49e9",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a035c0-5cb5-7a91-8d3d-f91b85e9886f",
+      "path": "reports/REF-MUST/website_citation--website_citation-01a035c0-5cb5-7a91-8d3d-f91b85e9886f.json",
+      "sha256": "3e56e12fe2b27cdb698a7a698ce9e617dd73a3974c7ff07691dfe3bf4c4539b8",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "2322f486558db3d7de0edf49958b97f61a5066e3a5f40c63d580bdaac7e2cc05",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-5cb5-7a91-8d3d-f91b85e9886f",
+        "invocation_id": "e6640fe9-e2c7-4d5f-bd8f-a6064af3c6b8",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": false
+}

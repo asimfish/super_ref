@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "created_at": "2026-08-24T21:07:49+00:00",
+  "status": "BLOCKED",
+  "references_path": "REFERENCES.json",
+  "references_sha256": "6dc6f059fc5a60b679751f5a77ec8b95337575a775c238d295d799ae07e41720",
+  "source_bib": null,
+  "config": {
+    "schema_version": 1,
+    "enforce": true,
+    "required_roles": [
+      "pdf_identity",
+      "website_citation",
+      "registry_crosscheck",
+      "adversarial_provenance"
+    ],
+    "field_required_roles": {
+      "authors": [
+        "pdf_identity",
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "title": [
+        "pdf_identity",
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "year": [
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "venue": [
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ]
+    },
+    "require_all_source_values_to_agree": true,
+    "required_source_families": [
+      "paper_pdf",
+      "landing_page",
+      "citation_export",
+      "registry_metadata"
+    ],
+    "network": {
+      "timeout_seconds": 25,
+      "allow_http": false,
+      "resolver_mode": "trusted_proxy",
+      "allowed_domains": [
+        "arxiv.org",
+        "openreview.net",
+        "doi.org",
+        "crossref.org",
+        "semanticscholar.org",
+        "dl.acm.org",
+        "aaai.org"
+      ],
+      "max_redirects": 5,
+      "user_agent": "super-rebuttal-citation-audit/1.0",
+      "max_pdf_bytes": 52428800,
+      "min_pdf_bytes": 1024,
+      "max_html_bytes": 5242880,
+      "max_citation_bytes": 2097152,
+      "max_metadata_bytes": 5242880
+    },
+    "pdf": {
+      "first_pages": 2,
+      "extract_timeout_seconds": 30,
+      "min_extracted_chars": 80,
+      "max_extract_bytes": 1048576,
+      "max_memory_mb": 512
+    },
+    "agent_runner": {
+      "type": "codex_cli",
+      "binary": "codex",
+      "max_parallel": 4,
+      "timeout_seconds": 900
+    }
+  },
+  "references": [
+    {
+      "reference_id": "REF-LABELFREE-PHYSICS",
+      "reference_sha256": "e2b522fe24da359c02431937f3de58da74fb252fc79fddeb29b915ae869df25b",
+      "status": "CORRECTION_REQUIRED",
+      "evidence_sha256": "dddb465cf910d733b07284c80d499747b1375401512e3a3a9dcd36d50bbf7165",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-LABELFREE-PHYSICS/pdf_identity.json",
+          "sha256": "e05ca09edf567b1a7e9515dfc9831ec15ec140c09bda62aace12a505f68a6dcd"
+        },
+        "website_citation": {
+          "path": "packets/REF-LABELFREE-PHYSICS/website_citation.json",
+          "sha256": "550fb87f430a77f2f44480e2007a855bc754ab0e39b8f8a527c5d1a74981e572"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-LABELFREE-PHYSICS/registry_crosscheck.json",
+          "sha256": "10a237681647714b3ddb0bf1f2b775a705fcadd5c372927183b8c339893d0c5b"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-LABELFREE-PHYSICS/adversarial_provenance.json",
+          "sha256": "288e9d1cc881ac5d4a803fcf2273d8733f94f1b73e3c781ba74dba4d1e3e1f8f"
+        }
+      },
+      "decision_path": "decisions/REF-LABELFREE-PHYSICS.json",
+      "decision_sha256": "ca606b84ccde9e168e17d706fbffb3fd7c99d1e857406299766afc80499d3ecb"
+    },
+    {
+      "reference_id": "REF-MUST",
+      "reference_sha256": "c88f248ea60ee7ce8ac361707d7f70f1da206396766559d3766a00d8e5517f68",
+      "status": "BLOCKED",
+      "evidence_sha256": "c624f30f209d813df34ee8076121e0b6be8849d5790b43c93c3316734972ce8a",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-MUST/pdf_identity.json",
+          "sha256": "f9afabecc67b0745258c14109a01efc3d5577760f5fe40362732b9496c075efe"
+        },
+        "website_citation": {
+          "path": "packets/REF-MUST/website_citation.json",
+          "sha256": "c5fe6bde32945db13499316d5e3db2167d1f71e3ae61b5be36c3a3c3a010f91a"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-MUST/registry_crosscheck.json",
+          "sha256": "fd8ea92cf7cc17392383d66c20af5bc6c211012a46db068feff356cbf8d52d5c"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-MUST/adversarial_provenance.json",
+          "sha256": "32205ca5dc05c6fcdabc252fbc2563c2cc86c89c8ac2f94a64f26776971b2f08"
+        }
+      },
+      "decision_path": "decisions/REF-MUST.json",
+      "decision_sha256": "59a36c7ea2403b6160a85942e43f4ba3c7bb93a680605fc00b4c3ea47c4d7f74"
+    },
+    {
+      "reference_id": "REF-SATFORMER",
+      "reference_sha256": "49c8cede42396f81683dd326983fed61d18de01caffa3c22d945804b061b46f9",
+      "status": "BLOCKED",
+      "evidence_sha256": "f4a31c98e70d18f7d691c595baa29c31f650042288bd87544362c6b3a3ee0dab",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-SATFORMER/pdf_identity.json",
+          "sha256": "412a81f58899965c4e01c1e5f0828cd55b580caa5f8cf3d0ce5bf0ef51fa057e"
+        },
+        "website_citation": {
+          "path": "packets/REF-SATFORMER/website_citation.json",
+          "sha256": "e980b46cba654416aec82db06bf3ee29561a0109e1e88c062ee3a936bc15b267"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-SATFORMER/registry_crosscheck.json",
+          "sha256": "b617e955452cb6a362c3f7927a4adc173a3ef48d344ff01e2f8ee2b7b1f0df88"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-SATFORMER/adversarial_provenance.json",
+          "sha256": "1fb02fff77b4ba595fdcace7b054449d1f65bd041c2b3fa1538d047f5f053e0c"
+        }
+      },
+      "decision_path": "decisions/REF-SATFORMER.json",
+      "decision_sha256": "78700948963df64740532161f6d64e9f84152a68d1d05a6f2f2f7cfd662037ea"
+    },
+    {
+      "reference_id": "REF-IMITSAT",
+      "reference_sha256": "cab372f8ad4027a4502da62b09650d6c758f1404be7dbee0a1ae409af4ce5c90",
+      "status": "BLOCKED",
+      "evidence_sha256": "fe4141cff92e1986de84b2223c258a6b587b6e20c1df4a778fbbf9ef0efcd1fa",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-IMITSAT/pdf_identity.json",
+          "sha256": "3129aa57417ae82a5a680509545236a506836af54cdcc2d61a59b50038231c51"
+        },
+        "website_citation": {
+          "path": "packets/REF-IMITSAT/website_citation.json",
+          "sha256": "47cca585866382e6fabf3fd2105d43615503541d2b960ac006817ffca6cf1f37"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-IMITSAT/registry_crosscheck.json",
+          "sha256": "d6c3f920cdf10dbb4435389cabbe91a4a53cce05aa52b6440b2613c94d797acb"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-IMITSAT/adversarial_provenance.json",
+          "sha256": "b4a6d0725c45395ad5525523a5ede65b8c500b3b8bbaadc60630f3b3fe9112b5"
+        }
+      },
+      "decision_path": "decisions/REF-IMITSAT.json",
+      "decision_sha256": "d3c1e65b8bb069d8b75145bc0ab34b4a2f2a15a90c88794daa09f769c816e299"
+    },
+    {
+      "reference_id": "REF-GRAPHQSAT",
+      "reference_sha256": "10d8ada36810c05a23ee09360cf5c9f3b78501a8d99db672032bc2f30948e01b",
+      "status": "BLOCKED",
+      "evidence_sha256": "7d4bafdc06fca2a6b3cf888f94a2f73daff105fa5f61fb6bdefce4acb7a2a69e",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-GRAPHQSAT/pdf_identity.json",
+          "sha256": "c143483bf1e816f9be383b8b34bedba217ee8dff4448c8be13ab16bbd12a6fc6"
+        },
+        "website_citation": {
+          "path": "packets/REF-GRAPHQSAT/website_citation.json",
+          "sha256": "fdf65c8cb6f7f79d6aaa054e2441b25d4df0bb41e08201cac719a3ac907ee523"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-GRAPHQSAT/registry_crosscheck.json",
+          "sha256": "c3fdd8d954a237a9f688c73c27f18ab227d8d5661062169bf3152dbde8f5a3fd"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-GRAPHQSAT/adversarial_provenance.json",
+          "sha256": "a2954484043a1b10585206665779adffa2699bfbf831e952ce0ccffde67987a7"
+        }
+      },
+      "decision_path": "decisions/REF-GRAPHQSAT.json",
+      "decision_sha256": "e81d9f83b7b39378a6dc6a9be4bd39de7a75d66d9d1c902f501efd3e06080359"
+    },
+    {
+      "reference_id": "REF-NSNET",
+      "reference_sha256": "8c43231ee2e999cbdd3b1eda2a6421d8577578a596c103967bfacc56667801c1",
+      "status": "BLOCKED",
+      "evidence_sha256": "23f1ddb1ad55033d291ab191168ae7b33ea9e7537fb652c9cfbb77c103414655",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-NSNET/pdf_identity.json",
+          "sha256": "f73c48b7d1c7db32885874877b50b6884397d54588633c259da0550373fbfa60"
+        },
+        "website_citation": {
+          "path": "packets/REF-NSNET/website_citation.json",
+          "sha256": "f41666f4bdce175fe2c777b6c0dfdab1a99b77907409f23f6fd634e56457ac63"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-NSNET/registry_crosscheck.json",
+          "sha256": "89685cef34e2362754244b50d6b4060cdd8af3e8e66f837b5094c69d7e2d6b03"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-NSNET/adversarial_provenance.json",
+          "sha256": "b95bd067080787bff4e8e77a9031a9f39276149577df4c135ffca61b33740479"
+        }
+      },
+      "decision_path": "decisions/REF-NSNET.json",
+      "decision_sha256": "5d439de222efe18aaa02a639dc09c795b11b49f24e2ac97e0b819513b07c7f43"
+    },
+    {
+      "reference_id": "REF-G4SATBENCH",
+      "reference_sha256": "68176ed9ab3d91605d9f0a2764de75196e60665c023c2b81612fff37d143cb43",
+      "status": "BLOCKED",
+      "evidence_sha256": "62e1fe57cee4bade3b0449f24839c39c05beee0a72f0308dc5ca69fc1d316f3e",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-G4SATBENCH/pdf_identity.json",
+          "sha256": "2afef9558edc6f86b98cb4f96d8004a5429657a11f66a93624efb34044214a27"
+        },
+        "website_citation": {
+          "path": "packets/REF-G4SATBENCH/website_citation.json",
+          "sha256": "99443406f96d973e2c3ef29ff2718eb51bc380dda36207765cb69d9408aaa5fc"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-G4SATBENCH/registry_crosscheck.json",
+          "sha256": "a2bc0e7560fe123b4264d82493cc5ba7ae19f260d013a9d15a4ca834d6e0ae29"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-G4SATBENCH/adversarial_provenance.json",
+          "sha256": "7eb3d7fe5aa82541fec2f78a9738fff33697e4e3b5da734e59f75357139d8b45"
+        }
+      },
+      "decision_path": "decisions/REF-G4SATBENCH.json",
+      "decision_sha256": "8e3ce62615ccc62049ef283abdcfc8994c7cb557a0e689b41a2c263e89123450"
+    },
+    {
+      "reference_id": "REF-SURVEYPROP",
+      "reference_sha256": "a659230a37f7921df0829bac2201d69a01c3b5cae0bd584e952450a9dab41f44",
+      "status": "BLOCKED",
+      "evidence_sha256": "d3ff56f04a031b7f084a7bf1117f02bd11bfe557cd9fb70bd9ad3adcb51918f4",
+      "packets": {
+        "pdf_identity": {
+          "path": "packets/REF-SURVEYPROP/pdf_identity.json",
+          "sha256": "9bf44ff299aef997c9b7c80b0e81a82dbed5293ed481ea50238deeebafa25fb4"
+        },
+        "website_citation": {
+          "path": "packets/REF-SURVEYPROP/website_citation.json",
+          "sha256": "f586f7b2e397fad64ec87253665b0dc0ba86ef6b29fae329cc15fd070aa9cc9d"
+        },
+        "registry_crosscheck": {
+          "path": "packets/REF-SURVEYPROP/registry_crosscheck.json",
+          "sha256": "f6dd4e8a1437b9dc80c9313b4dcf904d3c7e986feb2102d5e186d7d17fe16768"
+        },
+        "adversarial_provenance": {
+          "path": "packets/REF-SURVEYPROP/adversarial_provenance.json",
+          "sha256": "f0198e86f4c30dbcdedc355f7cd3fb350a53cc2e1e7c13be10c8cdd2b5485a90"
+        }
+      },
+      "decision_path": "decisions/REF-SURVEYPROP.json",
+      "decision_sha256": "b5cd59c9d6b7f6781e6a2362d28bcbee2bf0f5ca4053d6de776cd779dfa6f61b"
+    },
+    {
+      "reference_id": "REF-SIMONSPECK",
+      "reference_sha256": "bba65d5f793db228c71590cd7bb0e07acc9afa022ff2c039a86fbb52fd7b2ffd",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "5c72eb8849453670b15eaa0dbbd863b766f10ba03682e88fbc640360ed717a9a"
+    },
+    {
+      "reference_id": "REF-SELMAN94",
+      "reference_sha256": "00881b16921bd46e4b722726f1b6612c136c140e1a2b763cff1fc652dfce5e64",
+      "status": "PENDING"
+    },
+    {
+      "reference_id": "REF-SATLIB",
+      "reference_sha256": "2d965091ae9879e79bffa491e9bbb5dad3c4431a549a48134f34bb33f39ea9aa",
+      "status": "PENDING"
+    },
+    {
+      "reference_id": "REF-CADICAL2024",
+      "reference_sha256": "2deecf92092c9627e9eab61ab0e7e50a5e0e1ca23782638ec866e81a9d19a061",
+      "status": "PENDING"
+    },
+    {
+      "reference_id": "REF-PEARL1988",
+      "reference_sha256": "62412ca9a3ba08d756a97a556acf41d1bc84fe78cd9d7077c7d60426c1f8d39c",
+      "status": "PENDING"
+    }
+  ],
+  "updated_at": "2026-08-24T22:01:14+00:00"
+}

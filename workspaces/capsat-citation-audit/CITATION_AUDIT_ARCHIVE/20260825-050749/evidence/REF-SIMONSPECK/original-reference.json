@@ -1,0 +1,12 @@
+{
+  "reference_id": "REF-SIMONSPECK",
+  "citation_key": "beaulieu2015simonspeck",
+  "entry_type": "inproceedings",
+  "authors": [
+    "R. Beaulieu"
+  ],
+  "title": "The SIMON and SPECK Lightweight Block Ciphers",
+  "venue": "DAC",
+  "year": "2015",
+  "doi": "10.1145/2744769.2747946"
+}

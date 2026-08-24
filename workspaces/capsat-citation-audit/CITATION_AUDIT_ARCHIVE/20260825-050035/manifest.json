@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "batch_id": "4cae8159-c46e-4179-8c90-e4d67891bd8c",
+  "created_at": "2026-08-24T20:54:42+00:00",
+  "status": "EVIDENCE_BLOCKED",
+  "references_path": "REFERENCES.json",
+  "references_sha256": "ed02aaa2b4674e98430ab5dca0114bcdc62963d5c474c9ce76e9c5a4ea6d04ef",
+  "source_bib": null,
+  "config": {
+    "schema_version": 1,
+    "enforce": true,
+    "required_roles": [
+      "pdf_identity",
+      "website_citation",
+      "registry_crosscheck",
+      "adversarial_provenance"
+    ],
+    "field_required_roles": {
+      "authors": [
+        "pdf_identity",
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "title": [
+        "pdf_identity",
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "year": [
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ],
+      "venue": [
+        "website_citation",
+        "registry_crosscheck",
+        "adversarial_provenance"
+      ]
+    },
+    "require_all_source_values_to_agree": true,
+    "required_source_families": [
+      "paper_pdf",
+      "landing_page",
+      "citation_export",
+      "registry_metadata"
+    ],
+    "network": {
+      "timeout_seconds": 25,
+      "allow_http": false,
+      "resolver_mode": "strict",
+      "allowed_domains": [],
+      "max_redirects": 5,
+      "user_agent": "super-rebuttal-citation-audit/1.0",
+      "max_pdf_bytes": 52428800,
+      "min_pdf_bytes": 1024,
+      "max_html_bytes": 5242880,
+      "max_citation_bytes": 2097152,
+      "max_metadata_bytes": 5242880
+    },
+    "pdf": {
+      "first_pages": 2,
+      "extract_timeout_seconds": 30,
+      "min_extracted_chars": 80,
+      "max_extract_bytes": 1048576,
+      "max_memory_mb": 512
+    },
+    "agent_runner": {
+      "type": "codex_cli",
+      "binary": "codex",
+      "max_parallel": 4,
+      "timeout_seconds": 900
+    }
+  },
+  "references": [
+    {
+      "reference_id": "REF-LABELFREE-PHYSICS",
+      "reference_sha256": "e0c315a2a72ad1d14dbd5a122fa689a275cc6be23bb21df48a5c516f6c108c93",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "266730f8bf694aa6368ab5598653def8c7ab3009d77b976179a3a2947427aa4e"
+    },
+    {
+      "reference_id": "REF-MUST",
+      "reference_sha256": "cdc13e3879bf4e445cffe7054689b24c27f994ec7476761b9a1569b37f6ca007",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "0f4e93f1f20fe9fdd1b8c945749931f0bf82bf442d9cb9b2f32d4830e034f5be"
+    },
+    {
+      "reference_id": "REF-SATFORMER",
+      "reference_sha256": "49c8cede42396f81683dd326983fed61d18de01caffa3c22d945804b061b46f9",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "5188a8f3804beea073be0bc87e9f5f1bea1816cc928185e334c8bbf5a417d51f"
+    },
+    {
+      "reference_id": "REF-IMITSAT",
+      "reference_sha256": "d8aef2de6c9a3c0a899bfd30c683129f621d4a46688facddc5089aa02357a9f4",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "1b99f112cc79515c97f62608ddc5245110bcffaa054d7ebb90ab964cf7b4f06f"
+    },
+    {
+      "reference_id": "REF-GRAPHQSAT",
+      "reference_sha256": "10d8ada36810c05a23ee09360cf5c9f3b78501a8d99db672032bc2f30948e01b",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "17e49fa5ffb60f39b59833339b38256a9e8523a8d629e61cc40c5f13b2a91571"
+    },
+    {
+      "reference_id": "REF-NSNET",
+      "reference_sha256": "50c7fcf10b2e7a13a48c57cd615b549cab99209ddbd4d49004f17059fcd2a887",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "a63a65cc06fafde22db58a74662afc2f929d9796a9e791b39dec95ae9222383b"
+    },
+    {
+      "reference_id": "REF-G4SATBENCH",
+      "reference_sha256": "6808498723102cc9495ca5702c8de9b2f76ab8f2f0c6fb5783e8af1d80e19dae",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "31a54156e2a88b257789a586e980ef8ba6aafe596a40bc262616e2d9f72ef994"
+    },
+    {
+      "reference_id": "REF-SURVEYPROP",
+      "reference_sha256": "a659230a37f7921df0829bac2201d69a01c3b5cae0bd584e952450a9dab41f44",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "08f3c3f1993a142b1d48618c34fb5669d147f85ddfcf8aac3b7d181618933e8e"
+    },
+    {
+      "reference_id": "REF-SIMONSPECK",
+      "reference_sha256": "bba65d5f793db228c71590cd7bb0e07acc9afa022ff2c039a86fbb52fd7b2ffd",
+      "status": "EVIDENCE_BLOCKED",
+      "evidence_sha256": "fb04c4ab6f6878fb114caa42a2e609aa3bd110d382602278b0af35f3e11505c2"
+    },
+    {
+      "reference_id": "REF-SELMAN94",
+      "reference_sha256": "00881b16921bd46e4b722726f1b6612c136c140e1a2b763cff1fc652dfce5e64",
+      "status": "PENDING"
+    },
+    {
+      "reference_id": "REF-SATLIB",
+      "reference_sha256": "2d965091ae9879e79bffa491e9bbb5dad3c4431a549a48134f34bb33f39ea9aa",
+      "status": "PENDING"
+    },
+    {
+      "reference_id": "REF-CADICAL2024",
+      "reference_sha256": "2deecf92092c9627e9eab61ab0e7e50a5e0e1ca23782638ec866e81a9d19a061",
+      "status": "PENDING"
+    },
+    {
+      "reference_id": "REF-PEARL1988",
+      "reference_sha256": "62412ca9a3ba08d756a97a556acf41d1bc84fe78cd9d7077c7d60426c1f8d39c",
+      "status": "PENDING"
+    }
+  ],
+  "updated_at": "2026-08-24T20:55:37+00:00"
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-GRAPHQSAT",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a035ca-0c97-7473-9634-fb6eb2fc3877",
+  "recorded_at": "2026-08-24T22:00:49+00:00",
+  "packet_sha256": "fdf65c8cb6f7f79d6aaa054e2441b25d4df0bb41e08201cac719a3ac907ee523",
+  "evidence_sha256": "7d4bafdc06fca2a6b3cf888f94a2f73daff105fa5f61fb6bdefce4acb7a2a69e",
+  "body_sha256": "940caf332edc8edda4ed189fd67aa5774c573ddfceb5ee482038a78bfe17867e",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "a6509b239a738a9e7bffb9a639f7ff7aa1fe48964b64f420d363cc08f6e90aa9",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035ca-0c97-7473-9634-fb6eb2fc3877",
+    "invocation_id": "c6d55db9-d969-431d-ad3c-4aa488fb70ff",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "CORRECT",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Vitaly Kurin",
+          "Saad Godil",
+          "Shimon Whiteson",
+          "Bryan Catanzaro"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "",
+        "issues": [
+          "The landing page states 2019/09/26, while the site-provided BibTeX export states 2020."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "Neither supplied artifact states a venue."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Publication year conflicts: landing_page gives 2019/09/26 (normalized as 2019), while citation_export gives 2020."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "The author lists contain the same four authors in the same order; only name formatting differs between the landing page and BibTeX export."
+  }
+}

@@ -1,0 +1,99 @@
+Published as a conference paper at ICLR 2026
+
+B OOLEAN S ATISFIABILITY VIA I MITATION L EARNING
+Zewei Zhang1 Huan Liu1 Yuanhao Yu1 Jun Chen1 Xiangyu Xu2∗
+1
+McMaster University 2 Xi’an Jiaotong University
+{zhanz561, chenjun}@mcmaster.ca {liuh127, dr.yhyu}@outlook.com
+xuxiangyu2014@gmail.com
+
+arXiv:2509.25411v2 [cs.AI] 21 Feb 2026
+
+A BSTRACT
+We propose ImitSAT, a branching policy for conflict-driven clause learning
+(CDCL) solvers based on imitation learning for the Boolean satisfiability problem (SAT). Unlike previous methods that predict instance-level signals to improve
+CDCL branching indirectly, or rely on reinforcement learning and insufficient
+CDCL information to enhance branching, ImitSAT learns from expert KeyTrace
+that collapses a full run into the sequence of surviving decisions. Replaying a
+KeyTrace on the same instance is nearly conflict-free, providing dense decisionlevel supervision and directly reducing propagations—the dominant contributor
+to wall-clock time. This prefix-conditioned supervision enables ImitSAT to reproduce high-quality branches without exploration, yielding faster convergence, stable training, and seamless integration into CDCL. Extensive experiments demonstrate that ImitSAT reduces propagation counts and runtime, outperforming stateof-the-art learned approaches. We released the source code and trained model at
+https://github.com/zewei-Zhang/ImitSAT.
+
+1
+
+I NTRODUCTION
+
+The Boolean satisfiability (SAT) problem is a cornerstone of theoretical computer science and artificial intelligence (Cook, 1971; Karp, 1972). Beyond its foundational role, SAT serves as the
+computational backbone of numerous applications, including formal verification, planning, and
+combinatorial optimization. Modern solvers for SAT are dominated by the conflict-driven clause
+learning (CDCL) framework (Silva & Sakallah, 1996; Biere et al., 2009), which has scaled to industrial benchmarks of immense complexity. A CDCL run interleaves branching, unit propagation, and
+conflict analysis. Among these components, the branching rule largely determines the search trajectory, while unit propagation often dominates runtime (Zhang & Malik, 2002; Davis et al., 2008;
+Moskewicz et al., 2001). As a result, more informed branching decisions can translate directly into
+faster solving.
+Classical branching heuristics, however, are hand-crafted and limited in their adaptability. Recent
+work has sought to improve solver performance by integrating learning-based guidance. For example, SATformer (Shi et al., 2023) learns instance-level signals to adjust variable activities during
+initialization, but it exerts no influence once the branching loop begins. Graph-Q-SAT (Kurin et al.,
+2020) introduces an online agent within CDCL, yet it relies on reinforcement learning (RL), which
+requires extensive exploration and can be unstable due to sparse rewards and delayed feedback.
+Moreover, Graph-Q-SAT does not utilize the full CDCL execution history; each branching is conditioned only on a compact graph snapshot of the current state, so the history influences the agent
+only indirectly.
+In contrast, we adopt imitation learning, which trains directly from expert traces. Specifically, we
+introduce ImitSAT, a CDCL branching learner trained on expert trace replays. Replaying an expert trace on the same instance is nearly conflict-free, eliminating redundant propagations and providing clean training targets. Since branching is inherently prefix-conditioned, we formulate it as
+an autoregressive sequence modeling problem, and implement ImitSAT with a Transformer-based
+learner (Vaswani et al., 2017). Our model captures long-context dependencies while keeping runtime
+costs practical through lightweight autoregressive attention (Hawthorne et al., 2022).
+∗
+
+Corresponding author
+
+1
+
+Published as a conference paper at ICLR 2026
+
+To obtain expert traces, we collapse full solver runs into sequences of surviving decisions, yielding
+dense, step-level supervision at every branching point. This approach enables the learner to reproduce high-quality decisions without costly exploration, resulting in faster convergence, more stable
+training, and natural alignment with the prefix-conditioned structure of branching. During inference,
+ImitSAT reads the instance together with a KeyTrace prefix and autoregressively predicts the next
+signed variable as the branch decision. The policy is queried under a small budget, reverting to the
+native heuristic when uncertain, while all other CDCL components remain unchanged, preserving
+completeness and robustness.
+We evaluate ImitSAT on held-out random 3-SAT instances ranging from 5 to 100 variables, as well
+as on structured families including satisfiable and unsatisfiable instances and non-k-SAT formulas. Under limited query budgets, ImitSAT consistently reduces propagations relative to a standard
+CDCL solver and outperforms prior learning-based methods, SATformer and Graph-Q-SAT, across
+most settings while matching their performance elsewhere. Wall-clock measurements show that ImitSAT achieves favorable runtime performance against SOTA methods (Shi et al., 2023; Kurin et al.,
+2020). Remarkably, although trained solely on simple random 3-SAT, ImitSAT transfers effectively
+to unsatisfiable and non-k-SAT benchmarks without modification.
+We summarize the contributions of this work as below.
+• We propose ImitSAT, the first branching policy for CDCL solvers based on imitation learning. Unlike prior methods that rely on reinforcement learning, ImitSAT leverages dense,
+decision-level supervision from expert traces.
+• We cast branching as a sequential modeling problem by collapsing solver runs into compact
+sequences of surviving decisions. These sequences serve as clean, conflict-free training
+targets and align naturally with prefix-conditioned autoregressive modeling.
+• Extensive experiments demonstrate that ImitSAT yields both practical efficiency and strong
+generalization.
+
+2
+
+R ELATED W ORKS
+
+Neural guidance for SAT and CDCL. Early learning approaches focused on instance-level prediction, using Graph Neural Network (GNNs) (Scarselli et al., 2008) to classify SAT or UNSAT, as
+seen in NeuroSAT (Selsam et al., 2019; Selsam & Bjørner, 2019) and (Cameron et al., 2020). Recent work has explored whether Transformers can learn solver behavior directly (Pan et al., 2025).
+In parallel with these model-based approaches, complementary efforts target data and benchmarking, including G2SAT (You et al., 2019) and G4SATBench (Li et al., 2024). Building on these
+foundations, a second line integrates learning inside solvers to shape specific components: for example, NeuroSelect (Liu et al., 2024) learns clause deletion policies, NeuroBack (Wang et al., 2024)
+improves phase initialization with GNNs, and RDC-SAT (Zhai & Ge, 2025) adopts a divide-andconquer strategy via reinforcement learning. This approach leads to targeted enhancements within
+solver mechanisms. More concretely, within the CDCL branching loop, several methods exemplify
+this integration: NeuroSAT (Selsam & Bjørner, 2019) has been used to guide variable selection;
+Graph-Q-SAT (Kurin et al., 2020) trains an RL agent queried online during search based on instance
+information; and SATformer (Shi et al., 2023) trains a GNN Transformer model to initialize the
+CDCL that indirectly influences branching thereafter.
+Imitation learning for control. Imitation learning (IL) learns policies directly from expert
+demonstrations, that is, sequences of states with associated actions (Osa et al., 2018; Zare et al.,
+2024). A simple example is behavior cloning (BC), which utilizes supervised learning to map
+observed situations to expert choices (Pomerleau, 1991). Building on the principles of imitation
+learning, the Decision Transformer (Chen et al., 2021) is similar to behavior cloning, framing reinforcement learning as sequence modeling, where an autoregressive Transformer is trained to predict
+the next action given a sequence rollout of returns, states, and actions. This view connects control
+to next-token prediction and attains competitive performance without explicit value function learning. The application of imitation learning extends beyond traditional domains. For instance, beyond
+robotics and games, IL has guided decision-making in exact optimization solvers. In mixed-integer
+linear programming, policies learned to imitate strong branching can be used within branch-and2
+
+

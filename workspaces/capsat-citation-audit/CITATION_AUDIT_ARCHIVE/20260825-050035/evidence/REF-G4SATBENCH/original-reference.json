@@ -1,0 +1,14 @@
+{
+  "reference_id": "REF-G4SATBENCH",
+  "citation_key": "li2024g4satbench",
+  "entry_type": "article",
+  "authors": [
+    "Z. Li",
+    "J. Guo",
+    "X. Si"
+  ],
+  "title": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+  "venue": "TMLR",
+  "year": "2024",
+  "openreview_id": "7VB5db72lr"
+}

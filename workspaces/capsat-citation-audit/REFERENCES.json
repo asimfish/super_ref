@@ -1,0 +1,187 @@
+{
+  "schema_version": 2,
+  "enforce": true,
+  "rule": "Citation fields require evidence-first multi-agent verification before use.",
+  "source_note": "Ledger reconstructed verbatim from the citation claims printed in 实际rebuttal/cap-sat/OPENREVIEW_REBUTTAL_FULL.md (NeurIPS 2026 submission 19389, forum 3XJrmmUpc2). Author lists and titles are recorded exactly as the rebuttal states them, including abbreviations; the audit is expected to surface omissions and propose corrections.",
+  "references": [
+    {
+      "reference_id": "REF-LABELFREE-PHYSICS",
+      "citation_key": "stewart2017labelfree",
+      "entry_type": "inproceedings",
+      "authors": [
+        "R. Stewart",
+        "S. Ermon"
+      ],
+      "title": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+      "venue": "AAAI",
+      "year": "2017",
+      "doi": "10.1609/aaai.v31i1.10934",
+      "route_note": "AAAI 2017 is open access on ojs.aaai.org with a Crossref-registered DOI; the DOI route is the venue-of-record authority and can attest venue/year, unlike the arXiv preprint route."
+    },
+    {
+      "reference_id": "REF-MUST",
+      "citation_key": "li2023must",
+      "entry_type": "inproceedings",
+      "authors": [
+        "J. Li",
+        "S. Savarese",
+        "S. Hoi"
+      ],
+      "title": "Masked Unsupervised Self-training for Label-free Image Classification",
+      "venue": "ICLR",
+      "year": "2023",
+      "arxiv_id": "2206.02967",
+      "openreview_note": "OpenReview note ZAKkiVxiAM9 is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+    },
+    {
+      "reference_id": "REF-SATFORMER",
+      "citation_key": "shi2023satformer",
+      "entry_type": "inproceedings",
+      "authors": [
+        "Zhengyuan Shi",
+        "Min Li",
+        "Yi Liu",
+        "Sadaf Khan",
+        "Junhua Huang",
+        "Hui-Ling Zhen",
+        "Mingxuan Yuan",
+        "Qiang Xu"
+      ],
+      "title": "SATformer: Transformer-Based UNSAT Core Learning",
+      "venue": "ICCAD",
+      "year": "2023",
+      "arxiv_id": "2209.00953"
+    },
+    {
+      "reference_id": "REF-IMITSAT",
+      "citation_key": "zhang2026imitsat",
+      "entry_type": "inproceedings",
+      "authors": [
+        "Zewei Zhang",
+        "Huan Liu",
+        "Yuanhao Yu",
+        "Jun Chen",
+        "Xiangyu Xu"
+      ],
+      "title": "Boolean Satisfiability via Imitation Learning",
+      "venue": "ICLR",
+      "year": "2026",
+      "arxiv_id": "2509.25411",
+      "openreview_note": "OpenReview note LNqWbY5iIf is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+    },
+    {
+      "reference_id": "REF-GRAPHQSAT",
+      "citation_key": "kurin2020graphqsat",
+      "entry_type": "inproceedings",
+      "authors": [
+        "V. Kurin"
+      ],
+      "title": "Can Q-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+      "venue": "NeurIPS",
+      "year": "2020",
+      "arxiv_id": "1909.11830"
+    },
+    {
+      "reference_id": "REF-NSNET",
+      "citation_key": "li2022nsnet",
+      "entry_type": "inproceedings",
+      "authors": [
+        "Li",
+        "Si"
+      ],
+      "title": "NSNet",
+      "venue": "NeurIPS",
+      "year": "2022",
+      "arxiv_id": "2211.03880",
+      "openreview_note": "OpenReview note f-FQE1fjPK is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+    },
+    {
+      "reference_id": "REF-G4SATBENCH",
+      "citation_key": "li2024g4satbench",
+      "entry_type": "article",
+      "authors": [
+        "Z. Li",
+        "J. Guo",
+        "X. Si"
+      ],
+      "title": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+      "venue": "TMLR",
+      "year": "2024",
+      "arxiv_id": "2309.16941",
+      "openreview_note": "OpenReview note 7VB5db72lr is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+    },
+    {
+      "reference_id": "REF-SURVEYPROP",
+      "citation_key": "braunstein2005surveyprop",
+      "entry_type": "article",
+      "authors": [
+        "A. Braunstein",
+        "M. Mézard",
+        "R. Zecchina"
+      ],
+      "title": "Survey Propagation: An Algorithm for Satisfiability",
+      "venue": "Random Structures & Algorithms",
+      "year": "2005",
+      "arxiv_id": "cs/0212002"
+    },
+    {
+      "reference_id": "REF-SIMONSPECK",
+      "citation_key": "beaulieu2015simonspeck",
+      "entry_type": "inproceedings",
+      "authors": [
+        "R. Beaulieu"
+      ],
+      "title": "The SIMON and SPECK Lightweight Block Ciphers",
+      "venue": "DAC",
+      "year": "2015",
+      "doi": "10.1145/2744769.2747946"
+    },
+    {
+      "reference_id": "REF-SELMAN94",
+      "citation_key": "selman1994noise",
+      "entry_type": "inproceedings",
+      "authors": [
+        "B. Selman",
+        "H. A. Kautz",
+        "B. Cohen"
+      ],
+      "title": "Noise Strategies for Improving Local Search",
+      "venue": "AAAI",
+      "year": "1994"
+    },
+    {
+      "reference_id": "REF-SATLIB",
+      "citation_key": "hoos2000satlib",
+      "entry_type": "incollection",
+      "authors": [
+        "H. H. Hoos",
+        "T. Stützle"
+      ],
+      "title": "SATLIB: An Online Resource for Research on SAT",
+      "venue": "SAT",
+      "year": "2000"
+    },
+    {
+      "reference_id": "REF-CADICAL2024",
+      "citation_key": "biere2024cadical",
+      "entry_type": "inproceedings",
+      "authors": [
+        "A. Biere"
+      ],
+      "title": "CaDiCaL, Gimsatul, IsaSAT and Kissat Entering the SAT Competition 2024",
+      "venue": "SAT Competition",
+      "year": "2024"
+    },
+    {
+      "reference_id": "REF-PEARL1988",
+      "citation_key": "pearl1988probabilistic",
+      "entry_type": "book",
+      "authors": [
+        "J. Pearl"
+      ],
+      "title": "Probabilistic Reasoning in Intelligent Systems",
+      "venue": "Morgan Kaufmann",
+      "year": "1988"
+    }
+  ]
+}

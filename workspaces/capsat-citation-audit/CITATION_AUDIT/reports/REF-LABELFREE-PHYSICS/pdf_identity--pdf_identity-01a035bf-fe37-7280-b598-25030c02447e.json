@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "role": "pdf_identity",
+  "agent_id": "pdf_identity-01a035bf-fe37-7280-b598-25030c02447e",
+  "recorded_at": "2026-08-24T21:49:50+00:00",
+  "packet_sha256": "e05ca09edf567b1a7e9515dfc9831ec15ec140c09bda62aace12a505f68a6dcd",
+  "evidence_sha256": "dddb465cf910d733b07284c80d499747b1375401512e3a3a9dcd36d50bbf7165",
+  "body_sha256": "f6fc4228a6c352002a4216c3dc4a31e887ddf387ff93316e423f657fa85b70ec",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "0e3edfa289d71274dec8ed5c5e0c2f0cb7538aae21b7caa5fe72ebebb21195eb",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035bf-fe37-7280-b598-25030c02447e",
+    "invocation_id": "2a0d6986-69d4-4f18-a920-dc03ee267dc8",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "year": {
+        "status": "CORRECT",
+        "value": "2017",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "venue": {
+        "status": "CORRECT",
+        "value": "Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence (AAAI-17)",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "The PDF identity-page evidence explicitly prints the title, authors in order, conference venue, and a 2017 copyright notice."
+  }
+}

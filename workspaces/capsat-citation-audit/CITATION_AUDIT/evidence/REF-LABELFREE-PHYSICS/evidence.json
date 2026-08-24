@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "reference_sha256": "e2b522fe24da359c02431937f3de58da74fb252fc79fddeb29b915ae869df25b",
+  "adapter": "doi",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T21:48:51+00:00",
+  "status": "READY",
+  "errors": [],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "landing_page",
+      "source_family": "landing_page",
+      "kind": "html",
+      "request_url": "https://doi.org/10.1609/aaai.v31i1.10934",
+      "final_url": "https://ojs.aaai.org/index.php/AAAI/article/view/10934",
+      "redirect_chain": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/10934"
+      ],
+      "peer_ip": "127.0.0.1",
+      "accept": "text/html,application/xhtml+xml",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 22265,
+      "sha256": "f70ed7d846a0a9469cdf1bde2c595a99d0d0a341ae2d930ee38a533619010761",
+      "path": "landing.html"
+    },
+    {
+      "artifact_id": "citation_export",
+      "source_family": "citation_export",
+      "kind": "citation",
+      "request_url": "https://doi.org/10.1609/aaai.v31i1.10934",
+      "final_url": "https://api.crossref.org/v1/works/10.1609%2Faaai.v31i1.10934/transform",
+      "redirect_chain": [
+        "https://api.crossref.org/v1/works/10.1609%2Faaai.v31i1.10934/transform"
+      ],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/x-bibtex",
+      "status": 200,
+      "content_type": "application/x-bibtex",
+      "bytes": 457,
+      "sha256": "07eeaf124d1b5494caedd9c7e8968e57b6867c536dd77f20951da6915e719309",
+      "path": "citation.bib"
+    },
+    {
+      "artifact_id": "registry_crossref",
+      "source_family": "registry_metadata",
+      "kind": "metadata",
+      "request_url": "https://api.crossref.org/works/10.1609%2Faaai.v31i1.10934",
+      "final_url": "https://api.crossref.org/works/10.1609%2Faaai.v31i1.10934",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/json",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 2942,
+      "sha256": "4c03068e0de3c794623f8b369c6620cf25d150cf60f584c3f9cc9aebe868b4f4",
+      "path": "registry-crossref.json"
+    },
+    {
+      "artifact_id": "paper_pdf",
+      "source_family": "paper_pdf",
+      "kind": "pdf",
+      "request_url": "https://ojs.aaai.org/index.php/AAAI/article/download/10934/10793",
+      "final_url": "https://ojs.aaai.org/index.php/AAAI/article/download/10934/10793",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 1194626,
+      "sha256": "80f4da11fe99ab2f597cea5ec2c38f4d22540c45ff47439ccd3be3c289963ab7",
+      "path": "paper.pdf"
+    },
+    {
+      "artifact_id": "paper_first_pages",
+      "source_family": "paper_pdf",
+      "kind": "derived_text",
+      "path": "paper.first-pages.txt",
+      "bytes": 10233,
+      "sha256": "d27559246f4edbc56773b732888ba9fbd7bea9a0b72c4457db011eb1714548d5",
+      "derived_from": "paper_pdf",
+      "pages": 2,
+      "resource_limits": {
+        "cpu_seconds": 30,
+        "output_bytes": 1048576,
+        "memory_bytes": null
+      }
+    }
+  ],
+  "observations": [
+    {
+      "source_id": "landing_page",
+      "source_family": "landing_page",
+      "authority": "publisher_or_repository_page",
+      "artifact_ids": [
+        "landing_page"
+      ],
+      "values": {
+        "authors": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "title": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "year": "2017/02/13",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence"
+      },
+      "normalized": {
+        "authors": [
+          "russell stewart",
+          "stefano ermon"
+        ],
+        "title": "label free supervision of neural networks with physics and domain knowledge",
+        "year": "2017",
+        "venue": "proceedings of the aaai conference on artificial intelligence"
+      }
+    },
+    {
+      "source_id": "citation_export",
+      "source_family": "citation_export",
+      "authority": "site_export",
+      "artifact_ids": [
+        "citation_export"
+      ],
+      "values": {
+        "authors": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "title": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "year": "2017",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence"
+      },
+      "normalized": {
+        "authors": [
+          "russell stewart",
+          "stefano ermon"
+        ],
+        "title": "label free supervision of neural networks with physics and domain knowledge",
+        "year": "2017",
+        "venue": "proceedings of the aaai conference on artificial intelligence"
+      }
+    },
+    {
+      "source_id": "registry_crossref",
+      "source_family": "registry_metadata",
+      "authority": "bibliographic_registry",
+      "artifact_ids": [
+        "registry_crossref"
+      ],
+      "values": {
+        "authors": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "title": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "year": "2017",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence"
+      },
+      "normalized": {
+        "authors": [
+          "russell stewart",
+          "stefano ermon"
+        ],
+        "title": "label free supervision of neural networks with physics and domain knowledge",
+        "year": "2017",
+        "venue": "proceedings of the aaai conference on artificial intelligence"
+      }
+    }
+  ],
+  "discoveries": {
+    "optional_fetch_errors": [
+      "registry_semantic_scholar: failed to fetch registry_semantic_scholar from https://api.semanticscholar.org/graph/v1/paper/DOI:10.1609%2Faaai.v31i1.10934?fields=title,authors,year,venue,publicationDate,externalIds,openAccessPdf: HTTP Error 429: "
+    ],
+    "landing_page": {
+      "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/10934/10793",
+      "doi": "10.1609/aaai.v31i1.10934",
+      "arxiv_id": "",
+      "raw_meta": {
+        "citation_abstract_html_url": [
+          "https://ojs.aaai.org/index.php/AAAI/article/view/10934"
+        ],
+        "citation_author": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "citation_author_institution": [
+          "Stanford University",
+          "Stanford University"
+        ],
+        "citation_date": [
+          "2017/02/13"
+        ],
+        "citation_doi": [
+          "10.1609/aaai.v31i1.10934"
+        ],
+        "citation_issn": [
+          "2374-3468"
+        ],
+        "citation_issue": [
+          "1"
+        ],
+        "citation_journal_abbrev": [
+          "AAAI"
+        ],
+        "citation_journal_title": [
+          "Proceedings of the AAAI Conference on Artificial Intelligence"
+        ],
+        "citation_keywords": [
+          "computer vision, unsupervised learning, physics"
+        ],
+        "citation_language": [
+          "en"
+        ],
+        "citation_pdf_url": [
+          "https://ojs.aaai.org/index.php/AAAI/article/download/10934/10793"
+        ],
+        "citation_title": [
+          "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge"
+        ],
+        "citation_volume": [
+          "31"
+        ],
+        "dc.creator.personalname": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "dc.date.created": [
+          "2017-02-13"
+        ],
+        "dc.date.datesubmitted": [
+          "2020-12-28"
+        ],
+        "dc.date.issued": [
+          "2017-02-11"
+        ],
+        "dc.date.modified": [
+          "2020-12-28"
+        ],
+        "dc.description": [
+          "In many machine learning applications, labeled data is scarce and obtaining more labels is expensive. We introduce a new approach to supervising neural networks by specifying constraints that should hold over the output space, rather than direct examples of input-output pairs. These constraints are derived from prior domain knowledge, e.g., from known laws of physics. We demonstrate the effectiveness of this approach on real world and simulated computer vision tasks. We are able to train a convolutional neural network to detect and track objects without any labeled examples. Our approach can significantly reduce the need for labeled training data, but introduces new challenges for encoding prior knowledge into appropriate loss functions."
+        ],
+        "dc.format": [
+          "application/pdf"
+        ],
+        "dc.identifier": [
+          "10934"
+        ],
+        "dc.identifier.doi": [
+          "10.1609/aaai.v31i1.10934"
+        ],
+        "dc.identifier.uri": [
+          "https://ojs.aaai.org/index.php/AAAI/article/view/10934"
+        ],
+        "dc.language": [
+          "en"
+        ],
+        "dc.rights": [
+          "Copyright (c)"
+        ],
+        "dc.source": [
+          "Proceedings of the AAAI Conference on Artificial Intelligence"
+        ],
+        "dc.source.issn": [
+          "2374-3468"
+        ],
+        "dc.source.issue": [
+          "1"
+        ],
+        "dc.source.uri": [
+          "https://ojs.aaai.org/index.php/AAAI"
+        ],
+        "dc.source.volume": [
+          "31"
+        ],
+        "dc.subject": [
+          "computer vision, unsupervised learning, physics"
+        ],
+        "dc.title": [
+          "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge"
+        ],
+        "dc.type": [
+          "Text.Serial.Journal"
+        ],
+        "dc.type.articletype": [
+          "Machine Learning Methods"
+        ]
+      }
+    },
+    "citation_export": {
+      "entry_type": "article",
+      "citation_key": "Stewart_2017",
+      "doi": "10.1609/aaai.v31i1.10934",
+      "arxiv_id": "",
+      "openreview_id": null,
+      "url": "http://dx.doi.org/10.1609/aaai.v31i1.10934"
+    },
+    "registry_crossref": {
+      "pdf_urls": [
+        "https://ojs.aaai.org/index.php/AAAI/article/download/10934/10793"
+      ],
+      "doi": "10.1609/aaai.v31i1.10934",
+      "raw_type": "journal-article"
+    },
+    "pdf_candidates": [
+      "https://ojs.aaai.org/index.php/AAAI/article/download/10934/10793"
+    ]
+  },
+  "source_binding": {
+    "adapter": "doi",
+    "status": "PASS",
+    "identifier_type": "doi",
+    "identifier": "10.1609/aaai.v31i1.10934",
+    "checks": {
+      "landing_page": "10.1609/aaai.v31i1.10934",
+      "citation_export": "10.1609/aaai.v31i1.10934",
+      "registry_crossref": "10.1609/aaai.v31i1.10934"
+    },
+    "pdf_printed_identifiers": [],
+    "errors": []
+  }
+}

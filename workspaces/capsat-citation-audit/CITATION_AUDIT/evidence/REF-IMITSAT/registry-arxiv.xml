@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/JhFGNZQB/nV9QPF4WEHR4b8XDSQ</id>
+  <title>arXiv Query: search_query=&amp;id_list=2509.25411&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-24T21:09:58Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2509.25411" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2509.25411v2</id>
+    <title>Boolean Satisfiability via Imitation Learning</title>
+    <updated>2026-02-21T23:23:03Z</updated>
+    <link href="https://arxiv.org/abs/2509.25411v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.25411v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose ImitSAT, a branching policy for conflict-driven clause learning (CDCL) solvers based on imitation learning for the Boolean satisfiability problem (SAT). Unlike previous methods that predict instance-level signals to improve CDCL branching indirectly, or rely on reinforcement learning and insufficient CDCL information to enhance branching, ImitSAT learns from expert KeyTrace that collapses a full run into the sequence of surviving decisions. Replaying a KeyTrace on the same instance is nearly conflict-free, providing dense decision-level supervision and directly reducing propagations -- the dominant contributor to wall-clock time. This prefix-conditioned supervision enables ImitSAT to reproduce high-quality branches without exploration, yielding faster convergence, stable training, and seamless integration into CDCL. Extensive experiments demonstrate that ImitSAT reduces propagation counts and runtime, outperforming state-of-the-art learned approaches. We released the source code and trained model at https://github.com/zewei-Zhang/ImitSAT</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-29T19:09:37Z</published>
+    <arxiv:comment>Accepted to ICLR 2026. Code: https://github.com/zewei-zhang/ImitSAT</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zewei Zhang</name>
+    </author>
+    <author>
+      <name>Huan Liu</name>
+    </author>
+    <author>
+      <name>Yuanhao Yu</name>
+    </author>
+    <author>
+      <name>Jun Chen</name>
+    </author>
+    <author>
+      <name>Xiangyu Xu</name>
+    </author>
+  </entry>
+</feed>

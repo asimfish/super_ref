@@ -1,0 +1,16 @@
+{
+  "reference_id": "REF-IMITSAT",
+  "citation_key": "zhang2026imitsat",
+  "entry_type": "inproceedings",
+  "authors": [
+    "Zewei Zhang",
+    "Huan Liu",
+    "Yuanhao Yu",
+    "Jun Chen",
+    "Xiangyu Xu"
+  ],
+  "title": "Boolean Satisfiability via Imitation Learning",
+  "venue": "ICLR",
+  "year": "2026",
+  "openreview_id": "LNqWbY5iIf"
+}

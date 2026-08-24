@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-IMITSAT",
+  "role": "pdf_identity",
+  "agent_id": "pdf_identity-01a035c0-bd25-76e2-84ec-a923b2120a0c",
+  "recorded_at": "2026-08-24T21:50:40+00:00",
+  "packet_sha256": "3129aa57417ae82a5a680509545236a506836af54cdcc2d61a59b50038231c51",
+  "evidence_sha256": "fe4141cff92e1986de84b2223c258a6b587b6e20c1df4a778fbbf9ef0efcd1fa",
+  "body_sha256": "b676a69e1bda065a1aadda4c9445f9490a100679726232c9f708c34d84f91aa2",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "b4b5867063faf70f1039e3f87746c9d094c3cf2edb7ffee52217b568cb9e82bd",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c0-bd25-76e2-84ec-a923b2120a0c",
+    "invocation_id": "75c942c0-a446-4595-bde2-342cbd1d9250",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Zewei Zhang",
+          "Huan Liu",
+          "Yuanhao Yu",
+          "Jun Chen",
+          "Xiangyu Xu"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "BOOLEAN SATISFIABILITY VIA IMITATION LEARNING",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "year": {
+        "status": "CORRECT",
+        "value": "2026",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "venue": {
+        "status": "CORRECT",
+        "value": "ICLR 2026",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "The PDF identity pages explicitly state “Published as a conference paper at ICLR 2026.”"
+  }
+}

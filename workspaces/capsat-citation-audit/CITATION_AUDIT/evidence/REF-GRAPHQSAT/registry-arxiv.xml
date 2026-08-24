@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/86snalIjEZJUl0zctctUuhy35DY</id>
+  <title>arXiv Query: search_query=&amp;id_list=1909.11830&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-24T21:10:24Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=1909.11830" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1909.11830v2</id>
+    <title>Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?</title>
+    <updated>2020-11-25T10:28:55Z</updated>
+    <link href="https://arxiv.org/abs/1909.11830v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1909.11830v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present Graph-$Q$-SAT, a branching heuristic for a Boolean SAT solver trained with value-based reinforcement learning (RL) using Graph Neural Networks for function approximation. Solvers using Graph-$Q$-SAT are complete SAT solvers that either provide a satisfying assignment or proof of unsatisfiability, which is required for many SAT applications. The branching heuristics commonly used in SAT solvers make poor decisions during their warm-up period, whereas Graph-$Q$-SAT is trained to examine the structure of the particular problem instance to make better decisions early in the search. Training Graph-$Q$-SAT is data efficient and does not require elaborate dataset preparation or feature engineering. We train Graph-$Q$-SAT using RL interfacing with MiniSat solver and show that Graph-$Q$-SAT can reduce the number of iterations required to solve SAT problems by 2-3X. Furthermore, it generalizes to unsatisfiable SAT instances, as well as to problems with 5X more variables than it was trained on. We show that for larger problems, reductions in the number of iterations lead to wall clock time reductions, the ultimate goal when designing heuristics. We also show positive zero-shot transfer behavior when testing Graph-$Q$-SAT on a task family different from that used for training. While more work is needed to apply Graph-$Q$-SAT to reduce wall clock time in modern SAT solving settings, it is a compelling proof-of-concept showing that RL equipped with Graph Neural Networks can learn a generalizable branching heuristic for SAT search.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-09-26T00:44:40Z</published>
+    <arxiv:comment>Camera-ready for NeurIPS 2020</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Vitaly Kurin</name>
+    </author>
+    <author>
+      <name>Saad Godil</name>
+    </author>
+    <author>
+      <name>Shimon Whiteson</name>
+    </author>
+    <author>
+      <name>Bryan Catanzaro</name>
+    </author>
+  </entry>
+</feed>

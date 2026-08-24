@@ -1,0 +1,15 @@
+{
+  "reference_id": "REF-MUST",
+  "citation_key": "li2023must",
+  "entry_type": "inproceedings",
+  "authors": [
+    "J. Li",
+    "S. Savarese",
+    "S. Hoi"
+  ],
+  "title": "Masked Unsupervised Self-training for Label-free Image Classification",
+  "venue": "ICLR",
+  "year": "2023",
+  "arxiv_id": "2206.02967",
+  "openreview_note": "OpenReview note ZAKkiVxiAM9 is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+}

@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-NSNET",
+  "created_at": "2026-08-24T22:01:14+00:00",
+  "status": "BLOCKED",
+  "original_reference_sha256": "8c43231ee2e999cbdd3b1eda2a6421d8577578a596c103967bfacc56667801c1",
+  "evidence_sha256": "23f1ddb1ad55033d291ab191168ae7b33ea9e7537fb652c9cfbb77c103414655",
+  "canonical_fields": {},
+  "field_checks": {
+    "authors": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Li, Zhaoyu",
+            "Si, Xujie"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "xujie si"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "Zhaoyu Li",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "xujie si"
+          ]
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": [
+            "Zhaoyu Li",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "xujie si"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c1-456a-7c50-9467-d8712a1f5c23",
+          "value": [
+            "Zhaoyu Li",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "xujie si"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c1-6a0c-7022-b419-a51ea3ceb566",
+          "value": [
+            "Zhaoyu Li",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "xujie si"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-515a-7db1-8d5b-4b26433637b6",
+          "value": [
+            "Zhaoyu Li",
+            "Xujie Si"
+          ],
+          "normalized": [
+            "zhaoyu li",
+            "xujie si"
+          ]
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify authors (CORRECT)"
+      ]
+    },
+    "title": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+          "normalized": "nsnet a general neural probabilistic framework for satisfiability problems"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+          "normalized": "nsnet a general neural probabilistic framework for satisfiability problems"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+          "normalized": "nsnet a general neural probabilistic framework for satisfiability problems"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c1-456a-7c50-9467-d8712a1f5c23",
+          "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+          "normalized": "nsnet a general neural probabilistic framework for satisfiability problems"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c1-6a0c-7022-b419-a51ea3ceb566",
+          "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+          "normalized": "nsnet a general neural probabilistic framework for satisfiability problems"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-515a-7db1-8d5b-4b26433637b6",
+          "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+          "normalized": "nsnet a general neural probabilistic framework for satisfiability problems"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify title (CORRECT)"
+      ]
+    },
+    "year": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2022/11/07",
+          "normalized": "2022"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2022",
+          "normalized": "2022"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "2022-11-07T21:43:33Z",
+          "normalized": "2022"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c1-6a0c-7022-b419-a51ea3ceb566",
+          "value": "2022",
+          "normalized": "2022"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-515a-7db1-8d5b-4b26433637b6",
+          "value": "2022",
+          "normalized": "2022"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify year (MATCH)"
+      ]
+    },
+    "venue": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-515a-7db1-8d5b-4b26433637b6",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "errors": [
+        "venue has fewer than two agreeing source families",
+        "role website_citation did not verify venue (UNVERIFIED)",
+        "role adversarial_provenance did not verify venue (UNVERIFIED)"
+      ]
+    }
+  },
+  "discrepancies": [],
+  "blocking_errors": [
+    "role adversarial_provenance did not verify authors (CORRECT)",
+    "role adversarial_provenance did not verify title (CORRECT)",
+    "role adversarial_provenance did not verify year (MATCH)",
+    "venue has fewer than two agreeing source families",
+    "role website_citation did not verify venue (UNVERIFIED)",
+    "role adversarial_provenance did not verify venue (UNVERIFIED)"
+  ],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a035c1-4253-7d83-bf6c-5b9bac665dd4",
+      "path": "reports/REF-NSNET/adversarial_provenance--adversarial_provenance-01a035c1-4253-7d83-bf6c-5b9bac665dd4.json",
+      "sha256": "53bb7ca288fa55925eea6e51c738727174ffefadade428b2b5ca115b297ba337",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "83d54f8a2442efb70cfcac681d1c702748267d5d3fe27f74f0d14b461f871052",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-4253-7d83-bf6c-5b9bac665dd4",
+        "invocation_id": "6d6816d4-ec1e-439e-bbc0-f2539ba5eb9f",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a035c1-456a-7c50-9467-d8712a1f5c23",
+      "path": "reports/REF-NSNET/pdf_identity--pdf_identity-01a035c1-456a-7c50-9467-d8712a1f5c23.json",
+      "sha256": "4d415d2092d61d1b45153a6447b18d6c727453671953cbcf0fd9dde67e145518",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "cc64b838bd771c4c8927f54e3e15293c2d07f78e2ec0864cd2dba43677d382ae",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-456a-7c50-9467-d8712a1f5c23",
+        "invocation_id": "bcb007c7-2149-4349-81fe-3baa0753e198",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a035c1-515a-7db1-8d5b-4b26433637b6",
+      "path": "reports/REF-NSNET/registry_crosscheck--registry_crosscheck-01a035c1-515a-7db1-8d5b-4b26433637b6.json",
+      "sha256": "7d3c6537708f6e93799e2a904b06a32ee8a1e094b35f6f4b21a1c7fd59c7dfd6",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "8319615484ea05bb88891b767e6a28c54420ddadd75c3bc0648b050ce9c91c56",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-515a-7db1-8d5b-4b26433637b6",
+        "invocation_id": "cdd6afca-5451-45f1-9271-1ad069113d28",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a035c1-6a0c-7022-b419-a51ea3ceb566",
+      "path": "reports/REF-NSNET/website_citation--website_citation-01a035c1-6a0c-7022-b419-a51ea3ceb566.json",
+      "sha256": "d9eed0d52980fba24cd2f413460a389193e3516d6530239955f86f2ef6052d0c",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "51ab6f940293247f335ba74be734cca16ed7af5cb68a9d0edb800c9a56696a15",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-6a0c-7022-b419-a51ea3ceb566",
+        "invocation_id": "6bab94ca-dc39-4bda-993b-1380918e2c94",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": false
+}

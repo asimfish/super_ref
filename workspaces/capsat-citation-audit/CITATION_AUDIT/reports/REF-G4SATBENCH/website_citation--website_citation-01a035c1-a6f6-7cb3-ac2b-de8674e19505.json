@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-G4SATBENCH",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a035c1-a6f6-7cb3-ac2b-de8674e19505",
+  "recorded_at": "2026-08-24T21:51:35+00:00",
+  "packet_sha256": "99443406f96d973e2c3ef29ff2718eb51bc380dda36207765cb69d9408aaa5fc",
+  "evidence_sha256": "62e1fe57cee4bade3b0449f24839c39c05beee0a72f0308dc5ca69fc1d316f3e",
+  "body_sha256": "6a6938e75ed1ff241673ee02177b0529ecf7409dfb9a01d6816aae647fcadc89",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "60f253641623cbe22651d9cdca0ac7821a65d0fcb78c30c2437ac78300aab9fd",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c1-a6f6-7cb3-ac2b-de8674e19505",
+    "invocation_id": "d4f14c44-cc8c-426e-8e9d-28a22488e5df",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "CORRECT",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Zhaoyu Li",
+          "Jinpei Guo",
+          "Xujie Si"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "",
+        "issues": [
+          "The landing page reports 2023/09/29, while the site-provided BibTeX export reports 2024."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "Neither supplied artifact provides a venue value."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Year conflict: landing_page gives 2023/09/29 (normalized as 2023), while citation_export gives 2024.",
+      "No authors are missing, added, reordered, or conflicting; both artifacts list Zhaoyu Li, Jinpei Guo, and Xujie Si in that order."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "The title and ordered author list agree across the supplied artifacts. The year cannot be reconciled from the supplied evidence, and the venue is absent from both."
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "reference_id": "REF-IMITSAT",
+  "reference_sha256": "cab372f8ad4027a4502da62b09650d6c758f1404be7dbee0a1ae409af4ce5c90",
+  "adapter": "arxiv",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T21:00:55+00:00",
+  "status": "BLOCKED",
+  "errors": [
+    "registry_arxiv: failed to fetch registry_arxiv from https://export.arxiv.org/api/query?id_list=2509.25411: HTTP Error 429: Unknown Error",
+    "source binding: registry_arxiv does not expose the audited arXiv id",
+    "missing required source family: registry_metadata"
+  ],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "landing_page",
+      "source_family": "landing_page",
+      "kind": "html",
+      "request_url": "https://arxiv.org/abs/2509.25411",
+      "final_url": "https://arxiv.org/abs/2509.25411",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "text/html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 41266,
+      "sha256": "3b85d07eeb7a027d5b35187037a22a9c605c2637a4c65563dd4bbbd3be900f9e",
+      "path": "landing.html"
+    },
+    {
+      "artifact_id": "citation_export",
+      "source_family": "citation_export",
+      "kind": "citation",
+      "request_url": "https://arxiv.org/bibtex/2509.25411",
+      "final_url": "https://arxiv.org/bibtex/2509.25411",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/x-bibtex,text/plain",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 352,
+      "sha256": "7005ef47ea56207c785b91da1b341ef6d82a1ae8d340e01d9ee46716bdac478c",
+      "path": "citation.bib"
+    },
+    {
+      "artifact_id": "paper_pdf",
+      "source_family": "paper_pdf",
+      "kind": "pdf",
+      "request_url": "https://arxiv.org/pdf/2509.25411",
+      "final_url": "https://arxiv.org/pdf/2509.25411",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 1600341,
+      "sha256": "97c1c242b074b1387671fafa30ebe47de15faf4a5580db70ac91002b1ba61d97",
+      "path": "paper.pdf"
+    },
+    {
+      "artifact_id": "paper_first_pages",
+      "source_family": "paper_pdf",
+      "kind": "derived_text",
+      "path": "paper.first-pages.txt",
+      "bytes": 8457,
+      "sha256": "b3d5586ec73121e210bcb6abaeb47d2238096aaffdd05e522e8475cea33b0da0",
+      "derived_from": "paper_pdf",
+      "pages": 2,
+      "resource_limits": {
+        "cpu_seconds": 30,
+        "output_bytes": 1048576,
+        "memory_bytes": null
+      }
+    }
+  ],
+  "observations": [
+    {
+      "source_id": "landing_page",
+      "source_family": "landing_page",
+      "authority": "publisher_or_repository_page",
+      "artifact_ids": [
+        "landing_page"
+      ],
+      "values": {
+        "authors": [
+          "Zhang, Zewei",
+          "Liu, Huan",
+          "Yu, Yuanhao",
+          "Chen, Jun",
+          "Xu, Xiangyu"
+        ],
+        "title": "Boolean Satisfiability via Imitation Learning",
+        "year": "2025/09/29",
+        "venue": ""
+      },
+      "normalized": {
+        "authors": [
+          "zewei zhang",
+          "huan liu",
+          "yuanhao yu",
+          "jun chen",
+          "xiangyu xu"
+        ],
+        "title": "boolean satisfiability via imitation learning",
+        "year": "2025",
+        "venue": ""
+      }
+    },
+    {
+      "source_id": "citation_export",
+      "source_family": "citation_export",
+      "authority": "site_export",
+      "artifact_ids": [
+        "citation_export"
+      ],
+      "values": {
+        "authors": [
+          "Zewei Zhang",
+          "Huan Liu",
+          "Yuanhao Yu",
+          "Jun Chen",
+          "Xiangyu Xu"
+        ],
+        "title": "Boolean Satisfiability via Imitation Learning",
+        "year": "2026",
+        "venue": ""
+      },
+      "normalized": {
+        "authors": [
+          "zewei zhang",
+          "huan liu",
+          "yuanhao yu",
+          "jun chen",
+          "xiangyu xu"
+        ],
+        "title": "boolean satisfiability via imitation learning",
+        "year": "2026",
+        "venue": ""
+      }
+    }
+  ],
+  "discoveries": {
+    "landing_page": {
+      "pdf_url": "https://arxiv.org/pdf/2509.25411",
+      "doi": "",
+      "arxiv_id": "2509.25411",
+      "raw_meta": {
+        "citation_abstract": [
+          "We propose ImitSAT, a branching policy for conflict-driven clause learning (CDCL) solvers based on imitation learning for the Boolean satisfiability problem (SAT). Unlike previous methods that predict instance-level signals to improve CDCL branching indirectly, or rely on reinforcement learning and insufficient CDCL information to enhance branching, ImitSAT learns from expert KeyTrace that collapses a full run into the sequence of surviving decisions. Replaying a KeyTrace on the same instance is nearly conflict-free, providing dense decision-level supervision and directly reducing propagations -- the dominant contributor to wall-clock time. This prefix-conditioned supervision enables ImitSAT to reproduce high-quality branches without exploration, yielding faster convergence, stable training, and seamless integration into CDCL. Extensive experiments demonstrate that ImitSAT reduces propagation counts and runtime, outperforming state-of-the-art learned approaches. We released the source code and trained model at https://github.com/zewei-Zhang/ImitSAT"
+        ],
+        "citation_arxiv_id": [
+          "2509.25411"
+        ],
+        "citation_author": [
+          "Zhang, Zewei",
+          "Liu, Huan",
+          "Yu, Yuanhao",
+          "Chen, Jun",
+          "Xu, Xiangyu"
+        ],
+        "citation_date": [
+          "2025/09/29"
+        ],
+        "citation_online_date": [
+          "2026/02/21"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2509.25411"
+        ],
+        "citation_title": [
+          "Boolean Satisfiability via Imitation Learning"
+        ],
+        "og:description": [
+          "We propose ImitSAT, a branching policy for conflict-driven clause learning (CDCL) solvers based on imitation learning for the Boolean satisfiability problem (SAT). Unlike previous methods that predict instance-level signals to improve CDCL branching indirectly, or rely on reinforcement learning and insufficient CDCL information to enhance branching, ImitSAT learns from expert KeyTrace that collapses a full run into the sequence of surviving decisions. Replaying a KeyTrace on the same instance is nearly conflict-free, providing dense decision-level supervision and directly reducing propagations -- the dominant contributor to wall-clock time. This prefix-conditioned supervision enables ImitSAT to reproduce high-quality branches without exploration, yielding faster convergence, stable training, and seamless integration into CDCL. Extensive experiments demonstrate that ImitSAT reduces propagation counts and runtime, outperforming state-of-the-art learned approaches. We released the source code and trained model at https://github.com/zewei-Zhang/ImitSAT"
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Boolean Satisfiability via Imitation Learning"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2509.25411v2"
+        ]
+      }
+    },
+    "citation_export": {
+      "entry_type": "misc",
+      "citation_key": "zhang2026booleansatisfiabilityimitationlearning",
+      "doi": "",
+      "arxiv_id": "2509.25411",
+      "openreview_id": null,
+      "url": "https://arxiv.org/abs/2509.25411"
+    },
+    "pdf_candidates": [
+      "https://arxiv.org/pdf/2509.25411"
+    ]
+  },
+  "source_binding": {
+    "adapter": "arxiv",
+    "status": "BLOCKED",
+    "identifier_type": "arxiv",
+    "identifier": "2509.25411",
+    "checks": {
+      "landing_page": "2509.25411",
+      "citation_export": "2509.25411",
+      "registry_arxiv": ""
+    },
+    "errors": [
+      "registry_arxiv does not expose the audited arXiv id"
+    ]
+  }
+}

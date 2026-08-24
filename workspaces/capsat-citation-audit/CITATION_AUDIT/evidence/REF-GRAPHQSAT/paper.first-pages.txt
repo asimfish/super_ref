@@ -1,0 +1,125 @@
+arXiv:1909.11830v2 [cs.LG] 25 Nov 2020
+
+Can Q-Learning with Graph Networks Learn a
+Generalizable Branching Heuristic for a SAT Solver?
+
+Vitaly Kurin∗
+Department of Computer Science
+University of Oxford
+Oxford, United Kingdom
+vitaly.kurin@cs.ox.ac.uk
+
+Saad Godil
+NVIDIA
+Santa Clara, California
+United States
+sgodil@nvidia.com
+
+Shimon Whiteson
+Department of Computer Science
+University of Oxford
+Oxford, United Kingdom
+shimon.whiteson@cs.ox.ac.uk
+
+Bryan Catanzaro
+NVIDIA
+Santa Clara, California
+United States
+bcatanzaro@nvidia.com
+
+Abstract
+We present Graph-Q-SAT, a branching heuristic for a Boolean SAT solver trained
+with value-based reinforcement learning (RL) using Graph Neural Networks for
+function approximation. Solvers using Graph-Q-SAT are complete SAT solvers
+that either provide a satisfying assignment or proof of unsatisfiability, which is
+required for many SAT applications. The branching heuristics commonly used in
+SAT solvers make poor decisions during their warm-up period, whereas GraphQ-SAT is trained to examine the structure of the particular problem instance to
+make better decisions early in the search. Training Graph-Q-SAT is data efficient
+and does not require elaborate dataset preparation or feature engineering. We train
+Graph-Q-SAT using RL interfacing with MiniSat solver and show that GraphQ-SAT can reduce the number of iterations required to solve SAT problems by
+2-3X. Furthermore, it generalizes to unsatisfiable SAT instances, as well as to
+problems with 5X more variables than it was trained on. We show that for larger
+problems, reductions in the number of iterations lead to wall clock time reductions,
+the ultimate goal when designing heuristics. We also show positive zero-shot
+transfer behavior when testing Graph-Q-SAT on a task family different from that
+used for training. While more work is needed to apply Graph-Q-SAT to reduce
+wall clock time in modern SAT solving settings, it is a compelling proof-of-concept
+showing that RL equipped with Graph Neural Networks can learn a generalizable
+branching heuristic for SAT search.
+
+1
+
+Introduction
+
+Boolean satisfiability (SAT) is an important problem for both industry and academia that impacts
+various fields, including circuit design, computer security, artificial intelligence and automatic theorem
+proving. As a result, modern SAT solvers are well crafted, sophisticated, reliable pieces of software
+that can scale to problems with hundreds of thousands of variables [33].
+∗
+
+The work was done when the author was a research intern at NVIDIA.
+
+34th Conference on Neural Information Processing Systems (NeurIPS 2020), Vancouver, Canada.
+
+SAT is known to be NP-complete [22], and most state-of-the-art open-source and commercial solvers
+rely on multiple heuristics to speed up the exhaustive search, which is otherwise intractable. These
+heuristics are usually meticulously crafted using expert domain knowledge and are often iteratively
+refined via trial and error. In this paper, we investigate how we can use machine learning to improve
+upon an existing branching heuristic without leveraging domain expertise.
+We present Graph-Q-SAT, a branching heuristic in a Conflict Driven Clause Learning [40, 21, CDCL]
+SAT solver trained with value-based reinforcement learning (RL), based on deep Q-networks [30,
+DQN]. Graph-Q-SAT uses a graph representation of SAT problems similar to Selsam et al. [39]
+which provides permutation and variable relabeling invariance. Graph-Q-SAT uses a Graph Neural
+Network [13, 4, GNN] as a function approximator to provide generalization as well as support for a
+dynamic state-action space. Graph-Q-SAT uses a simple state representation and a binary reward that
+requires no feature engineering or problem domain knowledge. Graph-Q-SAT modifies only part of
+the CDCL based solver, keeping it complete, i.e., always yielding a correct solution.
+We demonstrate that Graph-Q-SAT outperforms Variable State Independent Decaying Sum [31,
+VSIDS], the most frequently used CDCL branching heuristic, reducing the number of iterations
+required to solve SAT problems by 2-3X. Graph-Q-SAT is trained to examine the structure of the
+particular problem instance to make better decisions at the beginning of the search, whereas the
+VSIDS heuristic suffers from poor decisions during the warm-up period.
+Our work primarily focuses on the machine learning perspective and thus more work would be
+required to apply Graph-Q-SAT in industrial-scale SAT settings. However, Graph-Q-SAT exhibits
+intriguing properties which might eventually be useful for practical applications. We show that our
+method generalizes to problems five times larger than those it was trained on. We also show that
+Graph-Q-SAT generalizes across problem types from satisfiable (SAT) to unsatisfiable instances
+(unSAT). We show that reducing the number of iterations, in turn, could reduce wall clock time,
+the ultimate goal when designing heuristics. We also show positive zero-shot transfer properties of
+Graph-Q-SAT when the testing task family is different from the training one. Finally, we show that
+some of these improvements are achieved even when training is limited to a single SAT problem,
+demonstrating data efficiency.
+
+2
+
+Background
+
+2.1
+
+SAT problem
+
+A SAT problem involves finding variable assignments such that a propositional logic formula is
+satisfied or showing that such an assignment does not exist. A propositional formula is a Boolean
+expression, including Boolean variables, ANDs, ORs and negations. The term literal is used to refer
+to a variable or its negation. It is convenient to represent Boolean formulas in conjunctive normal
+form (CNF), i.e., conjunctions (AND) of clauses, where a clause is a disjunction (OR) of literals. An
+example of a CNF is (x1 ∨ ¬x2 ) ∧ (x2 ∨ ¬x3 ), where ∧, ∨, ¬ are AND, OR, and negation respectively.
+This CNF formula has two clauses: (x1 ∨ ¬x2 ) and (x2 ∨ ¬x3 ). In this work, we use SAT to denote
+both the Boolean Satisfiability problem and a satisfiable instance, which should be clear from the
+context. We use unSAT to denote unsatisfiable instances.
+There are many types of SAT solvers. We focus on CDCL solvers, MiniSat [10] in particular, because
+it is an open-source, minimal, but powerful implementation. A CDCL solver repeats the following
+steps: every iteration it chooses a variable and assigns it a binary value. This is called a decision.
+Then, the solver simplifies the formula building an implication graph and checks whether a conflict
+emerged. Given a conflict, the solver can infer (learn) new clauses and backtrack to the variable
+assignments where the newly learned clause becomes unit (consisting of a single literal). Learnt
+clauses force a variable assignment which avoids the previous conflict. Sometimes, CDCL solver
+undoes all the variable assignments keeping the learned clauses to escape futile regions of the search
+space. This is called a restart.
+We focus on the branching heuristic because it is one of the most heavily used during the solution
+procedure. The branching heuristic is responsible for picking the variable and assigning some value to
+it. VSIDS [31] is one of the most used CDCL branching heuristics. It is a counter-based heuristic that
+keeps a scalar value for each literal or variable (MiniSat uses the latter). These values are increased
+2
+
+

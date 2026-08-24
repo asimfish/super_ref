@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-IMITSAT",
+  "created_at": "2026-08-24T22:01:14+00:00",
+  "status": "BLOCKED",
+  "original_reference_sha256": "cab372f8ad4027a4502da62b09650d6c758f1404be7dbee0a1ae409af4ce5c90",
+  "evidence_sha256": "fe4141cff92e1986de84b2223c258a6b587b6e20c1df4a778fbbf9ef0efcd1fa",
+  "canonical_fields": {},
+  "field_checks": {
+    "authors": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Zhang, Zewei",
+            "Liu, Huan",
+            "Yu, Yuanhao",
+            "Chen, Jun",
+            "Xu, Xiangyu"
+          ],
+          "normalized": [
+            "zewei zhang",
+            "huan liu",
+            "yuanhao yu",
+            "jun chen",
+            "xiangyu xu"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "Zewei Zhang",
+            "Huan Liu",
+            "Yuanhao Yu",
+            "Jun Chen",
+            "Xiangyu Xu"
+          ],
+          "normalized": [
+            "zewei zhang",
+            "huan liu",
+            "yuanhao yu",
+            "jun chen",
+            "xiangyu xu"
+          ]
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": [
+            "Zewei Zhang",
+            "Huan Liu",
+            "Yuanhao Yu",
+            "Jun Chen",
+            "Xiangyu Xu"
+          ],
+          "normalized": [
+            "zewei zhang",
+            "huan liu",
+            "yuanhao yu",
+            "jun chen",
+            "xiangyu xu"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c0-bd25-76e2-84ec-a923b2120a0c",
+          "value": [
+            "Zewei Zhang",
+            "Huan Liu",
+            "Yuanhao Yu",
+            "Jun Chen",
+            "Xiangyu Xu"
+          ],
+          "normalized": [
+            "zewei zhang",
+            "huan liu",
+            "yuanhao yu",
+            "jun chen",
+            "xiangyu xu"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c0-e79f-7322-99c2-81424f2fe700",
+          "value": [
+            "Zhang, Zewei",
+            "Liu, Huan",
+            "Yu, Yuanhao",
+            "Chen, Jun",
+            "Xu, Xiangyu"
+          ],
+          "normalized": [
+            "zewei zhang",
+            "huan liu",
+            "yuanhao yu",
+            "jun chen",
+            "xiangyu xu"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-bd40-75e2-8881-e3c11d4636a2",
+          "value": [
+            "Zewei Zhang",
+            "Huan Liu",
+            "Yuanhao Yu",
+            "Jun Chen",
+            "Xiangyu Xu"
+          ],
+          "normalized": [
+            "zewei zhang",
+            "huan liu",
+            "yuanhao yu",
+            "jun chen",
+            "xiangyu xu"
+          ]
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify authors (MATCH)"
+      ]
+    },
+    "title": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "Boolean Satisfiability via Imitation Learning",
+          "normalized": "boolean satisfiability via imitation learning"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "Boolean Satisfiability via Imitation Learning",
+          "normalized": "boolean satisfiability via imitation learning"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "Boolean Satisfiability via Imitation Learning",
+          "normalized": "boolean satisfiability via imitation learning"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c0-bd25-76e2-84ec-a923b2120a0c",
+          "value": "BOOLEAN SATISFIABILITY VIA IMITATION LEARNING",
+          "normalized": "boolean satisfiability via imitation learning"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c0-e79f-7322-99c2-81424f2fe700",
+          "value": "Boolean Satisfiability via Imitation Learning",
+          "normalized": "boolean satisfiability via imitation learning"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-bd40-75e2-8881-e3c11d4636a2",
+          "value": "Boolean Satisfiability via Imitation Learning",
+          "normalized": "boolean satisfiability via imitation learning"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify title (MATCH)"
+      ]
+    },
+    "year": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2025/09/29",
+          "normalized": "2025"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2026",
+          "normalized": "2026"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "2025-09-29T19:09:37Z",
+          "normalized": "2025"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-bd40-75e2-8881-e3c11d4636a2",
+          "value": "2025",
+          "normalized": "2025"
+        }
+      ],
+      "errors": [
+        "source conflict for year: 2025: ['landing_page', 'registry_arxiv']; 2026: ['citation_export']",
+        "role website_citation did not verify year (CONFLICT)",
+        "role adversarial_provenance did not verify year (CONFLICT)"
+      ]
+    },
+    "venue": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-bd40-75e2-8881-e3c11d4636a2",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "errors": [
+        "venue has fewer than two agreeing source families",
+        "role website_citation did not verify venue (UNVERIFIED)",
+        "role adversarial_provenance did not verify venue (UNVERIFIED)"
+      ]
+    }
+  },
+  "discrepancies": [],
+  "blocking_errors": [
+    "role adversarial_provenance did not verify authors (MATCH)",
+    "role adversarial_provenance did not verify title (MATCH)",
+    "source conflict for year: 2025: ['landing_page', 'registry_arxiv']; 2026: ['citation_export']",
+    "role website_citation did not verify year (CONFLICT)",
+    "role adversarial_provenance did not verify year (CONFLICT)",
+    "venue has fewer than two agreeing source families",
+    "role website_citation did not verify venue (UNVERIFIED)",
+    "role adversarial_provenance did not verify venue (UNVERIFIED)"
+  ],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a035c0-b8de-77a3-a974-48bacfdabb95",
+      "path": "reports/REF-IMITSAT/adversarial_provenance--adversarial_provenance-01a035c0-b8de-77a3-a974-48bacfdabb95.json",
+      "sha256": "fd5bcee8fafcf613bbf25497435da0215d65293ac587683854603de68d52c88c",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "4f565927ca76f9c67f769dc9d69d74a8f95dda87f095a2ef104d7f28a181f14c",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-b8de-77a3-a974-48bacfdabb95",
+        "invocation_id": "9d7062eb-fd65-4743-a10e-2d42cc2f5f7c",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a035c0-bd25-76e2-84ec-a923b2120a0c",
+      "path": "reports/REF-IMITSAT/pdf_identity--pdf_identity-01a035c0-bd25-76e2-84ec-a923b2120a0c.json",
+      "sha256": "921b7c11412911022ef03384d8ae4bca2c52d430d20968504a7f202915181809",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "b4b5867063faf70f1039e3f87746c9d094c3cf2edb7ffee52217b568cb9e82bd",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-bd25-76e2-84ec-a923b2120a0c",
+        "invocation_id": "75c942c0-a446-4595-bde2-342cbd1d9250",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a035c0-bd40-75e2-8881-e3c11d4636a2",
+      "path": "reports/REF-IMITSAT/registry_crosscheck--registry_crosscheck-01a035c0-bd40-75e2-8881-e3c11d4636a2.json",
+      "sha256": "b85eb725848c64d2de31bfa8c1fcc690ac1505d3422957715a4cc1e7c320a407",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "28c8bdbe4e0f5363d836fec87169317e0e5f900b5ad26e7645fa16f43623e7b7",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-bd40-75e2-8881-e3c11d4636a2",
+        "invocation_id": "478f8fef-96fb-402e-b372-27b59c872b76",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a035c0-e79f-7322-99c2-81424f2fe700",
+      "path": "reports/REF-IMITSAT/website_citation--website_citation-01a035c0-e79f-7322-99c2-81424f2fe700.json",
+      "sha256": "d6b0f89b6b18fedba974afa87c557be1ff3a2f328d24069f1add97121a4ffb63",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "db7d0d8794e616f1ffd41c8109aa3778f2fbe597cb05d17f5d438d48f65e4b34",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-e79f-7322-99c2-81424f2fe700",
+        "invocation_id": "11c74855-8900-4a76-bc68-6deb7212b317",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": false
+}

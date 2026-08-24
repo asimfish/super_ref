@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "batch_id": "4cae8159-c46e-4179-8c90-e4d67891bd8c",
+  "reference_id": "REF-SIMONSPECK",
+  "reference_sha256": "bba65d5f793db228c71590cd7bb0e07acc9afa022ff2c039a86fbb52fd7b2ffd",
+  "adapter": "doi",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T20:55:37+00:00",
+  "status": "BLOCKED",
+  "errors": [
+    "landing_page: failed to fetch landing_page from https://doi.org/10.1145/2744769.2747946: HTTP Error 403: Forbidden",
+    "citation_export: actual network peer is not public: 127.0.0.1",
+    "registry_crossref: actual network peer is not public: 127.0.0.1",
+    "paper_pdf: no candidate produced a valid PDF",
+    "source binding: landing_page does not expose the audited DOI",
+    "source binding: citation_export does not expose the audited DOI",
+    "source binding: registry_crossref does not expose the audited DOI",
+    "missing required source family: paper_pdf",
+    "missing required source family: landing_page",
+    "missing required source family: citation_export",
+    "missing required source family: registry_metadata"
+  ],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [],
+  "observations": [],
+  "discoveries": {
+    "optional_fetch_errors": [
+      "registry_semantic_scholar: actual network peer is not public: 127.0.0.1"
+    ],
+    "pdf_candidates": []
+  },
+  "source_binding": {
+    "adapter": "doi",
+    "status": "BLOCKED",
+    "identifier_type": "doi",
+    "identifier": "10.1145/2744769.2747946",
+    "checks": {
+      "landing_page": "",
+      "citation_export": "",
+      "registry_crossref": ""
+    },
+    "pdf_printed_identifiers": [],
+    "errors": [
+      "landing_page does not expose the audited DOI",
+      "citation_export does not expose the audited DOI",
+      "registry_crossref does not expose the audited DOI"
+    ]
+  }
+}

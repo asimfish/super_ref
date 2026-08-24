@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-SATFORMER",
+  "role": "adversarial_provenance",
+  "agent_id": "adversarial_provenance-01a035c0-7e59-7511-b9af-eb36431fdd68",
+  "recorded_at": "2026-08-24T21:50:18+00:00",
+  "packet_sha256": "1fb02fff77b4ba595fdcace7b054449d1f65bd041c2b3fa1538d047f5f053e0c",
+  "evidence_sha256": "f4a31c98e70d18f7d691c595baa29c31f650042288bd87544362c6b3a3ee0dab",
+  "body_sha256": "70f54fac8dee2555d1923f8878abc55b54bd8c341f74d8c592e135844597ebde",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "2f0a08f47498a5fec94f1a2ca4a972004c3a6963ed38d3791760ef9586db3233",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c0-7e59-7511-b9af-eb36431fdd68",
+    "invocation_id": "068aeda2-7b2b-4551-95d3-615a92c185aa",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "BLOCKED",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Zhengyuan Shi",
+          "Min Li",
+          "Yi Liu",
+          "Sadaf Khan",
+          "Junhua Huang",
+          "Hui-Ling Zhen",
+          "Mingxuan Yuan",
+          "Qiang Xu"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "SATformer: Transformer-Based UNSAT Core Learning",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "2023",
+        "issues": [
+          "The original reference gives 2023, while the supplied observations report 2022 from the arXiv landing page and registry and 2024 from the citation export; the conflict is unresolved."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "ICCAD",
+        "issues": [
+          "No supplied observation explicitly verifies ICCAD as the venue."
+        ],
+        "evidence_artifact_ids": []
+      }
+    },
+    "discrepancies": [
+      "Publication year is inconsistent across the original reference and supplied evidence.",
+      "The venue ICCAD is not explicitly supported by a supplied observation."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "Authors and title are consistently supported, but the unresolved year conflict and unverified venue are blocking under the adversarial-provenance assignment."
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-GRAPHQSAT",
+  "reference_sha256": "10d8ada36810c05a23ee09360cf5c9f3b78501a8d99db672032bc2f30948e01b",
+  "adapter": "arxiv",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T21:10:25+00:00",
+  "status": "READY",
+  "errors": [],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "landing_page",
+      "source_family": "landing_page",
+      "kind": "html",
+      "request_url": "https://arxiv.org/abs/1909.11830",
+      "final_url": "https://arxiv.org/abs/1909.11830",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "text/html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 44465,
+      "sha256": "eaaa7b17490cf7cbfb1a3844f810d660084f6f0dc07c45da22c5fc1e36e49169",
+      "path": "landing.html"
+    },
+    {
+      "artifact_id": "citation_export",
+      "source_family": "citation_export",
+      "kind": "citation",
+      "request_url": "https://arxiv.org/bibtex/1909.11830",
+      "final_url": "https://arxiv.org/bibtex/1909.11830",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/x-bibtex,text/plain",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 392,
+      "sha256": "edb4e62f4800edaba67d93f104fde29a80fbccc9057d45275d52dc590ffbac9c",
+      "path": "citation.bib"
+    },
+    {
+      "artifact_id": "registry_arxiv",
+      "source_family": "registry_metadata",
+      "kind": "metadata",
+      "request_url": "https://export.arxiv.org/api/query?id_list=1909.11830",
+      "final_url": "https://export.arxiv.org/api/query?id_list=1909.11830",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/atom+xml",
+      "status": 200,
+      "content_type": "application/atom+xml",
+      "bytes": 3221,
+      "sha256": "d6aa3d8a8f0187091e8c5066f37747f8b0be22d77e31f20a2838eecb263fa790",
+      "path": "registry-arxiv.xml"
+    },
+    {
+      "artifact_id": "paper_pdf",
+      "source_family": "paper_pdf",
+      "kind": "pdf",
+      "request_url": "https://arxiv.org/pdf/1909.11830",
+      "final_url": "https://arxiv.org/pdf/1909.11830",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 544579,
+      "sha256": "e3c91b22d502ba1d058098bb7b7511310af33c930c460d4d41f868123ddbaaf3",
+      "path": "paper.pdf"
+    },
+    {
+      "artifact_id": "paper_first_pages",
+      "source_family": "paper_pdf",
+      "kind": "derived_text",
+      "path": "paper.first-pages.txt",
+      "bytes": 7359,
+      "sha256": "90de4f44f60b4b338db127265614d6acad987386798f8180eaf6743e1e217c2d",
+      "derived_from": "paper_pdf",
+      "pages": 2,
+      "resource_limits": {
+        "cpu_seconds": 30,
+        "output_bytes": 1048576,
+        "memory_bytes": null
+      }
+    }
+  ],
+  "observations": [
+    {
+      "source_id": "landing_page",
+      "source_family": "landing_page",
+      "authority": "publisher_or_repository_page",
+      "artifact_ids": [
+        "landing_page"
+      ],
+      "values": {
+        "authors": [
+          "Kurin, Vitaly",
+          "Godil, Saad",
+          "Whiteson, Shimon",
+          "Catanzaro, Bryan"
+        ],
+        "title": "Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+        "year": "2019/09/26",
+        "venue": ""
+      },
+      "normalized": {
+        "authors": [
+          "vitaly kurin",
+          "saad godil",
+          "shimon whiteson",
+          "bryan catanzaro"
+        ],
+        "title": "can q learning with graph networks learn a generalizable branching heuristic for a sat solver",
+        "year": "2019",
+        "venue": ""
+      }
+    },
+    {
+      "source_id": "citation_export",
+      "source_family": "citation_export",
+      "authority": "site_export",
+      "artifact_ids": [
+        "citation_export"
+      ],
+      "values": {
+        "authors": [
+          "Vitaly Kurin",
+          "Saad Godil",
+          "Shimon Whiteson",
+          "Bryan Catanzaro"
+        ],
+        "title": "Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+        "year": "2020",
+        "venue": ""
+      },
+      "normalized": {
+        "authors": [
+          "vitaly kurin",
+          "saad godil",
+          "shimon whiteson",
+          "bryan catanzaro"
+        ],
+        "title": "can q learning with graph networks learn a generalizable branching heuristic for a sat solver",
+        "year": "2020",
+        "venue": ""
+      }
+    },
+    {
+      "source_id": "registry_arxiv",
+      "source_family": "registry_metadata",
+      "authority": "bibliographic_registry",
+      "artifact_ids": [
+        "registry_arxiv"
+      ],
+      "values": {
+        "authors": [
+          "Vitaly Kurin",
+          "Saad Godil",
+          "Shimon Whiteson",
+          "Bryan Catanzaro"
+        ],
+        "title": "Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+        "year": "2019-09-26T00:44:40Z",
+        "venue": "arXiv"
+      },
+      "normalized": {
+        "authors": [
+          "vitaly kurin",
+          "saad godil",
+          "shimon whiteson",
+          "bryan catanzaro"
+        ],
+        "title": "can q learning with graph networks learn a generalizable branching heuristic for a sat solver",
+        "year": "2019",
+        "venue": "arxiv"
+      }
+    }
+  ],
+  "discoveries": {
+    "landing_page": {
+      "pdf_url": "https://arxiv.org/pdf/1909.11830",
+      "doi": "",
+      "arxiv_id": "1909.11830",
+      "raw_meta": {
+        "citation_abstract": [
+          "We present Graph-$Q$-SAT, a branching heuristic for a Boolean SAT solver trained with value-based reinforcement learning (RL) using Graph Neural Networks for function approximation. Solvers using Graph-$Q$-SAT are complete SAT solvers that either provide a satisfying assignment or proof of unsatisfiability, which is required for many SAT applications. The branching heuristics commonly used in SAT solvers make poor decisions during their warm-up period, whereas Graph-$Q$-SAT is trained to examine the structure of the particular problem instance to make better decisions early in the search. Training Graph-$Q$-SAT is data efficient and does not require elaborate dataset preparation or feature engineering. We train Graph-$Q$-SAT using RL interfacing with MiniSat solver and show that Graph-$Q$-SAT can reduce the number of iterations required to solve SAT problems by 2-3X. Furthermore, it generalizes to unsatisfiable SAT instances, as well as to problems with 5X more variables than it was trained on. We show that for larger problems, reductions in the number of iterations lead to wall clock time reductions, the ultimate goal when designing heuristics. We also show positive zero-shot transfer behavior when testing Graph-$Q$-SAT on a task family different from that used for training. While more work is needed to apply Graph-$Q$-SAT to reduce wall clock time in modern SAT solving settings, it is a compelling proof-of-concept showing that RL equipped with Graph Neural Networks can learn a generalizable branching heuristic for SAT search."
+        ],
+        "citation_arxiv_id": [
+          "1909.11830"
+        ],
+        "citation_author": [
+          "Kurin, Vitaly",
+          "Godil, Saad",
+          "Whiteson, Shimon",
+          "Catanzaro, Bryan"
+        ],
+        "citation_date": [
+          "2019/09/26"
+        ],
+        "citation_online_date": [
+          "2020/11/25"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/1909.11830"
+        ],
+        "citation_title": [
+          "Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?"
+        ],
+        "og:description": [
+          "We present Graph-$Q$-SAT, a branching heuristic for a Boolean SAT solver trained with value-based reinforcement learning (RL) using Graph Neural Networks for function approximation. Solvers using Graph-$Q$-SAT are complete SAT solvers that either provide a satisfying assignment or proof of unsatisfiability, which is required for many SAT applications. The branching heuristics commonly used in SAT solvers make poor decisions during their warm-up period, whereas Graph-$Q$-SAT is trained to examine the structure of the particular problem instance to make better decisions early in the search. Training Graph-$Q$-SAT is data efficient and does not require elaborate dataset preparation or feature engineering. We train Graph-$Q$-SAT using RL interfacing with MiniSat solver and show that Graph-$Q$-SAT can reduce the number of iterations required to solve SAT problems by 2-3X. Furthermore, it generalizes to unsatisfiable SAT instances, as well as to problems with 5X more variables than it was trained on. We show that for larger problems, reductions in the number of iterations lead to wall clock time reductions, the ultimate goal when designing heuristics. We also show positive zero-shot transfer behavior when testing Graph-$Q$-SAT on a task family different from that used for training. While more work is needed to apply Graph-$Q$-SAT to reduce wall clock time in modern SAT solving settings, it is a compelling proof-of-concept showing that RL equipped with Graph Neural Networks can learn a generalizable branching heuristic for SAT search."
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/1909.11830v2"
+        ]
+      }
+    },
+    "citation_export": {
+      "entry_type": "misc",
+      "citation_key": "kurin2020qlearninggraphnetworkslearn",
+      "doi": "",
+      "arxiv_id": "1909.11830",
+      "openreview_id": null,
+      "url": "https://arxiv.org/abs/1909.11830"
+    },
+    "registry_arxiv": {
+      "entry_id": "http://arxiv.org/abs/1909.11830v2",
+      "pdf_urls": []
+    },
+    "pdf_candidates": [
+      "https://arxiv.org/pdf/1909.11830"
+    ]
+  },
+  "source_binding": {
+    "adapter": "arxiv",
+    "status": "PASS",
+    "identifier_type": "arxiv",
+    "identifier": "1909.11830",
+    "checks": {
+      "landing_page": "1909.11830",
+      "citation_export": "1909.11830",
+      "registry_arxiv": "1909.11830"
+    },
+    "errors": []
+  }
+}

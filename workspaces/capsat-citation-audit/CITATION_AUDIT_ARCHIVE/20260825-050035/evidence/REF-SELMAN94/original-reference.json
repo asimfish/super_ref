@@ -1,0 +1,13 @@
+{
+  "reference_id": "REF-SELMAN94",
+  "citation_key": "selman1994noise",
+  "entry_type": "inproceedings",
+  "authors": [
+    "B. Selman",
+    "H. A. Kautz",
+    "B. Cohen"
+  ],
+  "title": "Noise Strategies for Improving Local Search",
+  "venue": "AAAI",
+  "year": "1994"
+}

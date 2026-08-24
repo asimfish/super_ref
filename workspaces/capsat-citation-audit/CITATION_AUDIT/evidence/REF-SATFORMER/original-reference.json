@@ -1,0 +1,19 @@
+{
+  "reference_id": "REF-SATFORMER",
+  "citation_key": "shi2023satformer",
+  "entry_type": "inproceedings",
+  "authors": [
+    "Zhengyuan Shi",
+    "Min Li",
+    "Yi Liu",
+    "Sadaf Khan",
+    "Junhua Huang",
+    "Hui-Ling Zhen",
+    "Mingxuan Yuan",
+    "Qiang Xu"
+  ],
+  "title": "SATformer: Transformer-Based UNSAT Core Learning",
+  "venue": "ICCAD",
+  "year": "2023",
+  "arxiv_id": "2209.00953"
+}

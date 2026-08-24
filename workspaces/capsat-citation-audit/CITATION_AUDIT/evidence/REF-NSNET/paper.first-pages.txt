@@ -1,0 +1,138 @@
+NSNet: A General Neural Probabilistic Framework
+for Satisfiability Problems
+
+arXiv:2211.03880v1 [cs.AI] 7 Nov 2022
+
+1
+
+Zhaoyu Li1,2 , Xujie Si1,2,3
+McGill University, Mila – Quebec AI Institute, 3 CIFAR AI Research Chair
+{zli199, xsi}@cs.mcgill.ca
+2
+
+Abstract
+We present the Neural Satisfiability Network (NSNet), a general neural framework that models satisfiability problems as probabilistic inference and meanwhile
+exhibits proper explainability. Inspired by the Belief Propagation (BP), NSNet
+uses a novel graph neural network (GNN) to parameterize BP in the latent space,
+where its hidden representations maintain the same probabilistic interpretation as
+BP. NSNet can be flexibly configured to solve both SAT and #SAT problems by
+applying different learning objectives. For SAT, instead of directly predicting a
+satisfying assignment, NSNet performs marginal inference among all satisfying
+solutions, which we empirically find is more feasible for neural networks to learn.
+With the estimated marginals, a satisfying assignment can be efficiently generated
+by rounding and executing a stochastic local search. For #SAT, NSNet performs
+approximate model counting by learning the Bethe approximation of the partition
+function. Our evaluations show that NSNet achieves competitive results in terms
+of inference accuracy and time efficiency on multiple SAT and #SAT datasets 1 .
+
+1
+
+Introduction
+
+The Boolean Satisfiability Problem (SAT) and the Sharp Satisfiability Problem (#SAT, or model
+counting) are fundamental challenges for computer science, with numerous applications including
+software verification [12, 19], hardware design [28, 36], and planning [14, 15]. Although modern SAT
+and #SAT solvers have achieved practical success in these domains, the performance of satisfiability
+solvers heavily relies on custom search heuristics [8]. However, designing good heuristics is highly
+non-trivial and time-consuming. With the superior learning ability of neural networks, recent research
+on satisfiability problems has migrated from hand-engineered methods toward data-driven ones.
+Various neural methods have been proposed for satisfiability problems [18]. A line of research aims at
+building standalone neural solvers, which directly predicts the satisfiability [35, 22, 10] or a satisfying
+assignment [2, 3, 31] of a given instance. Other approaches integrate the neural modules into classic
+solvers, improving the branching heuristics in SAT [34] or #SAT [42] solvers. Yet, despite recent
+progress, the interpretation of these neural networks still remains a mystery: why and how can neural
+networks learn to tackle satisfiability problems? Answering this question is crucial for utilizing
+neural networks on satisfiability problems, especially for designing better neural architectures.
+This paper addresses the above question by developing an explainable neural framework that can be
+interpreted using graphical models. Specifically, we propose Neural Satisfiability Network (NSNet),
+a novel graph neural network (GNN) framework taking the formulation of solving satisfiability
+problems as probabilistic inference. Inspired by the inference algorithm Belief Propagation (BP),
+NSNet adopts a new graph encoding for propositional formulas and employs a novel message passing
+mechanism that subsumes the BP’s updating rules in the latent space. In such a manner, NSNet serves
+1
+
+Code is available at https://github.com/zhaoyu-li/NSNet.
+
+36th Conference on Neural Information Processing Systems (NeurIPS 2022).
+
+Perform marginal inference
+Round
+
+Estimate the partition function
+
+Estimated marginals
+
+Initialize
+
+Initial assignment
+
+SAT
+
+SLS Solver
+Satisfying assignment
+
+NSNet
+Input formula
+
+#SAT
+Estimated the log
+partition function
+
+Figure 1: Overview of our pipeline for solving SAT and #SAT problems. For SAT, we apply NSNet to
+perform marginal inference and use the estimated marginals to guide the initialization of a SLS solver.
+For #SAT, NSNet itself can serve as an approximate solver by estimating the partition function.
+as a neural extension of BP and allows the inference to learn from data. Like BP, NSNet can estimate
+both marginals and the partition function of graphical models. This key observation makes NSNet an
+effective unified solution to both SAT and #SAT problems (Figure 1).
+Existing neural SAT solvers [2, 3] aim to predict a single satisfying assignment for a satisfiable
+formula. However, there can be multiple satisfying solutions, making it unclear which particular
+solution should be generated. Instead of directly predicting a solution, NSNet performs marginal
+inference in the solution space of a SAT problem, estimating the assignment distribution of each
+variable among all satisfying assignments. Although NSNet is not directly trained to solve a SAT
+problem, its estimated marginals can be used to quickly generate a satisfying assignment. One simple
+way is to round the estimated marginals to an initial assignment and then perform the stochastic
+local search (SLS) on it. Our experimental evaluations on the synthetic datasets with three different
+distributions show that NSNet’s initial assignments can not only solve much more instances than
+both BP and the neural baseline but also improve the state-of-the-art SLS solver to find a satisfying
+assignment with fewer flips.
+To solve #SAT, we formulate it as the partition function estimation of graphical models. NSNet
+learns the Bethe approximation of the partition function and thus acts as an approximate #SAT solver.
+Experiments on the BIRD and SATLIB benchmarks illustrate that our method notably surpasses both
+BP and the recent neural approach. Compared with the state-of-the-art approximate #SAT solvers,
+NSNet can estimate the solutions with more than three orders of magnitude speedup, while still
+achieving competitive precision.
+
+2
+
+Preliminaries
+
+Satisfiability Problems. In propositional logic, a Boolean formula consists of Boolean variables
+and logical operators such as negations (¬), conjunctions (∧), and disjunctions (∨). It is typical to
+represent Boolean formulas in conjunctive normal form (CNF), expressed as a conjunction of clauses,
+each of which is a disjunction of literals (a variable or its negation). Given a CNF formula, the SAT
+problem asks whether there exists an assignment to its variables that can satisfy the formula, whereas
+the goal for #SAT is to count the number of all satisfying solutions.
+Factor Graphs. A factor graph is a bipartite graph with a set of variable nodes connected to a
+set of factor nodes, where each factor node expresses the dependencies among the variables it is
+connected. Let p denote a distribution defined over n discrete random variables and xi be a possible
+assignment of the i-th variable Xi . Then we may define the joint probability p(x) of an assignment
+x = {x1 , x2 , . . . , xn } using m factors {f1 , f2 , . . . , fm } as:
+!
+m
+m
+X Y
+1 Y
+p(x) =
+fa (xa ), Z =
+fa (xa ) ,
+(1)
+Z a=1
+x
+a=1
+where each factor fa takes an assignment of its associated variables xa ⊆ x as input, Z is the
+normalization constant, which is also known as the partition function.
+In the case of satisfiability problems, each Boolean variable and clause in a CNF formula correspond
+to a variable and a factor node in a factor graph respectively. Given a factor fa with its associated
+2
+
+

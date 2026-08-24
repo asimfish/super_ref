@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-NSNET",
+  "role": "adversarial_provenance",
+  "agent_id": "adversarial_provenance-01a035c1-4253-7d83-bf6c-5b9bac665dd4",
+  "recorded_at": "2026-08-24T21:51:12+00:00",
+  "packet_sha256": "b95bd067080787bff4e8e77a9031a9f39276149577df4c135ffca61b33740479",
+  "evidence_sha256": "23f1ddb1ad55033d291ab191168ae7b33ea9e7537fb652c9cfbb77c103414655",
+  "body_sha256": "4d563ef06cd1e9b50f6fcc63859b768bb3625cf82e9d55df034bc21a65c4ff53",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "83d54f8a2442efb70cfcac681d1c702748267d5d3fe27f74f0d14b461f871052",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c1-4253-7d83-bf6c-5b9bac665dd4",
+    "invocation_id": "6d6816d4-ec1e-439e-bbc0-f2539ba5eb9f",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "BLOCKED",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Zhaoyu Li",
+          "Xujie Si"
+        ],
+        "issues": [
+          "Original reference provides surnames only; supplied arXiv sources consistently provide complete names in the same order."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+        "issues": [
+          "Original reference abbreviates the title as \"NSNet\"; all supplied structured sources agree on the full title."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "year": {
+        "status": "MATCH",
+        "value": "2022",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "NeurIPS",
+        "issues": [
+          "No supplied artifact verifies NeurIPS as the venue of record.",
+          "The registry value \"arXiv\" establishes repository publication, not the claimed conference venue.",
+          "The OpenReview venue claim appears only in the original reference note and is not independently evidenced by an allowed artifact."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      }
+    },
+    "discrepancies": [
+      "The original title is incomplete relative to every supplied source.",
+      "The original authors are incomplete relative to every supplied source.",
+      "The claimed NeurIPS venue is unsupported by the allowed artifacts."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "Author identity, order, full title, and year are consistently supported by three independent supplied source families. Venue verification is blocking."
+  }
+}

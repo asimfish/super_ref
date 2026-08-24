@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "created_at": "2026-08-24T21:06:39+00:00",
+  "status": "BLOCKED",
+  "original_reference_sha256": "e0c315a2a72ad1d14dbd5a122fa689a275cc6be23bb21df48a5c516f6c108c93",
+  "evidence_sha256": "1d876473dec7e607f35b97576654546266081f82f3f67b413521fef45d2f9312",
+  "canonical_fields": {},
+  "field_checks": {
+    "authors": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Stewart, Russell",
+            "Ermon, Stefano"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a03595-8f7d-7d11-9487-4874f8745c98",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a03595-8f7e-7ba0-99b6-19182e06af05",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a03595-8f7d-7530-9a07-dda1884194a3",
+          "value": [
+            "Russell Stewart",
+            "Stefano Ermon"
+          ],
+          "normalized": [
+            "russell stewart",
+            "stefano ermon"
+          ]
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify authors (MATCH)"
+      ]
+    },
+    "title": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a03595-8f7d-7d11-9487-4874f8745c98",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a03595-8f7e-7ba0-99b6-19182e06af05",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a03595-8f7d-7530-9a07-dda1884194a3",
+          "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+          "normalized": "label free supervision of neural networks with physics and domain knowledge"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify title (MATCH)"
+      ]
+    },
+    "year": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2016/09/18",
+          "normalized": "2016"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2016",
+          "normalized": "2016"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "2016-09-18T23:16:14Z",
+          "normalized": "2016"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a03595-8f7e-7ba0-99b6-19182e06af05",
+          "value": "2016",
+          "normalized": "2016"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a03595-8f7d-7530-9a07-dda1884194a3",
+          "value": "2016",
+          "normalized": "2016"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify year (UNVERIFIED)"
+      ]
+    },
+    "venue": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a03595-8f7d-7530-9a07-dda1884194a3",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "errors": [
+        "venue has fewer than two agreeing source families",
+        "role website_citation did not verify venue (UNVERIFIED)",
+        "role adversarial_provenance did not verify venue (UNVERIFIED)"
+      ]
+    }
+  },
+  "discrepancies": [],
+  "blocking_errors": [
+    "role adversarial_provenance did not verify authors (MATCH)",
+    "role adversarial_provenance did not verify title (MATCH)",
+    "role adversarial_provenance did not verify year (UNVERIFIED)",
+    "venue has fewer than two agreeing source families",
+    "role website_citation did not verify venue (UNVERIFIED)",
+    "role adversarial_provenance did not verify venue (UNVERIFIED)"
+  ],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a03595-8f7e-7501-bf10-551da26ff78b",
+      "path": "reports/REF-LABELFREE-PHYSICS/adversarial_provenance--adversarial_provenance-01a03595-8f7e-7501-bf10-551da26ff78b.json",
+      "sha256": "1b5607ab14add36cbe79937e95514af3a9ab38d0b3a0eb50ecd425c53c2a05a9",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "2601b50830034c34a5fa439a903640ed0a6e8c06d6583e2ad35fdd2b47daa3c6",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a03595-8f7e-7501-bf10-551da26ff78b",
+        "invocation_id": "aa2b5b4e-b819-4e92-b41a-2a5faf87e78b",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a03595-8f7d-7d11-9487-4874f8745c98",
+      "path": "reports/REF-LABELFREE-PHYSICS/pdf_identity--pdf_identity-01a03595-8f7d-7d11-9487-4874f8745c98.json",
+      "sha256": "69f3d87669f00812d8ee6be856c5097c2bbe7b2c1c2b95080756e877080e0ac6",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "685955f3db350323a78a46c908a488db569fd0cfeb833e0ca29210bc00ab42a3",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a03595-8f7d-7d11-9487-4874f8745c98",
+        "invocation_id": "1198d826-ffad-47df-ae02-2f2e42202fc0",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a03595-8f7d-7530-9a07-dda1884194a3",
+      "path": "reports/REF-LABELFREE-PHYSICS/registry_crosscheck--registry_crosscheck-01a03595-8f7d-7530-9a07-dda1884194a3.json",
+      "sha256": "1133df504c62c1b83a4cd0e7e598dc37924fe0360e9358a0052f8d7f407de5c5",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "1edba78a476d34cf8771c7acc8464ba699a77ac32352291d186895e2a2c50212",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a03595-8f7d-7530-9a07-dda1884194a3",
+        "invocation_id": "d4337b4a-4815-44aa-a591-72168fda6866",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a03595-8f7e-7ba0-99b6-19182e06af05",
+      "path": "reports/REF-LABELFREE-PHYSICS/website_citation--website_citation-01a03595-8f7e-7ba0-99b6-19182e06af05.json",
+      "sha256": "d630555f7c37f5858d7850c1e989ef7fff9b9b5c28d924792d378728de44d25e",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "053c976a5bb00f0447d9c4aced9c5279b26e2ebc4a7789fd8506ab32dfd95748",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a03595-8f7e-7ba0-99b6-19182e06af05",
+        "invocation_id": "7c5b44f0-0448-4b41-9034-52f7d7b8417b",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": false
+}

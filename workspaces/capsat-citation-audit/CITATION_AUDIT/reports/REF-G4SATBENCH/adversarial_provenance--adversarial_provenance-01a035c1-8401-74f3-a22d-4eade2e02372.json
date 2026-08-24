@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-G4SATBENCH",
+  "role": "adversarial_provenance",
+  "agent_id": "adversarial_provenance-01a035c1-8401-74f3-a22d-4eade2e02372",
+  "recorded_at": "2026-08-24T21:51:35+00:00",
+  "packet_sha256": "7eb3d7fe5aa82541fec2f78a9738fff33697e4e3b5da734e59f75357139d8b45",
+  "evidence_sha256": "62e1fe57cee4bade3b0449f24839c39c05beee0a72f0308dc5ca69fc1d316f3e",
+  "body_sha256": "505c6d3668f9c44035c541d56c12c4e7bc338c3783960b022a0aa14e44bd587a",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "de28f35b8e5373efcc27fcdd56dc2c43217da74359d94bc6e3668d138257f9cd",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c1-8401-74f3-a22d-4eade2e02372",
+    "invocation_id": "ea2ccc5b-5835-4723-8227-9ea070865a86",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "BLOCKED",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Zhaoyu Li",
+          "Jinpei Guo",
+          "Xujie Si"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "2024",
+        "issues": [
+          "The citation export supports 2024, but the arXiv landing page and registry metadata identify the work as first submitted in 2023; the supplied evidence does not establish which year applies to the venue-of-record citation."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "TMLR",
+        "issues": [
+          "No supplied artifact verifies TMLR as the publication venue; the structured observations provide either no venue or only the repository label arXiv."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_arxiv"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Publication year is inconsistent across supplied sources: 2023 in the arXiv landing page and registry metadata versus 2024 in the citation export.",
+      "The claimed TMLR venue is unsupported by the allowed artifacts."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "Author count, order, surnames, and initials align across all supplied sources. The unresolved year conflict and unverified venue block full verification."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "reference_id": "REF-SURVEYPROP",
+  "citation_key": "braunstein2005surveyprop",
+  "entry_type": "article",
+  "authors": [
+    "A. Braunstein",
+    "M. Mézard",
+    "R. Zecchina"
+  ],
+  "title": "Survey Propagation: An Algorithm for Satisfiability",
+  "venue": "Random Structures & Algorithms",
+  "year": "2005",
+  "arxiv_id": "cs/0212002"
+}

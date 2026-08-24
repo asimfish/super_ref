@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a03595-8f7e-7ba0-99b6-19182e06af05",
+  "recorded_at": "2026-08-24T21:03:29+00:00",
+  "packet_sha256": "ecf6d3035865c0049346153962c49f47ba457e157c34f51433c0d0c151c2e361",
+  "evidence_sha256": "1d876473dec7e607f35b97576654546266081f82f3f67b413521fef45d2f9312",
+  "body_sha256": "df9b34214e6db2e70e314acd9f282edb9eeda8649f7c16762c67327bfa953348",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "053c976a5bb00f0447d9c4aced9c5279b26e2ebc4a7789fd8506ab32dfd95748",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a03595-8f7e-7ba0-99b6-19182e06af05",
+    "invocation_id": "7c5b44f0-0448-4b41-9034-52f7d7b8417b",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "MATCH",
+        "value": "2016",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "Venue is absent from both supplied artifacts."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "Landing-page metadata and site-provided BibTeX agree on the complete author list and order; no authors are missing, added, reordered, or conflicting."
+  }
+}

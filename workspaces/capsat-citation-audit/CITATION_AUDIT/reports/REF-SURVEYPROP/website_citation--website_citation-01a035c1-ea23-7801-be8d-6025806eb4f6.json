@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-SURVEYPROP",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a035c1-ea23-7801-be8d-6025806eb4f6",
+  "recorded_at": "2026-08-24T21:51:58+00:00",
+  "packet_sha256": "f586f7b2e397fad64ec87253665b0dc0ba86ef6b29fae329cc15fd070aa9cc9d",
+  "evidence_sha256": "d3ff56f04a031b7f084a7bf1117f02bd11bfe557cd9fb70bd9ad3adcb51918f4",
+  "body_sha256": "755a674933c6bae5c10142f7b29443ab9bcbd285c0dfb836c196dd8c53076857",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "96d902b7e3956a3f0dca4b09aa655f5617cd99abd4b6f79fcc2e7e028873fffe",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c1-ea23-7801-be8d-6025806eb4f6",
+    "invocation_id": "dbd4d39f-1490-4dbb-a637-7b912bd32248",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Braunstein, A.",
+          "Mezard, M.",
+          "Zecchina, R."
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Survey propagation: an algorithm for satisfiability",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "",
+        "issues": [
+          "Landing page gives 2002/12/04 (year 2002), while the site-provided BibTeX export gives 2006."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "No venue is provided by either artifact."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Publication year conflicts: landing_page reports 2002/12/04, while citation_export reports 2006."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "Author identities and printed order agree across both artifacts; no authors are missing, added, or reordered."
+  }
+}

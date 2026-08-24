@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/F8l+R5ppZfBsqTJY8AsSkneCgjE</id>
+  <title>arXiv Query: search_query=&amp;id_list=2209.00953&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-24T20:55:12Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2209.00953" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2209.00953v2</id>
+    <title>SATformer: Transformer-Based UNSAT Core Learning</title>
+    <updated>2024-03-12T02:43:40Z</updated>
+    <link href="https://arxiv.org/abs/2209.00953v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2209.00953v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper introduces SATformer, a novel Transformer-based approach for the Boolean Satisfiability (SAT) problem. Rather than solving the problem directly, SATformer approaches the problem from the opposite direction by focusing on unsatisfiability. Specifically, it models clause interactions to identify any unsatisfiable sub-problems. Using a graph neural network, we convert clauses into clause embeddings and employ a hierarchical Transformer-based model to understand clause correlation. SATformer is trained through a multi-task learning approach, using the single-bit satisfiability result and the minimal unsatisfiable core (MUC) for UNSAT problems as clause supervision. As an end-to-end learning-based satisfiability classifier, the performance of SATformer surpasses that of NeuroSAT significantly. Furthermore, we integrate the clause predictions made by SATformer into modern heuristic-based SAT solvers and validate our approach with a logic equivalence checking task. Experimental results show that our SATformer can decrease the runtime of existing solvers by an average of 21.33%.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-09-02T11:17:39Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>In 2023 IEEE/ACM International Conference on Computer Aided Design (ICCAD) 2023 Oct 28 (pp. 1-4). IEEE</arxiv:journal_ref>
+    <author>
+      <name>Zhengyuan Shi</name>
+      <arxiv:affiliation>The Chinese University of Hong Kong</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Min Li</name>
+      <arxiv:affiliation>The Chinese University of Hong Kong</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yi Liu</name>
+      <arxiv:affiliation>The Chinese University of Hong Kong</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sadaf Khan</name>
+      <arxiv:affiliation>The Chinese University of Hong Kong</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Junhua Huang</name>
+      <arxiv:affiliation>Huawei Noah's Ark Lab</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Hui-Ling Zhen</name>
+      <arxiv:affiliation>Huawei Noah's Ark Lab</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Mingxuan Yuan</name>
+      <arxiv:affiliation>Huawei Noah's Ark Lab</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Qiang Xu</name>
+      <arxiv:affiliation>The Chinese University of Hong Kong</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1109/ICCAD57390.2023.10323731</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/ICCAD57390.2023.10323731" title="doi"/>
+  </entry>
+</feed>

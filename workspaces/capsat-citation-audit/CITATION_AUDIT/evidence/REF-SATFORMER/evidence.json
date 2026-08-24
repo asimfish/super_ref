@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-SATFORMER",
+  "reference_sha256": "49c8cede42396f81683dd326983fed61d18de01caffa3c22d945804b061b46f9",
+  "adapter": "arxiv",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T21:09:34+00:00",
+  "status": "READY",
+  "errors": [],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "landing_page",
+      "source_family": "landing_page",
+      "kind": "html",
+      "request_url": "https://arxiv.org/abs/2209.00953",
+      "final_url": "https://arxiv.org/abs/2209.00953",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "text/html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 43569,
+      "sha256": "e041ba1bd7a8e17401c1aa9a572a321746cac3096243039eed5ec0b91edd0ecd",
+      "path": "landing.html"
+    },
+    {
+      "artifact_id": "citation_export",
+      "source_family": "citation_export",
+      "kind": "citation",
+      "request_url": "https://arxiv.org/bibtex/2209.00953",
+      "final_url": "https://arxiv.org/bibtex/2209.00953",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/x-bibtex,text/plain",
+      "status": 200,
+      "content_type": "text/plain",
+      "bytes": 460,
+      "sha256": "dfee7d8c2519e239725616ee39f12c6216bee4a4a89407a082ec2bcedccc8416",
+      "path": "citation.bib"
+    },
+    {
+      "artifact_id": "registry_arxiv",
+      "source_family": "registry_metadata",
+      "kind": "metadata",
+      "request_url": "https://export.arxiv.org/api/query?id_list=2209.00953",
+      "final_url": "https://export.arxiv.org/api/query?id_list=2209.00953",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/atom+xml",
+      "status": 200,
+      "content_type": "application/atom+xml",
+      "bytes": 3844,
+      "sha256": "b1fa7b5e4144bd907231c14f4de4298a822dfa55c380292ce8015a3c6c9a4c62",
+      "path": "registry-arxiv.xml"
+    },
+    {
+      "artifact_id": "paper_pdf",
+      "source_family": "paper_pdf",
+      "kind": "pdf",
+      "request_url": "https://arxiv.org/pdf/2209.00953",
+      "final_url": "https://arxiv.org/pdf/2209.00953",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 993311,
+      "sha256": "4a36d42bda550732860f604566ed32ab981879d93a357f9cf4f130ed14d1d9a9",
+      "path": "paper.pdf"
+    },
+    {
+      "artifact_id": "paper_first_pages",
+      "source_family": "paper_pdf",
+      "kind": "derived_text",
+      "path": "paper.first-pages.txt",
+      "bytes": 13737,
+      "sha256": "e82ffb670a3041bd459bde50e7fc215103601289467bbb5e7d68a7901d8e8136",
+      "derived_from": "paper_pdf",
+      "pages": 2,
+      "resource_limits": {
+        "cpu_seconds": 30,
+        "output_bytes": 1048576,
+        "memory_bytes": null
+      }
+    }
+  ],
+  "observations": [
+    {
+      "source_id": "landing_page",
+      "source_family": "landing_page",
+      "authority": "publisher_or_repository_page",
+      "artifact_ids": [
+        "landing_page"
+      ],
+      "values": {
+        "authors": [
+          "Shi, Zhengyuan",
+          "Li, Min",
+          "Liu, Yi",
+          "Khan, Sadaf",
+          "Huang, Junhua",
+          "Zhen, Hui-Ling",
+          "Yuan, Mingxuan",
+          "Xu, Qiang"
+        ],
+        "title": "SATformer: Transformer-Based UNSAT Core Learning",
+        "year": "2022/09/02",
+        "venue": ""
+      },
+      "normalized": {
+        "authors": [
+          "zhengyuan shi",
+          "min li",
+          "yi liu",
+          "sadaf khan",
+          "junhua huang",
+          "hui ling zhen",
+          "mingxuan yuan",
+          "qiang xu"
+        ],
+        "title": "satformer transformer based unsat core learning",
+        "year": "2022",
+        "venue": ""
+      }
+    },
+    {
+      "source_id": "citation_export",
+      "source_family": "citation_export",
+      "authority": "site_export",
+      "artifact_ids": [
+        "citation_export"
+      ],
+      "values": {
+        "authors": [
+          "Zhengyuan Shi",
+          "Min Li",
+          "Yi Liu",
+          "Sadaf Khan",
+          "Junhua Huang",
+          "Hui-Ling Zhen",
+          "Mingxuan Yuan",
+          "Qiang Xu"
+        ],
+        "title": "SATformer: Transformer-Based UNSAT Core Learning",
+        "year": "2024",
+        "venue": ""
+      },
+      "normalized": {
+        "authors": [
+          "zhengyuan shi",
+          "min li",
+          "yi liu",
+          "sadaf khan",
+          "junhua huang",
+          "hui ling zhen",
+          "mingxuan yuan",
+          "qiang xu"
+        ],
+        "title": "satformer transformer based unsat core learning",
+        "year": "2024",
+        "venue": ""
+      }
+    },
+    {
+      "source_id": "registry_arxiv",
+      "source_family": "registry_metadata",
+      "authority": "bibliographic_registry",
+      "artifact_ids": [
+        "registry_arxiv"
+      ],
+      "values": {
+        "authors": [
+          "Zhengyuan Shi",
+          "Min Li",
+          "Yi Liu",
+          "Sadaf Khan",
+          "Junhua Huang",
+          "Hui-Ling Zhen",
+          "Mingxuan Yuan",
+          "Qiang Xu"
+        ],
+        "title": "SATformer: Transformer-Based UNSAT Core Learning",
+        "year": "2022-09-02T11:17:39Z",
+        "venue": "arXiv"
+      },
+      "normalized": {
+        "authors": [
+          "zhengyuan shi",
+          "min li",
+          "yi liu",
+          "sadaf khan",
+          "junhua huang",
+          "hui ling zhen",
+          "mingxuan yuan",
+          "qiang xu"
+        ],
+        "title": "satformer transformer based unsat core learning",
+        "year": "2022",
+        "venue": "arxiv"
+      }
+    }
+  ],
+  "discoveries": {
+    "landing_page": {
+      "pdf_url": "https://arxiv.org/pdf/2209.00953",
+      "doi": "10.1109/ICCAD57390.2023.10323731",
+      "arxiv_id": "2209.00953",
+      "raw_meta": {
+        "citation_abstract": [
+          "This paper introduces SATformer, a novel Transformer-based approach for the Boolean Satisfiability (SAT) problem. Rather than solving the problem directly, SATformer approaches the problem from the opposite direction by focusing on unsatisfiability. Specifically, it models clause interactions to identify any unsatisfiable sub-problems. Using a graph neural network, we convert clauses into clause embeddings and employ a hierarchical Transformer-based model to understand clause correlation. SATformer is trained through a multi-task learning approach, using the single-bit satisfiability result and the minimal unsatisfiable core (MUC) for UNSAT problems as clause supervision. As an end-to-end learning-based satisfiability classifier, the performance of SATformer surpasses that of NeuroSAT significantly. Furthermore, we integrate the clause predictions made by SATformer into modern heuristic-based SAT solvers and validate our approach with a logic equivalence checking task. Experimental results show that our SATformer can decrease the runtime of existing solvers by an average of 21.33%."
+        ],
+        "citation_arxiv_id": [
+          "2209.00953"
+        ],
+        "citation_author": [
+          "Shi, Zhengyuan",
+          "Li, Min",
+          "Liu, Yi",
+          "Khan, Sadaf",
+          "Huang, Junhua",
+          "Zhen, Hui-Ling",
+          "Yuan, Mingxuan",
+          "Xu, Qiang"
+        ],
+        "citation_date": [
+          "2022/09/02"
+        ],
+        "citation_doi": [
+          "10.1109/ICCAD57390.2023.10323731"
+        ],
+        "citation_online_date": [
+          "2024/03/12"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2209.00953"
+        ],
+        "citation_title": [
+          "SATformer: Transformer-Based UNSAT Core Learning"
+        ],
+        "og:description": [
+          "This paper introduces SATformer, a novel Transformer-based approach for the Boolean Satisfiability (SAT) problem. Rather than solving the problem directly, SATformer approaches the problem from the opposite direction by focusing on unsatisfiability. Specifically, it models clause interactions to identify any unsatisfiable sub-problems. Using a graph neural network, we convert clauses into clause embeddings and employ a hierarchical Transformer-based model to understand clause correlation. SATformer is trained through a multi-task learning approach, using the single-bit satisfiability result and the minimal unsatisfiable core (MUC) for UNSAT problems as clause supervision. As an end-to-end learning-based satisfiability classifier, the performance of SATformer surpasses that of NeuroSAT significantly. Furthermore, we integrate the clause predictions made by SATformer into modern heuristic-based SAT solvers and validate our approach with a logic equivalence checking task. Experimental results show that our SATformer can decrease the runtime of existing solvers by an average of 21.33%."
+        ],
+        "og:image": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:alt": [
+          "arXiv logo"
+        ],
+        "og:image:height": [
+          "700"
+        ],
+        "og:image:secure_url": [
+          "/static/browse/0.3.4/images/arxiv-logo-fb.png"
+        ],
+        "og:image:width": [
+          "1200"
+        ],
+        "og:site_name": [
+          "arXiv.org"
+        ],
+        "og:title": [
+          "SATformer: Transformer-Based UNSAT Core Learning"
+        ],
+        "og:type": [
+          "website"
+        ],
+        "og:url": [
+          "https://arxiv.org/abs/2209.00953v2"
+        ]
+      }
+    },
+    "citation_export": {
+      "entry_type": "misc",
+      "citation_key": "shi2024satformertransformerbasedunsatcore",
+      "doi": "https://doi.org/10.1109/ICCAD57390.2023.10323731",
+      "arxiv_id": "2209.00953",
+      "openreview_id": null,
+      "url": "https://arxiv.org/abs/2209.00953"
+    },
+    "registry_arxiv": {
+      "entry_id": "http://arxiv.org/abs/2209.00953v2",
+      "pdf_urls": []
+    },
+    "pdf_candidates": [
+      "https://arxiv.org/pdf/2209.00953"
+    ]
+  },
+  "source_binding": {
+    "adapter": "arxiv",
+    "status": "PASS",
+    "identifier_type": "arxiv",
+    "identifier": "2209.00953",
+    "checks": {
+      "landing_page": "2209.00953",
+      "citation_export": "2209.00953",
+      "registry_arxiv": "2209.00953"
+    },
+    "errors": []
+  }
+}

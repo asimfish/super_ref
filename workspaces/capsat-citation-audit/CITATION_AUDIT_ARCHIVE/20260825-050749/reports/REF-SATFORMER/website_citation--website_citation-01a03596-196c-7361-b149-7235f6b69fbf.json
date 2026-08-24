@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "reference_id": "REF-SATFORMER",
+  "role": "website_citation",
+  "agent_id": "website_citation-01a03596-196c-7361-b149-7235f6b69fbf",
+  "recorded_at": "2026-08-24T21:04:03+00:00",
+  "packet_sha256": "7f435908dae30854420399eea9c3d783a112f6dfe0257880a7cf6166dd7fd669",
+  "evidence_sha256": "99087a6c06affa45562711138cd977a3778699e8ec6d70471f96dc8e1690b275",
+  "body_sha256": "b0968d0f644cf4ba681febea95e6b4721acd1b10a52a749795191bb01ea028d0",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "b3b0572e80a0226f429fd113fff227152542fd23ccb2689b1193dd3596830fa9",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a03596-196c-7361-b149-7235f6b69fbf",
+    "invocation_id": "0c4dcf6c-e9ee-462b-aa2b-2c8988e9915c",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "CORRECT",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Zhengyuan Shi",
+          "Min Li",
+          "Yi Liu",
+          "Sadaf Khan",
+          "Junhua Huang",
+          "Hui-Ling Zhen",
+          "Mingxuan Yuan",
+          "Qiang Xu"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "SATformer: Transformer-Based UNSAT Core Learning",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "year": {
+        "status": "CONFLICT",
+        "value": "",
+        "issues": [
+          "The landing page dates the paper to 2022/09/02, while the site-provided BibTeX export gives year 2024."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "Neither supplied artifact provides a venue value."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export"
+        ]
+      }
+    },
+    "discrepancies": [
+      "Year conflict: landing_page reports 2022/09/02, while citation_export reports 2024."
+    ],
+    "prompt_injection_detected": false,
+    "notes": "All eight authors match with no missing, added, or reordered authors; the landing page prints names surname-first, while the BibTeX export prints them given-name-first."
+  }
+}

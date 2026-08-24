@@ -1,0 +1,15 @@
+{
+  "reference_id": "REF-G4SATBENCH",
+  "citation_key": "li2024g4satbench",
+  "entry_type": "article",
+  "authors": [
+    "Z. Li",
+    "J. Guo",
+    "X. Si"
+  ],
+  "title": "G4SATBench: Benchmarking and Advancing SAT Solving with Graph Neural Networks",
+  "venue": "TMLR",
+  "year": "2024",
+  "arxiv_id": "2309.16941",
+  "openreview_note": "OpenReview note 7VB5db72lr is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+}

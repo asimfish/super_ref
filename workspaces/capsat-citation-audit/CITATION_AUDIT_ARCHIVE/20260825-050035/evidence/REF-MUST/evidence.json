@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "batch_id": "4cae8159-c46e-4179-8c90-e4d67891bd8c",
+  "reference_id": "REF-MUST",
+  "reference_sha256": "cdc13e3879bf4e445cffe7054689b24c27f994ec7476761b9a1569b37f6ca007",
+  "adapter": "openreview",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T20:55:09+00:00",
+  "status": "BLOCKED",
+  "errors": [
+    "landing_page: actual network peer is not public: 127.0.0.1",
+    "registry_openreview: failed to fetch registry_openreview from https://api2.openreview.net/notes?id=ZAKkiVxiAM9: HTTP Error 403: Forbidden",
+    "paper_pdf: no candidate produced a valid PDF; https://openreview.net/pdf?id=ZAKkiVxiAM9: failed to fetch paper_pdf from https://openreview.net/pdf?id=ZAKkiVxiAM9: HTTP Error 403: Forbidden",
+    "source binding: OpenReview registry note id does not match the audited forum id",
+    "missing required source family: paper_pdf",
+    "missing required source family: landing_page",
+    "missing required source family: citation_export",
+    "missing required source family: registry_metadata"
+  ],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [],
+  "observations": [],
+  "discoveries": {
+    "pdf_candidates": [
+      "https://openreview.net/pdf?id=ZAKkiVxiAM9"
+    ]
+  },
+  "source_binding": {
+    "adapter": "openreview",
+    "status": "BLOCKED",
+    "identifier_type": "openreview",
+    "identifier": "ZAKkiVxiAM9",
+    "checks": {
+      "registry_openreview": "",
+      "citation_export_note": ""
+    },
+    "errors": [
+      "OpenReview registry note id does not match the audited forum id"
+    ]
+  }
+}

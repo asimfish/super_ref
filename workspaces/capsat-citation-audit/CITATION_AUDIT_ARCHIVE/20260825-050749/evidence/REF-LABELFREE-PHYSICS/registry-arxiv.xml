@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/4g1KkrrQDBo7JvnTjmFkSxkVoeE</id>
+  <title>arXiv Query: search_query=&amp;id_list=1609.05566&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-24T20:55:03Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=1609.05566" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1609.05566v1</id>
+    <title>Label-Free Supervision of Neural Networks with Physics and Domain Knowledge</title>
+    <updated>2016-09-18T23:16:14Z</updated>
+    <link href="https://arxiv.org/abs/1609.05566v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1609.05566v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In many machine learning applications, labeled data is scarce and obtaining more labels is expensive. We introduce a new approach to supervising neural networks by specifying constraints that should hold over the output space, rather than direct examples of input-output pairs. These constraints are derived from prior domain knowledge, e.g., from known laws of physics. We demonstrate the effectiveness of this approach on real world and simulated computer vision tasks. We are able to train a convolutional neural network to detect and track objects without any labeled examples. Our approach can significantly reduce the need for labeled training data, but introduces new challenges for encoding prior knowledge into appropriate loss functions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-09-18T23:16:14Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Russell Stewart</name>
+    </author>
+    <author>
+      <name>Stefano Ermon</name>
+    </author>
+  </entry>
+</feed>

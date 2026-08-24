@@ -1,0 +1,18 @@
+{
+  "workspace_purpose": "Real-data citation verification for the cap-sat rebuttal (NeurIPS 2026 submission 19389, forum 3XJrmmUpc2). Reference claims transcribed verbatim from 实际rebuttal/cap-sat/OPENREVIEW_REBUTTAL_FULL.md.",
+  "citation_audit": {
+    "network": {
+      "resolver_mode": "trusted_proxy",
+      "allowed_domains": [
+        "arxiv.org",
+        "openreview.net",
+        "doi.org",
+        "crossref.org",
+        "semanticscholar.org",
+        "dl.acm.org",
+        "aaai.org"
+      ]
+    }
+  },
+  "trusted_proxy_justification": "This machine routes all egress through its own local relay at 127.0.0.1:7890 (system-wide HTTP/HTTPS/SOCKS proxy, see scutil --proxy). Per docs/citation-verification.md section 6, strict DNS is unusable in relay-only environments; trusted_proxy is enabled with an explicit allowlist restricted to the fixed authority routes (arXiv, OpenReview, DOI/Crossref, Semantic Scholar secondary) plus dl.acm.org, which is the DOI landing redirect target for REF-SIMONSPECK."
+}

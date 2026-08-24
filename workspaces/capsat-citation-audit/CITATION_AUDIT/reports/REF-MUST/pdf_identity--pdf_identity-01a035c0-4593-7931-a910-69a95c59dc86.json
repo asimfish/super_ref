@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-MUST",
+  "role": "pdf_identity",
+  "agent_id": "pdf_identity-01a035c0-4593-7931-a910-69a95c59dc86",
+  "recorded_at": "2026-08-24T21:50:02+00:00",
+  "packet_sha256": "f9afabecc67b0745258c14109a01efc3d5577760f5fe40362732b9496c075efe",
+  "evidence_sha256": "c624f30f209d813df34ee8076121e0b6be8849d5790b43c93c3316734972ce8a",
+  "body_sha256": "9812a31af8cbee08362ef6367607fb62d80dc0de709476327b77819164f91302",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "324bd9adfff66739e9a94d7a52738f73a3b50eae2e123cc5e4d55506b2cd10b8",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035c0-4593-7931-a910-69a95c59dc86",
+    "invocation_id": "cc5740a4-3750-4da6-b014-6d247a84e435",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Junnan Li",
+          "Silvio Savarese",
+          "Steven Hoi"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "Masked Unsupervised Self-Training for Label Free Image Classification",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "year": {
+        "status": "CORRECT",
+        "value": "2023",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "venue": {
+        "status": "CORRECT",
+        "value": "ICLR 2023",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "The PDF identity page explicitly prints the title, authors in this order, and “Published as a conference paper at ICLR 2023.”"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "citation_key": "stewart2017labelfree",
+  "entry_type": "inproceedings",
+  "authors": [
+    "R. Stewart",
+    "S. Ermon"
+  ],
+  "title": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+  "venue": "AAAI",
+  "year": "2017",
+  "doi": "10.1609/aaai.v31i1.10934",
+  "route_note": "AAAI 2017 is open access on ojs.aaai.org with a Crossref-registered DOI; the DOI route is the venue-of-record authority and can attest venue/year, unlike the arXiv preprint route."
+}

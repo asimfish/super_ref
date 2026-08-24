@@ -1,0 +1,17 @@
+{
+  "reference_id": "REF-IMITSAT",
+  "citation_key": "zhang2026imitsat",
+  "entry_type": "inproceedings",
+  "authors": [
+    "Zewei Zhang",
+    "Huan Liu",
+    "Yuanhao Yu",
+    "Jun Chen",
+    "Xiangyu Xu"
+  ],
+  "title": "Boolean Satisfiability via Imitation Learning",
+  "venue": "ICLR",
+  "year": "2026",
+  "arxiv_id": "2509.25411",
+  "openreview_note": "OpenReview note LNqWbY5iIf is the venue-of-record copy, but openreview.net now enforces browser challenge verification (ChallengeRequiredError, HTTP 403) on unauthenticated API/PDF routes, so the arXiv authority route is used as the verifiable official alternative per docs/citation-verification.md section 8."
+}

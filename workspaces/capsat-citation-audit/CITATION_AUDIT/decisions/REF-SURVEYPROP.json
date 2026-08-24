@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-SURVEYPROP",
+  "created_at": "2026-08-24T22:01:14+00:00",
+  "status": "BLOCKED",
+  "original_reference_sha256": "a659230a37f7921df0829bac2201d69a01c3b5cae0bd584e952450a9dab41f44",
+  "evidence_sha256": "d3ff56f04a031b7f084a7bf1117f02bd11bfe557cd9fb70bd9ad3adcb51918f4",
+  "canonical_fields": {},
+  "field_checks": {
+    "authors": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Braunstein, A.",
+            "Mezard, M.",
+            "Zecchina, R."
+          ],
+          "normalized": [
+            "a braunstein",
+            "m mezard",
+            "r zecchina"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "A. Braunstein",
+            "M. Mezard",
+            "R. Zecchina"
+          ],
+          "normalized": [
+            "a braunstein",
+            "m mezard",
+            "r zecchina"
+          ]
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": [
+            "A. Braunstein",
+            "M. Mezard",
+            "R. Zecchina"
+          ],
+          "normalized": [
+            "a braunstein",
+            "m mezard",
+            "r zecchina"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c1-d71e-7572-87c0-f2d822295300",
+          "value": [
+            "A. Braunstein",
+            "M. Mézard",
+            "R. Zecchina"
+          ],
+          "normalized": [
+            "a braunstein",
+            "m mezard",
+            "r zecchina"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c1-ea23-7801-be8d-6025806eb4f6",
+          "value": [
+            "Braunstein, A.",
+            "Mezard, M.",
+            "Zecchina, R."
+          ],
+          "normalized": [
+            "a braunstein",
+            "m mezard",
+            "r zecchina"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-e9d1-7353-bdf9-118a5fc1978b",
+          "value": [
+            "A. Braunstein",
+            "M. Mezard",
+            "R. Zecchina"
+          ],
+          "normalized": [
+            "a braunstein",
+            "m mezard",
+            "r zecchina"
+          ]
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify authors (MATCH)"
+      ]
+    },
+    "title": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "Survey propagation: an algorithm for satisfiability",
+          "normalized": "survey propagation an algorithm for satisfiability"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "Survey propagation: an algorithm for satisfiability",
+          "normalized": "survey propagation an algorithm for satisfiability"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "Survey propagation: an algorithm for satisfiability",
+          "normalized": "survey propagation an algorithm for satisfiability"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c1-d71e-7572-87c0-f2d822295300",
+          "value": "Survey propagation: an algorithm for satisfiability",
+          "normalized": "survey propagation an algorithm for satisfiability"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c1-ea23-7801-be8d-6025806eb4f6",
+          "value": "Survey propagation: an algorithm for satisfiability",
+          "normalized": "survey propagation an algorithm for satisfiability"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-e9d1-7353-bdf9-118a5fc1978b",
+          "value": "Survey propagation: an algorithm for satisfiability",
+          "normalized": "survey propagation an algorithm for satisfiability"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify title (MATCH)"
+      ]
+    },
+    "year": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2002/12/04",
+          "normalized": "2002"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2006",
+          "normalized": "2006"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "2002-12-04T17:08:29Z",
+          "normalized": "2002"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-e9d1-7353-bdf9-118a5fc1978b",
+          "value": "2002",
+          "normalized": "2002"
+        }
+      ],
+      "errors": [
+        "source conflict for year: 2002: ['landing_page', 'registry_arxiv']; 2006: ['citation_export']",
+        "role website_citation did not verify year (CONFLICT)",
+        "role adversarial_provenance did not verify year (CONFLICT)"
+      ]
+    },
+    "venue": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c1-e9d1-7353-bdf9-118a5fc1978b",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "errors": [
+        "venue has fewer than two agreeing source families",
+        "role website_citation did not verify venue (UNVERIFIED)",
+        "role adversarial_provenance did not verify venue (UNVERIFIED)"
+      ]
+    }
+  },
+  "discrepancies": [],
+  "blocking_errors": [
+    "role adversarial_provenance did not verify authors (MATCH)",
+    "role adversarial_provenance did not verify title (MATCH)",
+    "source conflict for year: 2002: ['landing_page', 'registry_arxiv']; 2006: ['citation_export']",
+    "role website_citation did not verify year (CONFLICT)",
+    "role adversarial_provenance did not verify year (CONFLICT)",
+    "venue has fewer than two agreeing source families",
+    "role website_citation did not verify venue (UNVERIFIED)",
+    "role adversarial_provenance did not verify venue (UNVERIFIED)"
+  ],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a035c1-c92e-7733-bd27-fbcfa10d4602",
+      "path": "reports/REF-SURVEYPROP/adversarial_provenance--adversarial_provenance-01a035c1-c92e-7733-bd27-fbcfa10d4602.json",
+      "sha256": "9b0433a5f51594fbab1eaece2395431f931fd5f8dfe87303d91c75365f15a630",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "375918d07a2816de81055c91d0610c199b1a2a0e9e9619e2396d96524ff5fc97",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-c92e-7733-bd27-fbcfa10d4602",
+        "invocation_id": "f60c0a80-0704-4f48-a4b0-d6631cd62598",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a035c1-d71e-7572-87c0-f2d822295300",
+      "path": "reports/REF-SURVEYPROP/pdf_identity--pdf_identity-01a035c1-d71e-7572-87c0-f2d822295300.json",
+      "sha256": "950bd722f8345dd70f9493d65778f1fb1474156753b7a6fb6e2de845ed4859c5",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "8fb8b481a9d0c58dd514ed136f7d1a32d534b3fc8fbdf3d1e0c62778c432572a",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-d71e-7572-87c0-f2d822295300",
+        "invocation_id": "7b459fec-1055-476b-84b1-4d03a7c343d4",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a035c1-e9d1-7353-bdf9-118a5fc1978b",
+      "path": "reports/REF-SURVEYPROP/registry_crosscheck--registry_crosscheck-01a035c1-e9d1-7353-bdf9-118a5fc1978b.json",
+      "sha256": "69cb9cfe3675969f8a62d32bbec59123c8621f82c31c98b58b6b63b7ed9f3f55",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "f522cbd3ce211c70d54a5cbc75b8293d0a3b2923f415831492dcd4429002e6a2",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-e9d1-7353-bdf9-118a5fc1978b",
+        "invocation_id": "889226b4-cb54-4200-b251-bdbf495ec158",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a035c1-ea23-7801-be8d-6025806eb4f6",
+      "path": "reports/REF-SURVEYPROP/website_citation--website_citation-01a035c1-ea23-7801-be8d-6025806eb4f6.json",
+      "sha256": "f0031d5230c38b47bbd1632ba7def0e900b8d784a1604320b1c94e2376c3a33a",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "96d902b7e3956a3f0dca4b09aa655f5617cd99abd4b6f79fcc2e7e028873fffe",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c1-ea23-7801-be8d-6025806eb4f6",
+        "invocation_id": "dbd4d39f-1490-4dbb-a637-7b912bd32248",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": false
+}

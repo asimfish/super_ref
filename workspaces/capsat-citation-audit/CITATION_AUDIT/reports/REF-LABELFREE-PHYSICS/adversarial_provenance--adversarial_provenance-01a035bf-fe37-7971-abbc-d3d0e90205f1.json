@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "role": "adversarial_provenance",
+  "agent_id": "adversarial_provenance-01a035bf-fe37-7971-abbc-d3d0e90205f1",
+  "recorded_at": "2026-08-24T21:49:54+00:00",
+  "packet_sha256": "288e9d1cc881ac5d4a803fcf2273d8733f94f1b73e3c781ba74dba4d1e3e1f8f",
+  "evidence_sha256": "dddb465cf910d733b07284c80d499747b1375401512e3a3a9dcd36d50bbf7165",
+  "body_sha256": "27305616a1d7a150fc15db1ae82ac804cc2a882526aef5f49264f11dc08f50dc",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "c2c5692378d7df40b92e2823f811d0b0ab8e00d24ab408f05938f04ba643b3ef",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035bf-fe37-7971-abbc-d3d0e90205f1",
+    "invocation_id": "2b6805bc-2fa2-4ce6-9434-26b753440d40",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "MATCH",
+        "value": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_crossref"
+        ]
+      },
+      "title": {
+        "status": "MATCH",
+        "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_crossref"
+        ]
+      },
+      "year": {
+        "status": "MATCH",
+        "value": "2017",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_crossref"
+        ]
+      },
+      "venue": {
+        "status": "MATCH",
+        "value": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "issues": [
+          "The original reference uses the equivalent abbreviated venue name \"AAAI\"."
+        ],
+        "evidence_artifact_ids": [
+          "landing_page",
+          "citation_export",
+          "registry_crossref"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "Publisher landing-page metadata, the citation export, and Crossref registry metadata independently agree on all required bibliographic fields. The abbreviated original author names preserve the exact verified order and align by surname and initials with the complete names."
+  }
+}

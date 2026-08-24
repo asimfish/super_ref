@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "reference_id": "REF-LABELFREE-PHYSICS",
+  "role": "pdf_identity",
+  "agent_id": "pdf_identity-01a03595-8f7d-7d11-9487-4874f8745c98",
+  "recorded_at": "2026-08-24T21:03:34+00:00",
+  "packet_sha256": "81d6268782fd9930bdf5a3e9ae826c7e1b3a129aeef141924af07862335aaf04",
+  "evidence_sha256": "1d876473dec7e607f35b97576654546266081f82f3f67b413521fef45d2f9312",
+  "body_sha256": "1f52d1bc63ac75baac581aae6578098acc620d0ef91abb6119ebbb4dd6280eac",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "685955f3db350323a78a46c908a488db569fd0cfeb833e0ca29210bc00ab42a3",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a03595-8f7d-7d11-9487-4874f8745c98",
+    "invocation_id": "1198d826-ffad-47df-ae02-2f2e42202fc0",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Russell Stewart",
+          "Stefano Ermon"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "Label-Free Supervision of Neural Networks with Physics and Domain Knowledge",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "year": {
+        "status": "CORRECT",
+        "value": "2017",
+        "issues": [
+          "The PDF also prints the arXiv v1 date as 18 Sep 2016; 2017 is the explicitly printed copyright year."
+        ],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      },
+      "venue": {
+        "status": "UNVERIFIED",
+        "value": "",
+        "issues": [
+          "The PDF identifies the Association for the Advancement of Artificial Intelligence as the copyright holder but does not explicitly print a publication venue on the supplied identity pages."
+        ],
+        "evidence_artifact_ids": [
+          "paper_first_pages"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "Author order and title were transcribed from the supplied PDF-derived identity-page text."
+  }
+}

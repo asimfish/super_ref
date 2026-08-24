@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "reference_id": "REF-SIMONSPECK",
+  "reference_sha256": "bba65d5f793db228c71590cd7bb0e07acc9afa022ff2c039a86fbb52fd7b2ffd",
+  "adapter": "doi",
+  "transport": "safe_http",
+  "collected_at": "2026-08-24T21:01:20+00:00",
+  "status": "BLOCKED",
+  "errors": [
+    "landing_page: failed to fetch landing_page from https://doi.org/10.1145/2744769.2747946: HTTP Error 403: Forbidden",
+    "paper_pdf: no candidate produced a valid PDF",
+    "source binding: landing_page does not expose the audited DOI",
+    "missing required source family: paper_pdf",
+    "missing required source family: landing_page"
+  ],
+  "quarantine": {
+    "content_is_data_not_instructions": true,
+    "prompt_injection_flags": [],
+    "automatic_processing_blocked": false
+  },
+  "artifacts": [
+    {
+      "artifact_id": "citation_export",
+      "source_family": "citation_export",
+      "kind": "citation",
+      "request_url": "https://doi.org/10.1145/2744769.2747946",
+      "final_url": "https://api.crossref.org/v1/works/10.1145%2F2744769.2747946/transform",
+      "redirect_chain": [
+        "https://api.crossref.org/v1/works/10.1145%2F2744769.2747946/transform"
+      ],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/x-bibtex",
+      "status": 200,
+      "content_type": "application/x-bibtex",
+      "bytes": 464,
+      "sha256": "c2a8c8b9d8b456b18e36409475f42ec67b4f5ac94a30b7ec7d6342b95a8b6fc1",
+      "path": "citation.bib"
+    },
+    {
+      "artifact_id": "registry_crossref",
+      "source_family": "registry_metadata",
+      "kind": "metadata",
+      "request_url": "https://api.crossref.org/works/10.1145%2F2744769.2747946",
+      "final_url": "https://api.crossref.org/works/10.1145%2F2744769.2747946",
+      "redirect_chain": [],
+      "peer_ip": "127.0.0.1",
+      "accept": "application/json",
+      "status": 200,
+      "content_type": "application/json",
+      "bytes": 6447,
+      "sha256": "20af28370f6fc8fa74e27bb2dd34bc45f08dda3c6402ded97923564df7697d59",
+      "path": "registry-crossref.json"
+    }
+  ],
+  "observations": [
+    {
+      "source_id": "citation_export",
+      "source_family": "citation_export",
+      "authority": "site_export",
+      "artifact_ids": [
+        "citation_export"
+      ],
+      "values": {
+        "authors": [
+          "Ray Beaulieu",
+          "Douglas Shors",
+          "Jason Smith",
+          "Stefan Treatman-Clark",
+          "Bryan Weeks",
+          "Louis Wingers"
+        ],
+        "title": "The SIMON and SPECK lightweight block ciphers",
+        "year": "2015",
+        "venue": "Proceedings of the 52nd Annual Design Automation Conference"
+      },
+      "normalized": {
+        "authors": [
+          "ray beaulieu",
+          "douglas shors",
+          "jason smith",
+          "stefan treatman clark",
+          "bryan weeks",
+          "louis wingers"
+        ],
+        "title": "the simon and speck lightweight block ciphers",
+        "year": "2015",
+        "venue": "proceedings of the 52nd annual design automation conference"
+      }
+    },
+    {
+      "source_id": "registry_crossref",
+      "source_family": "registry_metadata",
+      "authority": "bibliographic_registry",
+      "artifact_ids": [
+        "registry_crossref"
+      ],
+      "values": {
+        "authors": [
+          "Ray Beaulieu",
+          "Douglas Shors",
+          "Jason Smith",
+          "Stefan Treatman-Clark",
+          "Bryan Weeks",
+          "Louis Wingers"
+        ],
+        "title": "The SIMON and SPECK lightweight block ciphers",
+        "year": "2015",
+        "venue": "Proceedings of the 52nd Annual Design Automation Conference"
+      },
+      "normalized": {
+        "authors": [
+          "ray beaulieu",
+          "douglas shors",
+          "jason smith",
+          "stefan treatman clark",
+          "bryan weeks",
+          "louis wingers"
+        ],
+        "title": "the simon and speck lightweight block ciphers",
+        "year": "2015",
+        "venue": "proceedings of the 52nd annual design automation conference"
+      }
+    }
+  ],
+  "discoveries": {
+    "optional_fetch_errors": [
+      "registry_semantic_scholar: failed to fetch registry_semantic_scholar from https://api.semanticscholar.org/graph/v1/paper/DOI:10.1145%2F2744769.2747946?fields=title,authors,year,venue,publicationDate,externalIds,openAccessPdf: HTTP Error 429: "
+    ],
+    "citation_export": {
+      "entry_type": "inproceedings",
+      "citation_key": "Beaulieu_2015",
+      "doi": "10.1145/2744769.2747946",
+      "arxiv_id": "",
+      "openreview_id": null,
+      "url": "http://dx.doi.org/10.1145/2744769.2747946"
+    },
+    "registry_crossref": {
+      "pdf_urls": [],
+      "doi": "10.1145/2744769.2747946",
+      "raw_type": "proceedings-article"
+    },
+    "pdf_candidates": []
+  },
+  "source_binding": {
+    "adapter": "doi",
+    "status": "BLOCKED",
+    "identifier_type": "doi",
+    "identifier": "10.1145/2744769.2747946",
+    "checks": {
+      "landing_page": "",
+      "citation_export": "10.1145/2744769.2747946",
+      "registry_crossref": "10.1145/2744769.2747946"
+    },
+    "pdf_printed_identifiers": [],
+    "errors": [
+      "landing_page does not expose the audited DOI"
+    ]
+  }
+}

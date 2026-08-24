@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-SATFORMER",
+  "created_at": "2026-08-24T22:01:14+00:00",
+  "status": "BLOCKED",
+  "original_reference_sha256": "49c8cede42396f81683dd326983fed61d18de01caffa3c22d945804b061b46f9",
+  "evidence_sha256": "f4a31c98e70d18f7d691c595baa29c31f650042288bd87544362c6b3a3ee0dab",
+  "canonical_fields": {},
+  "field_checks": {
+    "authors": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": [
+            "Shi, Zhengyuan",
+            "Li, Min",
+            "Liu, Yi",
+            "Khan, Sadaf",
+            "Huang, Junhua",
+            "Zhen, Hui-Ling",
+            "Yuan, Mingxuan",
+            "Xu, Qiang"
+          ],
+          "normalized": [
+            "zhengyuan shi",
+            "min li",
+            "yi liu",
+            "sadaf khan",
+            "junhua huang",
+            "hui ling zhen",
+            "mingxuan yuan",
+            "qiang xu"
+          ]
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": [
+            "Zhengyuan Shi",
+            "Min Li",
+            "Yi Liu",
+            "Sadaf Khan",
+            "Junhua Huang",
+            "Hui-Ling Zhen",
+            "Mingxuan Yuan",
+            "Qiang Xu"
+          ],
+          "normalized": [
+            "zhengyuan shi",
+            "min li",
+            "yi liu",
+            "sadaf khan",
+            "junhua huang",
+            "hui ling zhen",
+            "mingxuan yuan",
+            "qiang xu"
+          ]
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": [
+            "Zhengyuan Shi",
+            "Min Li",
+            "Yi Liu",
+            "Sadaf Khan",
+            "Junhua Huang",
+            "Hui-Ling Zhen",
+            "Mingxuan Yuan",
+            "Qiang Xu"
+          ],
+          "normalized": [
+            "zhengyuan shi",
+            "min li",
+            "yi liu",
+            "sadaf khan",
+            "junhua huang",
+            "hui ling zhen",
+            "mingxuan yuan",
+            "qiang xu"
+          ]
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c0-7e69-7ca0-9a41-1700980afe50",
+          "value": [
+            "Zhengyuan Shi",
+            "Min Li",
+            "Yi Liu",
+            "Sadaf Khan",
+            "Junhua Huang",
+            "Hui-Ling Zhen",
+            "Mingxuan Yuan",
+            "Qiang Xu"
+          ],
+          "normalized": [
+            "zhengyuan shi",
+            "min li",
+            "yi liu",
+            "sadaf khan",
+            "junhua huang",
+            "hui ling zhen",
+            "mingxuan yuan",
+            "qiang xu"
+          ]
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c0-9d7d-7c53-ae47-30d885bb668c",
+          "value": [
+            "Zhengyuan Shi",
+            "Min Li",
+            "Yi Liu",
+            "Sadaf Khan",
+            "Junhua Huang",
+            "Hui-Ling Zhen",
+            "Mingxuan Yuan",
+            "Qiang Xu"
+          ],
+          "normalized": [
+            "zhengyuan shi",
+            "min li",
+            "yi liu",
+            "sadaf khan",
+            "junhua huang",
+            "hui ling zhen",
+            "mingxuan yuan",
+            "qiang xu"
+          ]
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-8539-7a63-8be3-35eecf5e0037",
+          "value": [
+            "Zhengyuan Shi",
+            "Min Li",
+            "Yi Liu",
+            "Sadaf Khan",
+            "Junhua Huang",
+            "Hui-Ling Zhen",
+            "Mingxuan Yuan",
+            "Qiang Xu"
+          ],
+          "normalized": [
+            "zhengyuan shi",
+            "min li",
+            "yi liu",
+            "sadaf khan",
+            "junhua huang",
+            "hui ling zhen",
+            "mingxuan yuan",
+            "qiang xu"
+          ]
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify authors (MATCH)"
+      ]
+    },
+    "title": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "SATformer: Transformer-Based UNSAT Core Learning",
+          "normalized": "satformer transformer based unsat core learning"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "SATformer: Transformer-Based UNSAT Core Learning",
+          "normalized": "satformer transformer based unsat core learning"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "SATformer: Transformer-Based UNSAT Core Learning",
+          "normalized": "satformer transformer based unsat core learning"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "pdf_identity",
+          "agent_id": "pdf_identity-01a035c0-7e69-7ca0-9a41-1700980afe50",
+          "value": "SATformer: Transformer-Based UNSAT Core Learning",
+          "normalized": "satformer transformer based unsat core learning"
+        },
+        {
+          "role": "website_citation",
+          "agent_id": "website_citation-01a035c0-9d7d-7c53-ae47-30d885bb668c",
+          "value": "SATformer: Transformer-Based UNSAT Core Learning",
+          "normalized": "satformer transformer based unsat core learning"
+        },
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-8539-7a63-8be3-35eecf5e0037",
+          "value": "SATformer: Transformer-Based UNSAT Core Learning",
+          "normalized": "satformer transformer based unsat core learning"
+        }
+      ],
+      "errors": [
+        "role adversarial_provenance did not verify title (MATCH)"
+      ]
+    },
+    "year": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "landing_page",
+          "source_family": "landing_page",
+          "value": "2022/09/02",
+          "normalized": "2022"
+        },
+        {
+          "source_id": "citation_export",
+          "source_family": "citation_export",
+          "value": "2024",
+          "normalized": "2024"
+        },
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "2022-09-02T11:17:39Z",
+          "normalized": "2022"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-8539-7a63-8be3-35eecf5e0037",
+          "value": "2022",
+          "normalized": "2022"
+        }
+      ],
+      "errors": [
+        "source conflict for year: 2022: ['landing_page', 'registry_arxiv']; 2024: ['citation_export']",
+        "role website_citation did not verify year (CONFLICT)",
+        "role adversarial_provenance did not verify year (CONFLICT)"
+      ]
+    },
+    "venue": {
+      "status": "BLOCKED",
+      "source_candidates": [
+        {
+          "source_id": "registry_arxiv",
+          "source_family": "registry_metadata",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "agent_candidates": [
+        {
+          "role": "registry_crosscheck",
+          "agent_id": "registry_crosscheck-01a035c0-8539-7a63-8be3-35eecf5e0037",
+          "value": "arXiv",
+          "normalized": "arxiv"
+        }
+      ],
+      "errors": [
+        "venue has fewer than two agreeing source families",
+        "role website_citation did not verify venue (UNVERIFIED)",
+        "role adversarial_provenance did not verify venue (UNVERIFIED)"
+      ]
+    }
+  },
+  "discrepancies": [],
+  "blocking_errors": [
+    "role adversarial_provenance did not verify authors (MATCH)",
+    "role adversarial_provenance did not verify title (MATCH)",
+    "source conflict for year: 2022: ['landing_page', 'registry_arxiv']; 2024: ['citation_export']",
+    "role website_citation did not verify year (CONFLICT)",
+    "role adversarial_provenance did not verify year (CONFLICT)",
+    "venue has fewer than two agreeing source families",
+    "role website_citation did not verify venue (UNVERIFIED)",
+    "role adversarial_provenance did not verify venue (UNVERIFIED)"
+  ],
+  "reports": [
+    {
+      "role": "adversarial_provenance",
+      "agent_id": "adversarial_provenance-01a035c0-7e59-7511-b9af-eb36431fdd68",
+      "path": "reports/REF-SATFORMER/adversarial_provenance--adversarial_provenance-01a035c0-7e59-7511-b9af-eb36431fdd68.json",
+      "sha256": "7153373a200268b6fd1abd86996be98a5588b21fa71a8193864b70e1d81da2c8",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "2f0a08f47498a5fec94f1a2ca4a972004c3a6963ed38d3791760ef9586db3233",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-7e59-7511-b9af-eb36431fdd68",
+        "invocation_id": "068aeda2-7b2b-4551-95d3-615a92c185aa",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "pdf_identity",
+      "agent_id": "pdf_identity-01a035c0-7e69-7ca0-9a41-1700980afe50",
+      "path": "reports/REF-SATFORMER/pdf_identity--pdf_identity-01a035c0-7e69-7ca0-9a41-1700980afe50.json",
+      "sha256": "63afb1eed352a001b712124b785e41348603ca6ae0d208dc48a108e6c38dc5c1",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "62a8d1648e22e135ce90fe6967b93fd069b7c08589517f2c01bb9263288f7b9e",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-7e69-7ca0-9a41-1700980afe50",
+        "invocation_id": "afafb135-14a1-4f02-a491-303e72c611a3",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "registry_crosscheck",
+      "agent_id": "registry_crosscheck-01a035c0-8539-7a63-8be3-35eecf5e0037",
+      "path": "reports/REF-SATFORMER/registry_crosscheck--registry_crosscheck-01a035c0-8539-7a63-8be3-35eecf5e0037.json",
+      "sha256": "4363b51a08eda63b5bb5a7b2d801eb71fb141c31d4c82502754c89f14f69e3cd",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "62c8611e150cf8868223a2b52aed59ecb86e44417faa244295c2f7bb06c17814",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-8539-7a63-8be3-35eecf5e0037",
+        "invocation_id": "b30d7719-6d3c-402b-b215-7f9437530375",
+        "environment_policy": "allowlist"
+      }
+    },
+    {
+      "role": "website_citation",
+      "agent_id": "website_citation-01a035c0-9d7d-7c53-ae47-30d885bb668c",
+      "path": "reports/REF-SATFORMER/website_citation--website_citation-01a035c0-9d7d-7c53-ae47-30d885bb668c.json",
+      "sha256": "34af508f140b8cccb32c583c288b7cf4d360680ea42dc2779c7ca31e428fa345",
+      "runner_attestation": {
+        "type": "codex_cli",
+        "process_isolated": true,
+        "packet_only": true,
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "packet_embedded": true,
+        "user_config_ignored": true,
+        "project_rules_ignored": true,
+        "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+        "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+        "prompt_sha256": "ed79b4263f0e14046f8b29afba1f90295033661845144b6c5b136c49b4419ca7",
+        "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+        "session_id": "01a035c0-9d7d-7c53-ae47-30d885bb668c",
+        "invocation_id": "3cd3e2a6-6476-420c-9111-6c1d4713a675",
+        "environment_policy": "allowlist"
+      }
+    }
+  ],
+  "approval_required_for_correction": false
+}

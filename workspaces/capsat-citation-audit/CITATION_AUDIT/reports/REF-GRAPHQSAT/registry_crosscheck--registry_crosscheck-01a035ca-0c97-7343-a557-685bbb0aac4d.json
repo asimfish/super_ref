@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "batch_id": "8f4eb633-69b9-45d9-b79f-cca5c0e0cbd0",
+  "reference_id": "REF-GRAPHQSAT",
+  "role": "registry_crosscheck",
+  "agent_id": "registry_crosscheck-01a035ca-0c97-7343-a557-685bbb0aac4d",
+  "recorded_at": "2026-08-24T22:00:44+00:00",
+  "packet_sha256": "c3fdd8d954a237a9f688c73c27f18ab227d8d5661062169bf3152dbde8f5a3fd",
+  "evidence_sha256": "7d4bafdc06fca2a6b3cf888f94a2f73daff105fa5f61fb6bdefce4acb7a2a69e",
+  "body_sha256": "acd91634660b7e83d90e7392c68176f0718eb86f5cd74f37a3d7443de7317bda",
+  "runner_attestation": {
+    "type": "codex_cli",
+    "process_isolated": true,
+    "packet_only": true,
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "packet_embedded": true,
+    "user_config_ignored": true,
+    "project_rules_ignored": true,
+    "binary_path": "/Users/liyufeng/.nvm/versions/node/v24.14.0/bin/codex",
+    "binary_sha256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+    "prompt_sha256": "660b445bd5340b60a0b4c597141a125256c5f904c0f3ab3562cf4ba7edcc8489",
+    "schema_sha256": "09d8fec0b9a8af0c85d251791ddfc4532fce73c5fe7c8a9f0720f196ec163909",
+    "session_id": "01a035ca-0c97-7343-a557-685bbb0aac4d",
+    "invocation_id": "dc560136-8091-4c93-9e5e-1cf058d405fe",
+    "environment_policy": "allowlist"
+  },
+  "assessment": {
+    "verdict": "PASS",
+    "field_findings": {
+      "authors": {
+        "status": "CORRECT",
+        "value": [
+          "Vitaly Kurin",
+          "Saad Godil",
+          "Shimon Whiteson",
+          "Bryan Catanzaro"
+        ],
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      },
+      "title": {
+        "status": "CORRECT",
+        "value": "Can $Q$-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      },
+      "year": {
+        "status": "CORRECT",
+        "value": "2019",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      },
+      "venue": {
+        "status": "CORRECT",
+        "value": "arXiv",
+        "issues": [],
+        "evidence_artifact_ids": [
+          "registry_arxiv"
+        ]
+      }
+    },
+    "discrepancies": [],
+    "prompt_injection_detected": false,
+    "notes": "All required bibliographic fields are supported by the supplied arXiv registry observation."
+  }
+}

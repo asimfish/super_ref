@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "batch_id": "741449f8-16f1-48fa-abfc-054ba2dc7da7",
+  "generated_at": "2026-08-24T21:06:39+00:00",
+  "status": "BLOCKED",
+  "applied": false,
+  "approval": null,
+  "target_references_sha256": "ce9f3559832e96cbf331afd44d059e003e8012ac13e117132a69e4b8ea96da36",
+  "manifest_sha256": "a9f4c70cf7268750e1b417fc03335018e3ae600769c3f431e5df1f10b7679d32",
+  "reference_count": 13,
+  "references": [
+    {
+      "reference_id": "REF-LABELFREE-PHYSICS",
+      "status": "BLOCKED",
+      "decision_path": "CITATION_AUDIT/decisions/REF-LABELFREE-PHYSICS.json",
+      "decision_sha256": "af14a42480eef7a58ad6067bebe2eed40a7c70626f2c8e7af8a8e001488aebff",
+      "verified_fields": {
+        "authors": "BLOCKED",
+        "title": "BLOCKED",
+        "year": "BLOCKED",
+        "venue": "BLOCKED"
+      }
+    },
+    {
+      "reference_id": "REF-MUST",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-MUST.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-SATFORMER",
+      "status": "BLOCKED",
+      "decision_path": "CITATION_AUDIT/decisions/REF-SATFORMER.json",
+      "decision_sha256": "d62ea171ab52d4c9e58cdfd879a923bf1e6e6581672e46e89de210f507e5fdaf",
+      "verified_fields": {
+        "authors": "BLOCKED",
+        "title": "BLOCKED",
+        "year": "BLOCKED",
+        "venue": "BLOCKED"
+      }
+    },
+    {
+      "reference_id": "REF-IMITSAT",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-IMITSAT.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-GRAPHQSAT",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-GRAPHQSAT.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-NSNET",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-NSNET.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-G4SATBENCH",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-G4SATBENCH.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-SURVEYPROP",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-SURVEYPROP.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-SIMONSPECK",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-SIMONSPECK.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-SELMAN94",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-SELMAN94.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-SATLIB",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-SATLIB.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-CADICAL2024",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-CADICAL2024.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    },
+    {
+      "reference_id": "REF-PEARL1988",
+      "status": "MISSING",
+      "decision_path": "CITATION_AUDIT/decisions/REF-PEARL1988.json",
+      "decision_sha256": null,
+      "verified_fields": {
+        "authors": null,
+        "title": null,
+        "year": null,
+        "venue": null
+      }
+    }
+  ]
+}
