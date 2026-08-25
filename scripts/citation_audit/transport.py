@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import datetime
+import email.utils
 import hashlib
 import ipaddress
 import json
@@ -15,12 +17,59 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import zlib
-from dataclasses import dataclass
-from typing import Dict, Mapping, Protocol
+from dataclasses import dataclass, replace
+from typing import Dict, Mapping, Optional, Protocol
 
 
 class FetchError(RuntimeError):
     pass
+
+
+class _RateLimitSignal(Exception):
+    """Internal marker: the origin asked this client to slow down (HTTP 429/503)."""
+
+    def __init__(self, status: int, retry_after: Optional[float]) -> None:
+        super().__init__(f"HTTP {status}")
+        self.status = status
+        self.retry_after = retry_after
+
+
+def _parse_retry_after(value: Optional[str], *, now: Optional[float] = None) -> Optional[float]:
+    """Parse an RFC 7231 Retry-After header into non-negative wait seconds.
+
+    Accepts the delay-seconds form and the HTTP-date form; anything malformed
+    returns None so the caller falls back to its own bounded default wait.
+    """
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text:
+        return None
+    if text.isdigit():
+        return float(text)
+    try:
+        target = email.utils.parsedate_to_datetime(text)
+    except (TypeError, ValueError):
+        return None
+    if target is None:
+        return None
+    if target.tzinfo is None:
+        target = target.replace(tzinfo=datetime.timezone.utc)
+    current = time.time() if now is None else now
+    return max(0.0, target.timestamp() - current)
+
+
+def _classify_rate_limit(exc: urllib.error.HTTPError) -> Optional[_RateLimitSignal]:
+    """Map an HTTP error to a retryable rate-limit signal, or None.
+
+    429 is always a rate limit (registries such as export.arxiv.org burst-limit
+    with it). 503 counts only when the origin committed to a Retry-After window;
+    a bare 503 is a genuine server error and stays fail-closed.
+    """
+    retry_after = _parse_retry_after(exc.headers.get("Retry-After") if exc.headers else None)
+    if exc.code == 429 or (exc.code == 503 and retry_after is not None):
+        return _RateLimitSignal(exc.code, retry_after)
+    return None
 
 
 @dataclass(frozen=True)
@@ -168,6 +217,17 @@ class SafeHTTPTransport:
             "citation": int(config.get("max_citation_bytes", 2 * 1024 * 1024)),
             "metadata": int(config.get("max_metadata_bytes", 5 * 1024 * 1024)),
         }
+        # Polite pacing and bounded rate-limit retries. Registries burst-limit
+        # multi-reference collects (observed: export.arxiv.org HTTP 429), and the
+        # alternative to waiting is a spurious BLOCKED verdict. All knobs are
+        # clamped so configuration cannot turn waiting into an unbounded stall.
+        self.min_host_interval = min(max(float(config.get("min_host_interval_seconds", 3.0)), 0.0), 60.0)
+        self.rate_limit_max_retries = min(max(int(config.get("rate_limit_max_retries", 2)), 0), 5)
+        self.rate_limit_max_wait = min(max(float(config.get("rate_limit_max_wait_seconds", 60.0)), 0.0), 300.0)
+        self.rate_limit_default_wait = min(max(float(config.get("rate_limit_default_wait_seconds", 15.0)), 1.0), 60.0)
+        self._host_last_request: Dict[str, float] = {}
+        self._sleep = time.sleep
+        self._monotonic = time.monotonic
         self.context = ssl.create_default_context()
 
     def _validate(self, url: str) -> None:
@@ -178,10 +238,54 @@ class SafeHTTPTransport:
             resolver_mode=self.resolver_mode,
         )
 
+    def _pace_host(self, host: str) -> None:
+        """Space consecutive requests to the same host at least the configured interval apart."""
+        if self.min_host_interval <= 0 or not host:
+            return
+        last = self._host_last_request.get(host)
+        if last is None:
+            return
+        remaining = self.min_host_interval - (self._monotonic() - last)
+        if remaining > 0:
+            self._sleep(remaining)
+
     def fetch(self, spec: FetchSpec) -> FetchResult:
         self._validate(spec.url)
-        started = time.monotonic()
         limit = self.limits.get(spec.kind, self.limits["metadata"])
+        host = (urllib.parse.urlsplit(spec.url).hostname or "").lower()
+        wait_budget = self.rate_limit_max_wait
+        retries = 0
+        while True:
+            self._pace_host(host)
+            try:
+                result = self._fetch_attempt(spec, limit)
+            except _RateLimitSignal as signal:
+                self._host_last_request[host] = self._monotonic()
+                retries += 1
+                if retries > self.rate_limit_max_retries:
+                    raise FetchError(
+                        f"{spec.artifact_id} rate limited by {host} (HTTP {signal.status}) "
+                        f"after {self.rate_limit_max_retries} bounded retries"
+                    ) from signal
+                wait = signal.retry_after if signal.retry_after is not None else self.rate_limit_default_wait
+                if wait > wait_budget:
+                    raise FetchError(
+                        f"{spec.artifact_id} rate limited by {host} (HTTP {signal.status}); "
+                        f"requested wait {wait:.0f}s exceeds the remaining {wait_budget:.0f}s budget"
+                    ) from signal
+                wait_budget -= wait
+                if wait > 0:
+                    self._sleep(wait)
+                continue
+            self._host_last_request[host] = self._monotonic()
+            if retries:
+                headers = dict(result.headers)
+                headers["x-citation-audit-rate-limit-retries"] = str(retries)
+                result = replace(result, headers=headers)
+            return result
+
+    def _fetch_attempt(self, spec: FetchSpec, limit: int) -> FetchResult:
+        started = time.monotonic()
         request = urllib.request.Request(
             spec.url,
             headers={
@@ -255,7 +359,12 @@ class SafeHTTPTransport:
                 )
         except FetchError:
             raise
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as exc:
+        except urllib.error.HTTPError as exc:
+            signal = _classify_rate_limit(exc)
+            if signal is not None:
+                raise signal from exc
+            raise FetchError(f"failed to fetch {spec.artifact_id} from {spec.url}: {exc}") from exc
+        except (urllib.error.URLError, TimeoutError, ValueError) as exc:
             raise FetchError(f"failed to fetch {spec.artifact_id} from {spec.url}: {exc}") from exc
 
 

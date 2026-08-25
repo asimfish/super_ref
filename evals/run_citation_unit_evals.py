@@ -15,6 +15,7 @@ Usage:
 from __future__ import annotations
 
 import email.message
+import email.utils
 import io
 import json
 import os
@@ -25,6 +26,7 @@ import string
 import sys
 import tempfile
 import unittest
+import urllib.error
 import urllib.request
 import zlib
 from unittest import mock
@@ -98,8 +100,12 @@ from citation_audit.transport import (  # noqa: E402
     FetchResult,
     FetchSpec,
     FixtureTransport,
+    SafeHTTPTransport,
+    _classify_rate_limit,
     _decode_gzip_body,
     _host_is_allowed,
+    _parse_retry_after,
+    _RateLimitSignal,
     _SafeRedirectHandler,
     challenge_markers,
     looks_like_html,
@@ -890,6 +896,143 @@ class GzipBodyDecodingTests(unittest.TestCase):
         # fetch() sniffs undeclared gzip bodies by this exact prefix; keep it
         # aligned with what a real gzip stream starts with.
         self.assertTrue(self.gz(b"x").startswith(b"\x1f\x8b\x08"))
+
+
+class RateLimitHandlingTests(unittest.TestCase):
+    """Registries burst-limit multi-reference collects (observed:
+    export.arxiv.org HTTP 429). Waits must be polite, bounded, and fail-closed
+    once the retry count or wait budget is exhausted."""
+
+    def transport(self, **config) -> SafeHTTPTransport:
+        instance = SafeHTTPTransport(config)
+        instance._validate = lambda url: None
+        self.sleeps: list[float] = []
+        self.clock = [1000.0]
+        instance._sleep = self.sleeps.append
+        instance._monotonic = lambda: self.clock[0]
+        return instance
+
+    @staticmethod
+    def http_error(code: int, headers: dict | None = None) -> urllib.error.HTTPError:
+        message = email.message.Message()
+        for key, value in (headers or {}).items():
+            message[key] = value
+        return urllib.error.HTTPError(
+            "https://export.arxiv.org/api/query", code, "throttled", message, io.BytesIO(b"")
+        )
+
+    def test_retry_after_delay_seconds_form(self):
+        self.assertEqual(_parse_retry_after("7"), 7.0)
+        self.assertEqual(_parse_retry_after("0"), 0.0)
+        self.assertEqual(_parse_retry_after(" 12 "), 12.0)
+
+    def test_retry_after_http_date_form(self):
+        header = "Wed, 21 Oct 2026 07:28:30 GMT"
+        target = email.utils.parsedate_to_datetime(header).timestamp()
+        self.assertEqual(_parse_retry_after(header, now=target - 30.0), 30.0)
+        # A date already in the past must clamp to zero, never go negative.
+        self.assertEqual(_parse_retry_after(header, now=target + 60.0), 0.0)
+
+    def test_retry_after_malformed_returns_none(self):
+        for value in (None, "", "soon", "-5", "12.5.3"):
+            self.assertIsNone(_parse_retry_after(value), value)
+
+    def test_429_is_rate_limit_even_without_retry_after(self):
+        signal = _classify_rate_limit(self.http_error(429))
+        self.assertIsInstance(signal, _RateLimitSignal)
+        self.assertEqual(signal.status, 429)
+        self.assertIsNone(signal.retry_after)
+
+    def test_503_is_rate_limit_only_with_retry_after(self):
+        with_header = _classify_rate_limit(self.http_error(503, {"Retry-After": "20"}))
+        self.assertIsInstance(with_header, _RateLimitSignal)
+        self.assertEqual(with_header.retry_after, 20.0)
+        self.assertIsNone(_classify_rate_limit(self.http_error(503)))
+
+    def test_other_http_errors_are_not_rate_limits(self):
+        for code in (400, 403, 404, 500, 502):
+            self.assertIsNone(_classify_rate_limit(self.http_error(code)), code)
+
+    def test_same_host_requests_are_paced(self):
+        instance = self.transport(min_host_interval_seconds=10)
+        instance._host_last_request["export.arxiv.org"] = 995.0
+        instance._pace_host("export.arxiv.org")
+        self.assertEqual(self.sleeps, [5.0])
+
+    def test_distinct_or_new_hosts_are_not_paced(self):
+        instance = self.transport(min_host_interval_seconds=10)
+        instance._host_last_request["export.arxiv.org"] = 995.0
+        instance._pace_host("doi.org")
+        instance._pace_host("")
+        self.assertEqual(self.sleeps, [])
+
+    def test_elapsed_interval_needs_no_pacing(self):
+        instance = self.transport(min_host_interval_seconds=10)
+        instance._host_last_request["export.arxiv.org"] = 985.0
+        instance._pace_host("export.arxiv.org")
+        self.assertEqual(self.sleeps, [])
+
+    def test_fetch_waits_retry_after_then_succeeds_and_marks_result(self):
+        instance = self.transport(min_host_interval_seconds=0)
+        expected = fetch_result()
+        attempts = []
+
+        def scripted(spec, limit):
+            attempts.append(limit)
+            if len(attempts) == 1:
+                raise _RateLimitSignal(429, 5.0)
+            return expected
+
+        instance._fetch_attempt = scripted
+        result = instance.fetch(expected.spec)
+        self.assertEqual(self.sleeps, [5.0])
+        self.assertEqual(len(attempts), 2)
+        self.assertEqual(result.headers["x-citation-audit-rate-limit-retries"], "1")
+        self.assertEqual(result.body, expected.body)
+
+    def test_fetch_uses_bounded_default_wait_when_header_is_missing(self):
+        instance = self.transport(min_host_interval_seconds=0)
+
+        def always_limited(spec, limit):
+            raise _RateLimitSignal(429, None)
+
+        instance._fetch_attempt = always_limited
+        with self.assertRaisesRegex(FetchError, "after 2 bounded retries"):
+            instance.fetch(fetch_result().spec)
+        # Two retries, each padded with the default 15s wait, then fail-closed.
+        self.assertEqual(self.sleeps, [15.0, 15.0])
+
+    def test_fetch_refuses_waits_beyond_budget(self):
+        instance = self.transport(min_host_interval_seconds=0)
+
+        def demanding(spec, limit):
+            raise _RateLimitSignal(429, 120.0)
+
+        instance._fetch_attempt = demanding
+        with self.assertRaisesRegex(FetchError, "exceeds the remaining"):
+            instance.fetch(fetch_result().spec)
+        self.assertEqual(self.sleeps, [])
+
+    def test_untouched_result_carries_no_retry_marker(self):
+        instance = self.transport(min_host_interval_seconds=0)
+        expected = fetch_result()
+        instance._fetch_attempt = lambda spec, limit: expected
+        result = instance.fetch(expected.spec)
+        self.assertNotIn("x-citation-audit-rate-limit-retries", result.headers)
+
+    def test_rate_limit_config_is_clamped(self):
+        instance = SafeHTTPTransport(
+            {
+                "min_host_interval_seconds": 999,
+                "rate_limit_max_retries": 99,
+                "rate_limit_max_wait_seconds": 9999,
+                "rate_limit_default_wait_seconds": 0,
+            }
+        )
+        self.assertEqual(instance.min_host_interval, 60.0)
+        self.assertEqual(instance.rate_limit_max_retries, 5)
+        self.assertEqual(instance.rate_limit_max_wait, 300.0)
+        self.assertEqual(instance.rate_limit_default_wait, 1.0)
 
 
 class FixtureTransportTests(unittest.TestCase):

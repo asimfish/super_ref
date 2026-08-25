@@ -23,7 +23,7 @@ description: Use when the user asks to verify, audit, or fix the references/cita
 mkdir -p workspaces/<name>            # + 写入 REFERENCES.json（格式见 README）
 # 本机走全局代理时，在 PROJECT_CONTEXT.json 配 trusted_proxy + 显式域白名单
 python3 scripts/citationctl init workspaces/<name>
-python3 scripts/citationctl collect workspaces/<name>     # arXiv API 限流则逐条 --only 并间隔 15s+
+python3 scripts/citationctl collect workspaces/<name>     # 注册库限流自动节流+有界重试；持续 429 再逐条 --only
 python3 scripts/citationctl packetize workspaces/<name>
 python3 scripts/citationctl run-agents workspaces/<name>  # 需要 codex CLI
 python3 scripts/citationctl consensus workspaces/<name>

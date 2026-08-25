@@ -221,6 +221,14 @@ stripping, no URL credentials, and structured argv for PDF extraction.
 Some hosts compress responses even for `Accept-Encoding: identity`; declared or
 magic-detected gzip bodies are decoded with the same per-kind byte cap applied
 to the decoded output, and any other content encoding is rejected.
+Registries burst-limit consecutive collects (observed: HTTP 429 from
+`export.arxiv.org`). The transport paces same-host requests at a minimum
+interval and retries HTTP 429 — plus 503 only when the origin commits to a
+`Retry-After` window — under a clamped retry count and total wait budget;
+exhausting either bound fails closed like any other fetch error, and retried
+results carry an `x-citation-audit-rate-limit-retries` header marker. The
+pacing interval, retry count, and wait budgets are configurable only within
+hard caps, so configuration cannot turn waiting into an unbounded stall.
 Downloaded files are never executed.
 `pdftotext` is restricted to identity pages, CPU time, output bytes, a minimal
 environment, and memory on platforms that support `RLIMIT_AS` (macOS records
@@ -350,7 +358,7 @@ CLI argument surfaces, `pdftotext` extraction boundaries, and a deterministic
 fake-codex binary that exercises the real parallel `run-agents` spawn path:
 attestation hash binding, environment allowlisting, argv lockdown flags,
 missing-session/exit/output/JSON/timeout rejections, and shared-session
-blocking under production evidence. The 226-test unit/property suite
+blocking under production evidence. The 240-test unit/property suite
 (`run_citation_unit_evals.py`) locks every parsing, normalization, policy,
 identifier-binding, report-validation, URL/SSRF, redirect, and path-guard
 function at the module boundary, plus seeded round-trip and hash-sensitivity

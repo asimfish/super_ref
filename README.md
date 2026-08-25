@@ -94,7 +94,7 @@ python3 scripts/citationctl doctor workspaces/my-audit
 ```
 
 - `trusted_proxy` 仍拒绝 IP 直连、内嵌凭据、非 HTTPS 和白名单外重定向；策略地板（四来源家族、四角色、全来源一致、HTTPS）不可配置移除。
-- arXiv API（export.arxiv.org）有突发限流（429），逐条采集并保持 ≥15s 间隔即可恢复。
+- 注册库会对连续采集突发限流（观测到 export.arxiv.org 返回 429）。传输层自动做同主机最小间隔节流（默认 3s），429（及带 `Retry-After` 的 503）按声明窗口有界重试（默认最多 2 次、单次 fetch 总等待预算 60s；`network` 配置可调但均有钳位上限）；预算耗尽即按 fail-closed 阻塞该条目，重试过的结果带 `x-citation-audit-rate-limit-retries` 标记。
 - OpenReview 自 2026 年起对未认证 API/PDF 路由启用浏览器 challenge（HTTP 403 `ChallengeRequiredError`）；系统按规不绕过，请改用 arXiv 等可验证官方替代路由，或等待窗口。
 - 会议/期刊口径必须由出版方权威通道证实：arXiv 预印本路由可核作者与标题，但通常无法证实 venue/出版年（预印本各来源年份还会互相冲突），此类引用会按设计阻塞。
 - 传输层会按 `Content-Encoding` 声明或 gzip 魔数解压响应（解压后仍受同一字节上限约束）；曾观测到 `ojs.aaai.org` 无视 `Accept-Encoding: identity` 且不声明编码直接返回 gzip 字节。
@@ -133,8 +133,8 @@ python3 scripts/citationctl doctor workspaces/labelfree-correction-demo
 ## 回归测试
 
 ```bash
-python3 evals/run_citation_unit_evals.py    # 226 项单元/属性测试（解析、归一化、策略、传输）
+python3 evals/run_citation_unit_evals.py    # 240 项单元/属性测试（解析、归一化、策略、传输）
 python3 evals/run_citation_evals.py         # 86 项端到端安全与状态机测试（含确定性 fake-codex 生成路径）
 ```
 
-覆盖假 PDF/登录页拒收、作者遗漏/添加/乱序、来源与字段冲突、BibTeX 歧义、提示注入隔离、包/报告/符号链接篡改、身份复用、权威标识失配、精确提案审批、apply 回滚与事务闭合、gzip 解压上限、并行 agent 下的报告扫描竞态等。
+覆盖假 PDF/登录页拒收、作者遗漏/添加/乱序、来源与字段冲突、BibTeX 歧义、提示注入隔离、包/报告/符号链接篡改、身份复用、权威标识失配、精确提案审批、apply 回滚与事务闭合、gzip 解压上限、注册库限流的节流与有界重试、并行 agent 下的报告扫描竞态等。
