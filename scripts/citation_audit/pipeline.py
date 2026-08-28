@@ -2221,7 +2221,7 @@ def validate_audit_summary(
     allow_fixture: bool = False,
     allow_pending_corrections: bool = False,
 ) -> list[str]:
-    """Deterministic final gate used by rebuttalctl; performs no network access."""
+    """Deterministic final offline gate; performs no network access."""
     workspace = os.path.abspath(workspace)
     errors = []
     summary_path = os.path.join(workspace, SUMMARY_FILE)

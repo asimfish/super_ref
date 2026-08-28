@@ -934,7 +934,9 @@ class RateLimitHandlingTests(unittest.TestCase):
         self.assertEqual(_parse_retry_after(header, now=target + 60.0), 0.0)
 
     def test_retry_after_malformed_returns_none(self):
-        for value in (None, "", "soon", "-5", "12.5.3"):
+        # "٧" and "²" pass str.isdigit() but not float(); the parser must stay
+        # total on origin-controlled header bytes instead of raising.
+        for value in (None, "", "soon", "-5", "12.5.3", "٧", "²"):
             self.assertIsNone(_parse_retry_after(value), value)
 
     def test_429_is_rate_limit_even_without_retry_after(self):

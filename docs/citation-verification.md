@@ -1,13 +1,17 @@
 # Citation Verification and Correction
 
 This subsystem verifies bibliographic identity from downloaded evidence before a
-reference can be used in a strict rebuttal. It is fail-closed: missing evidence,
+reference can be trusted downstream. It is fail-closed: missing evidence,
 source disagreement, agent disagreement, stale hashes, or an unapproved
 correction blocks finalization.
 
-In a strict workspace, any claim with a non-empty `citation_ids` list activates
-this gate. Removing or disabling `PROJECT_CONTEXT.json.citation_audit` cannot
-bypass verification.
+This repository is the standalone extraction of the subsystem. In the parent
+`super_rebuttal` integration, any claim with a non-empty `citation_ids` list
+activates this gate and disabling `PROJECT_CONTEXT.json.citation_audit` cannot
+bypass verification; in this standalone repository the chain ends at
+`citationctl doctor` and the offline summary gate bound to the exact ledger
+hash, and embedding consumers are responsible for wiring that gate into their
+own finalization step.
 
 ## 1. What Is Verified
 
@@ -114,9 +118,8 @@ python3 scripts/citationctl propose <workspace>
 python3 scripts/citationctl apply <workspace> --author-approved --replace-ledger \
   --proposal-sha256 '<printed-sha256>'
 
-# 8. Check the proof chain and the rebuttal final gate.
+# 8. Check the proof chain and the final offline gate.
 python3 scripts/citationctl doctor <workspace>
-python3 scripts/rebuttalctl lint <workspace>
 
 # Recovery only: use this when doctor reports apply=PREPARED.
 python3 scripts/citationctl recover <workspace>
@@ -135,9 +138,6 @@ When `propose` reports zero changes, its PASS summary already binds the current
 ledger and no empty `apply` is needed. A PREPARED apply transaction must be
 recovered before starting another apply or audit batch.
 
-Citation gates are activated by the contract's `citation_ids`, not by
-`RESPONSE_STYLE.json`. Disabling or misspelling a presentation profile cannot
-skip audit, draft blocking, or References binding.
 
 ## 4. Independent Agent Chain
 
@@ -325,14 +325,13 @@ operator with unrestricted write access can still forge an entire local
 workspace; defending against that actor would require externally signed,
 append-only attestations and is outside this local repository's trust model.
 
-`rebuttalctl lint` also binds reviewer-visible References blocks to the
-verified ledger. Each managed block must use contiguous `[1]...[N]` numbering;
-every entry must normalize exactly to one cited ledger record; duplicates,
-altered fields, and extra/unmapped entries fail. The union of all blocks must
-cover every `citation_ids` record. This gate runs even before `PASTE_READY.txt`
-exists, and `draft` is blocked until the underlying citation audit passes.
-When `citation_ids` is empty, an undeclared reviewer-visible References entry is
-still rejected rather than silently bypassing verification.
+In the parent `super_rebuttal` integration, a separate `rebuttalctl lint` gate
+additionally binds reviewer-visible References blocks to the verified ledger
+(contiguous `[1]...[N]` numbering, exact one-to-one entry mapping, and full
+coverage of every `citation_ids` record). That rendering-side binding gate did
+not move into this standalone repository: consumers embedding this subsystem
+are responsible for binding their own rendered bibliography to the audited
+ledger via `CITATION_AUDIT_SUMMARY.json` and its exact ledger hash.
 
 ## 9. Verification
 
@@ -340,7 +339,6 @@ still rejected rather than silently bypassing verification.
 python3 -m py_compile scripts/citationctl scripts/citation_audit/*.py
 python3 evals/run_citation_evals.py
 python3 evals/run_citation_unit_evals.py
-python3 evals/run_lint_evals.py
 ```
 
 The 86-case citation integration suite uses a structurally valid generated PDF
@@ -362,10 +360,8 @@ blocking under production evidence. The 240-test unit/property suite
 (`run_citation_unit_evals.py`) locks every parsing, normalization, policy,
 identifier-binding, report-validation, URL/SSRF, redirect, and path-guard
 function at the module boundary, plus seeded round-trip and hash-sensitivity
-properties. The 177-case main lint suite separately locks exact References
-sets — numbering, duplicates, stray bibliography lines, split-block coverage,
-wrapped entries, prepared-transaction blocking — and the full
-disabled/missing/typo-style × lint/draft/export citation-gate matrix.
+properties. The References-block rendering suite that locks reviewer-visible
+bibliography output lives in the parent `super_rebuttal` repository, not here.
 
 Relevant primary API documentation:
 [Crossref REST](https://www.crossref.org/documentation/retrieve-metadata/rest-api/),

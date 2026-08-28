@@ -142,9 +142,9 @@ def cmd_apply(args) -> int:
     )
     print(f"[citation:apply] summary status={summary['status']} applied={summary['applied']}")
     if not args.replace_ledger:
-        print("  preview remains separate; final lint stays blocked until --replace-ledger is explicitly approved")
+        print("  preview remains separate; the final gate stays blocked until --replace-ledger is explicitly approved")
         return 1 if summary.get("status") != "PASS" else 0
-    print("  REFERENCES.json updated with a timestamped backup; run citationctl doctor and rebuttalctl lint")
+    print("  REFERENCES.json updated with a timestamped backup; run citationctl doctor")
     return 0 if summary.get("status") == "PASS" else 1
 
 

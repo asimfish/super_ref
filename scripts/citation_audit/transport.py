@@ -45,7 +45,9 @@ def _parse_retry_after(value: Optional[str], *, now: Optional[float] = None) -> 
     text = str(value).strip()
     if not text:
         return None
-    if text.isdigit():
+    # isdigit() alone also accepts non-ASCII digits (e.g. Arabic-Indic) that
+    # float() rejects; headers are origin-controlled, so keep the parser total.
+    if text.isascii() and text.isdigit():
         return float(text)
     try:
         target = email.utils.parsedate_to_datetime(text)
